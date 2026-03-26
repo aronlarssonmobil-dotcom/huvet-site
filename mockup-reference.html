@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huvet — Klara körkortsprovet</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #111; background: #fff; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem; font-weight: 700; color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.85rem; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+.nav-cta {
+  background: #00C853 !important; color: #fff !important;
+  padding: 0.6rem 1.5rem !important; border-radius: 10px !important;
+  font-weight: 600 !important; text-shadow: none !important;
+}
+
+/* HERO — fullbleed med bild */
+.hero {
+  position: relative; width: 100%; height: 100vh; min-height: 700px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('huvet-hero.png') center center / cover no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,30,15,0.5) 0%, rgba(0,30,15,0.2) 40%, rgba(0,30,15,0.15) 60%, rgba(0,30,15,0.6) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0 1.5rem; text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+  color: #fff; padding: 0.45rem 1.25rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 600; margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.hero-badge .dot { width: 8px; height: 8px; background: #00C853; border-radius: 50%; }
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700;
+  color: #fff; line-height: 1.08; margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3); letter-spacing: -1px;
+}
+.hero-title .green { color: #00E676; }
+.hero-sub {
+  font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem;
+  max-width: 520px; line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 1rem; align-items: center; margin-bottom: 3rem; }
+.btn-hero {
+  background: #00C853; color: #fff; padding: 1rem 2.25rem; border-radius: 14px;
+  font-size: 1rem; font-weight: 700; text-decoration: none;
+  transition: all 0.2s; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+.btn-hero:hover { background: #00E676; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,200,83,0.35); }
+.btn-ghost {
+  color: #fff; padding: 1rem 1.5rem; font-size: 1rem; font-weight: 500;
+  text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 14px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+
+.hero-stats {
+  display: flex; gap: 3rem;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: #fff;
+}
+.hero-stat-num .accent { color: #00E676; }
+.hero-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* SECTIONS — consistent system */
+section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+.section-sub { color: #888; font-size: 0.95rem; }
+
+/* QUIZ PREVIEW */
+.quiz-section { padding: 5rem 2.5rem; background: #fafafa; }
+.quiz-inner { max-width: 1100px; margin: 0 auto; }
+.quiz-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: center; }
+.quiz-info {}
+.quiz-info h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+.quiz-info p { color: #666; line-height: 1.7; margin-bottom: 1.5rem; }
+.quiz-features { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+.quiz-feature { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: #444; }
+.quiz-feature .check { width: 24px; height: 24px; background: #E8F5E9; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #00C853; font-size: 0.75rem; flex-shrink: 0; }
+
+.quiz-card {
+  background: #fff; border-radius: 20px; padding: 2rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;
+}
+.quiz-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid #f5f5f5; }
+.quiz-card-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; }
+.quiz-progress { font-size: 0.75rem; color: #999; display: flex; align-items: center; gap: 0.5rem; }
+.progress-bar { width: 60px; height: 5px; background: #f0f0f0; border-radius: 10px; overflow: hidden; }
+.progress-fill { width: 60%; height: 100%; background: #00C853; border-radius: 10px; }
+.quiz-sign {
+  width: 100px; height: 100px; margin: 1rem auto 1.25rem;
+  border: 4px solid #E53935; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif; font-size: 2.25rem; font-weight: 700;
+}
+.quiz-question { font-size: 0.95rem; font-weight: 600; text-align: center; margin-bottom: 1.25rem; line-height: 1.4; }
+.quiz-options { display: flex; flex-direction: column; gap: 0.6rem; }
+.quiz-option {
+  padding: 0.85rem 1rem; border: 2px solid #f0f0f0; border-radius: 12px;
+  font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.65rem;
+  cursor: pointer; transition: all 0.15s;
+}
+.quiz-option:hover { border-color: #ddd; background: #fafafa; }
+.quiz-option.correct { border-color: #00C853; background: #E8F5E9; }
+.quiz-option .letter {
+  width: 26px; height: 26px; border-radius: 7px; background: #f5f5f5;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: #999; flex-shrink: 0;
+}
+.quiz-option.correct .letter { background: #00C853; color: #fff; }
+
+/* CATEGORIES */
+.cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.cat-card {
+  padding: 1.75rem; border-radius: 16px; background: #fafafa; border: 1px solid #f0f0f0;
+  transition: all 0.2s; cursor: pointer; text-decoration: none; color: inherit;
+}
+.cat-card:hover { transform: translateY(-4px); background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border-color: #e0e0e0; }
+.cat-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+.cat-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.35rem; }
+.cat-desc { color: #888; font-size: 0.8rem; line-height: 1.6; }
+.cat-count { display: inline-block; margin-top: 0.75rem; font-size: 0.7rem; font-weight: 600; color: #00C853; background: #E8F5E9; padding: 0.25rem 0.6rem; border-radius: 6px; }
+
+/* JOURNEY */
+.journey { padding: 5rem 2.5rem; background: #111; color: #fff; }
+.journey-inner { max-width: 800px; margin: 0 auto; }
+.journey-header { text-align: center; margin-bottom: 3rem; }
+.journey-title { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.journey-sub { color: #666; font-size: 0.95rem; }
+.journey-steps { position: relative; }
+.journey-line { position: absolute; left: 20px; top: 10px; bottom: 10px; width: 2px; background: #222; }
+.journey-step { display: flex; gap: 1.75rem; padding: 1.25rem 0; position: relative; }
+.step-dot {
+  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700; z-index: 1;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.step-dot.done { background: #00C853; color: #fff; }
+.step-dot.next { background: #222; color: #00C853; border: 2px solid #00C853; }
+.step-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.step-desc { color: #777; font-size: 0.82rem; line-height: 1.6; }
+
+/* REVIEWS */
+.reviews { padding: 5rem 2.5rem; background: #fafafa; }
+.reviews-inner { max-width: 1100px; margin: 0 auto; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.review-card { background: #fff; border-radius: 16px; padding: 1.75rem; border: 1px solid #f0f0f0; }
+.review-stars { color: #FFC107; font-size: 0.9rem; margin-bottom: 0.75rem; letter-spacing: 1px; }
+.review-text { font-size: 0.85rem; line-height: 1.7; color: #555; margin-bottom: 1rem; }
+.review-author { display: flex; align-items: center; gap: 0.6rem; }
+.review-avatar { width: 32px; height: 32px; border-radius: 50%; background: #E8F5E9; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #2E7D32; }
+.review-name { font-weight: 600; font-size: 0.78rem; }
+.review-date { font-size: 0.68rem; color: #999; }
+
+/* CTA */
+.cta { padding: 5rem 2.5rem; }
+.cta-inner {
+  max-width: 800px; margin: 0 auto; background: #111; border-radius: 24px;
+  padding: 4rem 3rem; text-align: center; color: #fff; position: relative; overflow: hidden;
+}
+.cta-glow { position: absolute; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(0,200,83,0.12), transparent 70%); top: -80px; right: -80px; }
+.cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; position: relative; }
+.cta-desc { color: #777; margin-bottom: 2rem; font-size: 0.9rem; position: relative; }
+.cta-btn {
+  background: #00C853; color: #fff; padding: 1rem 2.5rem; border-radius: 14px;
+  font-size: 0.95rem; font-weight: 700; border: none; cursor: pointer;
+  transition: all 0.2s; position: relative; font-family: 'Inter', sans-serif;
+}
+.cta-btn:hover { background: #00E676; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,200,83,0.3); }
+
+/* FOOTER */
+footer { border-top: 1px solid #f0f0f0; padding: 3.5rem 2.5rem 2rem; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; }
+.footer-brand { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
+.footer-desc { color: #888; font-size: 0.78rem; line-height: 1.8; }
+.footer-col-title { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: #999; margin-bottom: 0.85rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.4rem; }
+.footer-links a { color: #888; text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
+.footer-links a:hover { color: #111; }
+.footer-bottom { max-width: 1100px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #f0f0f0; text-align: center; color: #ccc; font-size: 0.72rem; }
+
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat-num { font-size: 1.5rem; }
+  .quiz-layout { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Huvet</div>
+  <div class="nav-links">
+    <a href="#">Teoriprov</a>
+    <a href="#">Vägmärken</a>
+    <a href="#">Trafikregler</a>
+    <a href="#" class="nav-cta">Börja öva</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> 94% klarar provet med Huvet</div>
+    <h1 class="hero-title">Klara körkortsprovet.<br><span class="green">Första gången.</span></h1>
+    <p class="hero-sub">450+ riktiga teorifrågor med smart svaghetsanalys. Öva på det du faktiskt behöver — inte allt annat.</p>
+    <div class="hero-ctas">
+      <button class="btn-hero">Börja öva gratis →</button>
+      <a href="#" class="btn-ghost">Så funkar det</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">450<span class="accent">+</span></div>
+        <div class="hero-stat-label">Frågor</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">94<span class="accent">%</span></div>
+        <div class="hero-stat-label">Klarar provet</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100<span class="accent">%</span></div>
+        <div class="hero-stat-label">Gratis</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="quiz-section">
+  <div class="quiz-inner">
+    <div class="quiz-layout">
+      <div class="quiz-info">
+        <h2>Öva direkt — ingen registrering</h2>
+        <p>Huvet anpassar sig efter dig. Svara fel på en fråga? Den dyker upp igen tills du kan den. Smart repetition som faktiskt funkar.</p>
+        <div class="quiz-features">
+          <div class="quiz-feature"><span class="check">✓</span> Riktiga frågor från teoriprovet</div>
+          <div class="quiz-feature"><span class="check">✓</span> Direkt feedback med förklaring</div>
+          <div class="quiz-feature"><span class="check">✓</span> Svaghetsanalys hittar dina gaps</div>
+          <div class="quiz-feature"><span class="check">✓</span> Funkar på mobil och dator</div>
+        </div>
+        <button class="btn-hero" style="font-family:'Inter',sans-serif;">Testa en fråga →</button>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-card-header">
+          <div class="quiz-card-title">Övningsfråga</div>
+          <div class="quiz-progress"><div class="progress-bar"><div class="progress-fill"></div></div> 12/20</div>
+        </div>
+        <div class="quiz-sign">50</div>
+        <div class="quiz-question">Vad innebär detta vägmärke?</div>
+        <div class="quiz-options">
+          <div class="quiz-option correct"><span class="letter">A</span> Högsta tillåtna hastighet 50 km/h</div>
+          <div class="quiz-option"><span class="letter">B</span> Rekommenderad hastighet 50 km/h</div>
+          <div class="quiz-option"><span class="letter">C</span> Minsta tillåtna hastighet 50 km/h</div>
+          <div class="quiz-option"><span class="letter">D</span> Hastigheten ökar till 50 km/h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section>
+  <div class="section-header">
+    <h2 class="section-title">Allt du behöver för körkort</h2>
+    <p class="section-sub">Välj ett ämne och börja direkt</p>
+  </div>
+  <div class="cat-grid">
+    <a class="cat-card" href="#">
+      <div class="cat-icon">📝</div>
+      <div class="cat-name">Teoriprov</div>
+      <div class="cat-desc">Simulera det riktiga provet med timer och poäng.</div>
+      <div class="cat-count">65 frågor</div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-icon">⚠️</div>
+      <div class="cat-name">Vägmärken</div>
+      <div class="cat-desc">Alla svenska vägmärken med bilder och förklaringar.</div>
+      <div class="cat-count">120+ skyltar</div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-icon">📏</div>
+      <div class="cat-name">Trafikregler</div>
+      <div class="cat-desc">Högerregel, stopplikt, väjning — allt du måste kunna.</div>
+      <div class="cat-count">45 frågor</div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-icon">🚗</div>
+      <div class="cat-name">Körprov</div>
+      <div class="cat-desc">Checklistor och tips för uppkörningen.</div>
+      <div class="cat-count">Guide</div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-icon">⚡</div>
+      <div class="cat-name">Hastigheter</div>
+      <div class="cat-desc">Alla hastighetsgränser och var de gäller.</div>
+      <div class="cat-count">30 frågor</div>
+    </a>
+    <a class="cat-card" href="#">
+      <div class="cat-icon">🛡️</div>
+      <div class="cat-name">Riskutbildning</div>
+      <div class="cat-desc">Förbered dig för Risk 1 och Risk 2.</div>
+      <div class="cat-count">Guide</div>
+    </a>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<div class="journey">
+  <div class="journey-inner">
+    <div class="journey-header">
+      <h2 class="journey-title">Din resa till körkort</h2>
+      <p class="journey-sub">Fyra steg — Huvet guidar dig hela vägen</p>
+    </div>
+    <div class="journey-steps">
+      <div class="journey-line"></div>
+      <div class="journey-step">
+        <div class="step-dot done">1</div>
+        <div><div class="step-title">Börja med grunderna</div><div class="step-desc">Gör dina första frågor. Huvet kartlägger vad du redan kan.</div></div>
+      </div>
+      <div class="journey-step">
+        <div class="step-dot done">2</div>
+        <div><div class="step-title">Öva på dina svagheter</div><div class="step-desc">Svaghetsanalysen ser till att du lägger tid på rätt saker.</div></div>
+      </div>
+      <div class="journey-step">
+        <div class="step-dot done">3</div>
+        <div><div class="step-title">Gör övningsprov</div><div class="step-desc">Simulera provet med timer. Klarar du 52/65? Du är redo.</div></div>
+      </div>
+      <div class="journey-step">
+        <div class="step-dot next">✓</div>
+        <div><div class="step-title">Klara provet</div><div class="step-desc">94% av Huvets användare klarar provet första gången.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="reviews">
+  <div class="reviews-inner">
+    <div class="section-header">
+      <h2 class="section-title">De klarade provet med Huvet</h2>
+      <p class="section-sub">Riktiga resultat från riktiga elever</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Jag var livrädd för teoriprovet men med Huvet kände jag mig redo. Klarade det första gången med 61/65!"</div>
+        <div class="review-author"><div class="review-avatar">EM</div><div><div class="review-name">Emma M.</div><div class="review-date">Mars 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Svaghetsanalysen visade exakt vad jag behövde plugga. Övade 15 min om dagen i två veckor. Sjukt smart app."</div>
+        <div class="review-author"><div class="review-avatar">AK</div><div><div class="review-name">Alex K.</div><div class="review-date">Februari 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Mycket bättre än att läsa körkortsboken. Frågorna liknar det riktiga provet och man lär sig av sina misstag."</div>
+        <div class="review-author"><div class="review-avatar">SJ</div><div><div class="review-name">Sara J.</div><div class="review-date">Januari 2026</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-glow"></div>
+    <h2 class="cta-title">Redo att klara provet?</h2>
+    <p class="cta-desc">Gratis. Ingen registrering. Börja öva direkt.</p>
+    <button class="cta-btn">Börja öva gratis →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Huvet</div>
+      <p class="footer-desc">Sveriges smartaste plattform för körkortsprovet. Öva, lär dig och klara provet — gratis.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Öva</div>
+      <ul class="footer-links">
+        <li><a href="#">Teoriprov</a></li>
+        <li><a href="#">Vägmärken</a></li>
+        <li><a href="#">Trafikregler</a></li>
+        <li><a href="#">Övningsprov</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Guider</div>
+      <ul class="footer-links">
+        <li><a href="#">Körprov</a></li>
+        <li><a href="#">Kostnad</a></li>
+        <li><a href="#">Intensivkurs</a></li>
+        <li><a href="#">Riskutbildning</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Huvet</div>
+      <ul class="footer-links">
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Integritetspolicy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Huvet. Alla rättigheter förbehållna.</div>
+</footer>
+
+</body>
+</html>
