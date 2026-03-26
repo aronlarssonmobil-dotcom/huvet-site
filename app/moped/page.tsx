@@ -281,6 +281,11 @@ export default function MopedPage() {
             <Link href="/" style={{ color: 'white', textDecoration: 'none', fontWeight: '800', fontSize: '18px' }}>Huvet</Link>
             <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
               {[
+                { href: '/teoriprov', label: 'Teoriprov' },
+                { href: '/korprov', label: 'Körprov' },
+                { href: '/ovningskörning', label: 'Övningskörning' },
+                { href: '/korkort-kostnad', label: 'Körkort kostnad' },
+                { href: '/intensivkurs', label: 'Intensivkurs' },
                 { href: '/korkortstips', label: 'Körkortslips' },
                 { href: '/vagmarken', label: 'Vägmärken' },
                 { href: '/korkortsfragor', label: 'Körkortsfrågor' },

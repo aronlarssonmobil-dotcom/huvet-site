@@ -1,1098 +1,1328 @@
 import QuizDemo from "@/components/QuizDemo";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <style>{`
-        /* ── Reset ── */
-        *, *::before, *::after { box-sizing: border-box; }
-
         /* ── Tokens ── */
         :root {
           --green: #006B3F;
           --green-dark: #004d2d;
           --green-xdark: #0d1f17;
           --green-light: #e6f4ee;
-          --green-mid: #c3ddd2;
           --green-bg: #f0f7f3;
-          --text: #0d1f17;
-          --muted: #555;
-          --border: #e2efe9;
           --yellow: #f5d020;
-          --font: var(--font-inter), system-ui, sans-serif;
+          --yellow-dark: #d4af00;
+          --text: #0d1f17;
+          --muted: #5a6b62;
+          --border: #dceee5;
+          --card-bg: #f0f7f3;
+          --heading: var(--font-playfair), 'Georgia', serif;
+          --body: var(--font-dm-sans), system-ui, sans-serif;
+          --radius: 18px;
+          --radius-sm: 14px;
         }
 
-        body { margin: 0; background: #fff; color: var(--text); font-family: var(--font); }
+        body { background: #fff; color: var(--text); font-family: var(--body); }
 
-        /* ── Utilities ── */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .container-sm { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-
-        /* ── Header ── */
-        .site-header {
-          position: sticky;
-          top: 0;
-          z-index: 200;
-          background: rgba(255,255,255,0.96);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
-          border-bottom: 1px solid var(--border);
-        }
-        .header-inner {
+        /* ── Hero ── */
+        .hero {
+          position: relative;
+          min-height: 100vh;
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 64px;
-          gap: 24px;
+          flex-direction: column;
+          justify-content: center;
+          overflow: hidden;
         }
-        .logo {
-          display: flex;
+        .hero-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+        }
+        .hero-bg img {
+          object-fit: cover;
+          object-position: center 40%;
+        }
+        .hero-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(180deg,
+              rgba(13,31,23,0.75) 0%,
+              rgba(13,31,23,0.55) 40%,
+              rgba(0,107,63,0.4) 70%,
+              rgba(13,31,23,0.85) 100%
+            );
+          z-index: 1;
+        }
+        /* Animated road lines at the bottom of hero */
+        .hero-road {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 6px;
+          z-index: 3;
+          background: var(--green-xdark);
+          overflow: hidden;
+        }
+        .hero-road::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 200%;
+          height: 3px;
+          background: repeating-linear-gradient(
+            90deg,
+            var(--yellow) 0px,
+            var(--yellow) 40px,
+            transparent 40px,
+            transparent 72px
+          );
+          animation: roadScroll 4s linear infinite;
+        }
+        @keyframes roadScroll {
+          from { transform: translateY(-50%) translateX(0); }
+          to { transform: translateY(-50%) translateX(-50%); }
+        }
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 120px 24px 80px;
+          text-align: center;
+        }
+
+        /* Achievement-style badge above hero title */
+        .hero-achievement {
+          display: inline-flex;
           align-items: center;
           gap: 10px;
-          text-decoration: none;
-          flex-shrink: 0;
+          background: rgba(245,208,32,0.15);
+          border: 1px solid rgba(245,208,32,0.3);
+          backdrop-filter: blur(8px);
+          padding: 8px 20px;
+          border-radius: 999px;
+          margin-bottom: 28px;
+          animation: fadeSlideUp 0.6s ease-out;
         }
-        .logo-circle {
-          width: 38px;
-          height: 38px;
-          background: var(--green);
+        .hero-achievement-icon {
+          width: 28px;
+          height: 28px;
+          background: var(--yellow);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          flex-shrink: 0;
+          font-size: 14px;
+          font-weight: 800;
+          color: var(--green-xdark);
         }
-        .logo-text {
-          font-size: 22px;
-          font-weight: 900;
-          color: var(--text);
-          letter-spacing: -0.04em;
-          line-height: 1;
-        }
-        .nav {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          flex: 1;
-          justify-content: center;
-        }
-        .nav a {
+        .hero-achievement span {
           font-size: 14px;
           font-weight: 600;
-          color: #444;
-          text-decoration: none;
-          padding: 8px 14px;
-          border-radius: 8px;
-          transition: color 0.15s, background 0.15s;
+          color: rgba(255,255,255,0.95);
+          letter-spacing: 0.02em;
         }
-        .nav a:hover { color: var(--green); background: var(--green-light); }
-        .btn-primary {
-          background: var(--green);
+
+        .hero-h1 {
+          font-family: var(--heading);
+          font-size: clamp(2.8rem, 6vw, 5rem);
+          font-weight: 900;
           color: white;
-          padding: 11px 22px;
-          border-radius: 999px;
-          font-size: 14px;
-          font-weight: 700;
-          text-decoration: none;
-          white-space: nowrap;
-          flex-shrink: 0;
-          transition: background 0.15s, transform 0.1s;
-          display: inline-block;
+          line-height: 1.05;
+          margin: 0 0 24px;
+          letter-spacing: -0.03em;
+          animation: fadeSlideUp 0.7s ease-out 0.1s both;
         }
-        .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
-        .btn-primary-lg {
-          background: var(--green);
-          color: white;
+        .hero-h1 .yellow { color: var(--yellow); }
+        .hero-sub {
+          font-size: clamp(17px, 2.2vw, 21px);
+          color: rgba(255,255,255,0.8);
+          max-width: 560px;
+          margin: 0 auto 40px;
+          line-height: 1.6;
+          animation: fadeSlideUp 0.7s ease-out 0.2s both;
+        }
+        .hero-cta-group {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          flex-wrap: wrap;
+          animation: fadeSlideUp 0.7s ease-out 0.3s both;
+        }
+        .btn-yellow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: var(--yellow);
+          color: var(--green-xdark);
           padding: 18px 40px;
           border-radius: 999px;
-          font-size: 18px;
+          font-size: 17px;
           font-weight: 800;
           text-decoration: none;
-          display: inline-block;
-          box-shadow: 0 6px 28px rgba(0,107,63,0.35);
-          transition: background 0.15s, transform 0.1s, box-shadow 0.1s;
+          font-family: var(--body);
+          box-shadow: 0 4px 20px rgba(245,208,32,0.4), 0 0 0 0 rgba(245,208,32,0.4);
+          transition: transform 0.2s, box-shadow 0.2s;
         }
-        .btn-primary-lg:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 36px rgba(0,107,63,0.4); }
-
-        /* ── Hero ── */
-        .hero {
-          background: linear-gradient(150deg, #f0f7f3 0%, #fff 55%);
-          padding: 80px 20px 0;
-          overflow: hidden;
+        .btn-yellow:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 32px rgba(245,208,32,0.5), 0 0 40px rgba(245,208,32,0.15);
         }
-        .hero-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 64px;
-          align-items: center;
-          max-width: 1100px;
-          margin: 0 auto;
-        }
-        .hero-badge {
+        .btn-ghost-white {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: var(--green-light);
-          color: var(--green);
+          background: rgba(255,255,255,0.1);
+          border: 1.5px solid rgba(255,255,255,0.25);
+          backdrop-filter: blur(4px);
+          color: white;
+          padding: 16px 32px;
+          border-radius: 999px;
+          font-size: 15px;
+          font-weight: 700;
+          text-decoration: none;
+          font-family: var(--body);
+          transition: background 0.2s, transform 0.2s;
+        }
+        .btn-ghost-white:hover {
+          background: rgba(255,255,255,0.18);
+          transform: translateY(-2px);
+        }
+
+        /* Floating stats in hero bottom */
+        .hero-floats {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 56px;
+          animation: fadeSlideUp 0.7s ease-out 0.5s both;
+        }
+        .hero-float-card {
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.12);
+          backdrop-filter: blur(12px);
+          padding: 14px 24px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .hero-float-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+        }
+        .hero-float-icon.green { background: rgba(0,107,63,0.4); }
+        .hero-float-icon.yellow { background: rgba(245,208,32,0.3); }
+        .hero-float-icon.white { background: rgba(255,255,255,0.15); }
+        .hero-float-value {
+          font-size: 20px;
+          font-weight: 800;
+          color: white;
+          line-height: 1.1;
+          font-family: var(--heading);
+        }
+        .hero-float-label {
+          font-size: 12px;
+          color: rgba(255,255,255,0.6);
+          font-weight: 500;
+        }
+
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Trust bar ── */
+        .trust-bar {
+          background: var(--green-xdark);
+          padding: 20px 24px;
+          overflow: hidden;
+        }
+        .trust-bar-inner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 32px;
+          flex-wrap: wrap;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .trust-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 14px;
+          font-weight: 600;
+          color: rgba(255,255,255,0.7);
+        }
+        .trust-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--yellow);
+        }
+
+        /* ── Stats Section — Road Sign Style ── */
+        .stats-section {
+          padding: 96px 24px;
+          background: white;
+          position: relative;
+        }
+        .stats-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 2px;
+          height: 48px;
+          background: linear-gradient(180deg, var(--green-xdark), var(--border));
+        }
+        .section-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
           font-size: 12px;
           font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 0.14em;
-          padding: 6px 16px;
-          border-radius: 999px;
-          margin-bottom: 28px;
+          letter-spacing: 0.16em;
+          color: var(--green);
+          margin-bottom: 16px;
         }
-        .hero-dot {
+        .section-label-dot {
           width: 8px;
           height: 8px;
           border-radius: 50%;
           background: var(--green);
-          display: inline-block;
-          animation: pulse 2s infinite;
         }
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
-        }
-        .hero-h1 {
-          font-size: clamp(2.6rem, 5vw, 4rem);
-          font-weight: 900;
-          line-height: 1.05;
-          color: var(--text);
-          margin: 0 0 24px;
-          letter-spacing: -0.04em;
-        }
-        .hero-h1 .accent { color: var(--green); }
-        .hero-sub {
-          font-size: 18px;
-          line-height: 1.7;
-          color: var(--muted);
-          max-width: 460px;
-          margin: 0 0 36px;
-        }
-        .hero-cta-row {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          flex-wrap: wrap;
-          margin-bottom: 36px;
-        }
-        .social-proof {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 14px;
-          color: #666;
-          font-weight: 500;
-        }
-        .stars { color: #f5d020; font-size: 16px; letter-spacing: 1px; }
-
-        /* Hero card */
-        .hero-card {
-          background: white;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 0 0 1px var(--border);
-          max-width: 380px;
-          margin-left: auto;
-        }
-        .hero-card-header {
-          background: var(--green);
-          padding: 18px 20px;
-          color: white;
-        }
-        .hero-card-title { font-size: 12px; opacity: 0.75; margin-bottom: 4px; font-weight: 600; }
-        .hero-card-q { font-size: 17px; font-weight: 800; margin-bottom: 14px; }
-        .progress-bar {
-          height: 6px;
-          background: rgba(255,255,255,0.25);
-          border-radius: 999px;
-          overflow: hidden;
-        }
-        .progress-fill {
-          height: 100%;
-          background: white;
-          border-radius: 999px;
-          width: 60%;
-        }
-        .hero-card-body { padding: 20px; }
-        .question-text {
-          font-size: 14px;
-          font-weight: 700;
-          color: var(--text);
-          line-height: 1.5;
-          margin-bottom: 16px;
-        }
-        .answer-opt {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 11px 14px;
-          border-radius: 12px;
-          margin-bottom: 8px;
-          font-size: 13px;
-          font-weight: 600;
-          border: 2px solid var(--border);
-          background: white;
-          color: var(--muted);
-        }
-        .answer-opt.correct {
-          border-color: var(--green);
-          background: var(--green-light);
-          color: var(--green-dark);
-          font-weight: 700;
-        }
-        .opt-circle {
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          background: var(--border);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 11px;
-          font-weight: 700;
-          color: #999;
-          flex-shrink: 0;
-        }
-        .opt-circle.correct-c { background: var(--green); color: white; }
-        .score-chip {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-top: 14px;
-          padding: 12px 16px;
-          background: var(--green-bg);
-          border-radius: 12px;
-        }
-        .score-label { font-size: 12px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.1em; }
-        .score-bar-wrap { flex: 1; margin: 0 12px; height: 6px; background: var(--green-mid); border-radius: 999px; overflow: hidden; }
-        .score-bar-fill { height: 100%; background: var(--green); border-radius: 999px; width: 68%; }
-        .score-pct { font-size: 14px; font-weight: 900; color: var(--green); }
-
-        /* ── Stats strip ── */
-        .stats-strip {
-          background: #0d3d27;
-          padding: 48px 20px;
-        }
-        .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        .stat-item {
-          text-align: center;
-          padding: 0 24px;
-        }
-        .stat-item:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.12); }
-        .stat-value {
+        .section-title {
+          font-family: var(--heading);
           font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 900;
-          color: #4ade96;
-          line-height: 1;
-          margin-bottom: 8px;
-        }
-        .stat-label { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.8); }
-
-        /* ── How it works ── */
-        .hiw { padding: 96px 20px; background: white; }
-        .section-tag {
-          display: inline-block;
-          background: var(--green-light);
-          color: var(--green);
-          font-size: 11px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.16em;
-          padding: 6px 16px;
-          border-radius: 999px;
-          margin-bottom: 20px;
-        }
-        .section-h2 {
-          font-size: clamp(1.8rem, 3.5vw, 2.8rem);
           font-weight: 900;
           color: var(--text);
           margin: 0 0 16px;
           letter-spacing: -0.03em;
         }
-        .section-sub {
+        .section-desc {
           font-size: 17px;
           color: var(--muted);
-          margin: 0 auto 56px;
-          max-width: 500px;
+          max-width: 520px;
+          line-height: 1.65;
         }
-        .steps-grid {
+        .stats-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 28px;
-          position: relative;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
         }
-        .step-card {
-          background: #fafcfb;
-          border-radius: 20px;
-          padding: 32px 28px;
+        .stat-card {
+          background: var(--card-bg);
           border: 2px solid var(--border);
+          border-radius: var(--radius);
+          padding: 32px 24px;
+          text-align: center;
           position: relative;
-          transition: border-color 0.2s, box-shadow 0.2s;
+          overflow: hidden;
+          transition: transform 0.25s, box-shadow 0.25s;
         }
-        .step-card:hover { border-color: var(--green-mid); box-shadow: 0 8px 32px rgba(0,107,63,0.10); }
-        .step-number {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          background: var(--green);
-          color: white;
-          font-size: 18px;
-          font-weight: 900;
+        .stat-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px rgba(0,107,63,0.12);
+        }
+        .stat-card-icon {
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          margin: 0 auto 16px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 20px;
-          letter-spacing: -0.02em;
+          font-size: 24px;
         }
-        .step-title {
+        .stat-card-icon.g { background: rgba(0,107,63,0.12); }
+        .stat-card-icon.y { background: rgba(245,208,32,0.2); }
+        .stat-card-icon.b { background: rgba(13,31,23,0.08); }
+        .stat-card-value {
+          font-family: var(--heading);
+          font-size: 36px;
+          font-weight: 900;
+          color: var(--green);
+          margin-bottom: 4px;
+        }
+        .stat-card-label {
+          font-size: 14px;
+          color: var(--muted);
+          font-weight: 600;
+        }
+        /* Progress bar inside stat card */
+        .stat-progress {
+          margin-top: 14px;
+          height: 6px;
+          background: var(--border);
+          border-radius: 999px;
+          overflow: hidden;
+        }
+        .stat-progress-fill {
+          height: 100%;
+          border-radius: 999px;
+          transition: width 1s ease-out;
+        }
+        .stat-progress-fill.green { background: var(--green); }
+        .stat-progress-fill.yellow { background: var(--yellow); }
+
+        /* ── Quiz Demo Section ── */
+        .quiz-section {
+          padding: 96px 24px;
+          background: linear-gradient(160deg, #f0f7f3 0%, white 100%);
+          position: relative;
+        }
+        .quiz-section-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1.1fr;
+          gap: 64px;
+          align-items: start;
+        }
+        .quiz-info {
+          position: sticky;
+          top: 96px;
+          padding-top: 20px;
+        }
+        .quiz-info-badges {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 32px;
+        }
+        .qi-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: white;
+          border: 1.5px solid var(--border);
+          padding: 8px 16px;
+          border-radius: 999px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text);
+        }
+        .qi-badge-icon {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+        }
+        .qi-badge-icon.g { background: var(--green-light); color: var(--green); }
+        .qi-badge-icon.y { background: rgba(245,208,32,0.2); }
+
+        /* Road-style progress tracker */
+        .road-progress {
+          margin-top: 40px;
+          padding: 24px;
+          background: white;
+          border-radius: var(--radius);
+          border: 2px solid var(--border);
+        }
+        .road-progress-title {
+          font-family: var(--heading);
+          font-size: 18px;
+          font-weight: 800;
+          margin-bottom: 20px;
+          color: var(--text);
+        }
+        .road-steps {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+        .road-step {
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
+          position: relative;
+        }
+        .road-step-line {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-shrink: 0;
+        }
+        .road-step-dot {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: 800;
+          flex-shrink: 0;
+          z-index: 1;
+        }
+        .road-step-dot.active {
+          background: var(--green);
+          color: white;
+          box-shadow: 0 0 0 4px rgba(0,107,63,0.15);
+        }
+        .road-step-dot.done {
+          background: var(--yellow);
+          color: var(--green-xdark);
+        }
+        .road-step-dot.future {
+          background: var(--border);
+          color: var(--muted);
+        }
+        .road-step-connector {
+          width: 2px;
+          height: 32px;
+          background: var(--border);
+        }
+        .road-step-connector.done-c { background: var(--green); }
+        .road-step-content {
+          padding-bottom: 20px;
+        }
+        .road-step-title {
+          font-weight: 700;
+          font-size: 15px;
+          color: var(--text);
+          margin-bottom: 2px;
+        }
+        .road-step-sub {
+          font-size: 13px;
+          color: var(--muted);
+        }
+
+        /* ── Categories Section ── */
+        .categories-section {
+          padding: 96px 24px;
+          background: white;
+        }
+        .categories-header {
+          max-width: 1200px;
+          margin: 0 auto 56px;
+          text-align: center;
+        }
+        .cat-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .cat-card {
+          background: var(--card-bg);
+          border: 2px solid var(--border);
+          border-radius: var(--radius);
+          padding: 28px 24px;
+          text-decoration: none;
+          color: var(--text);
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+        .cat-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px rgba(0,107,63,0.1);
+          border-color: var(--green);
+        }
+        .cat-card-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+        .cat-card-icon.sign {
+          background: #dc2626;
+          clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          color: white;
+          font-size: 18px;
+          font-weight: 900;
+        }
+        .cat-card-icon.triangle {
+          background: var(--yellow);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          color: var(--green-xdark);
+          font-size: 16px;
+          padding-top: 8px;
+        }
+        .cat-card-icon.circle {
+          background: #2563eb;
+          border-radius: 50%;
+          color: white;
+        }
+        .cat-card-icon.rect {
+          background: var(--green);
+          border-radius: 8px;
+          color: white;
+        }
+        .cat-card-icon.speed {
+          background: white;
+          border: 4px solid #dc2626;
+          border-radius: 50%;
+          color: var(--text);
+          font-size: 18px;
+          font-weight: 900;
+          font-family: var(--heading);
+        }
+        .cat-card-icon.risk {
+          background: var(--yellow);
+          border-radius: 14px;
+          color: var(--green-xdark);
+        }
+        .cat-card-title {
+          font-weight: 800;
+          font-size: 16px;
+          margin-bottom: 6px;
+          color: var(--text);
+        }
+        .cat-card-count {
+          font-size: 13px;
+          color: var(--muted);
+          font-weight: 500;
+        }
+        .cat-card-arrow {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          font-size: 18px;
+          color: var(--border);
+          transition: color 0.2s, transform 0.2s;
+        }
+        .cat-card:hover .cat-card-arrow {
+          color: var(--green);
+          transform: translateX(4px);
+        }
+
+        /* ── Journey / Timeline Section ── */
+        .journey-section {
+          padding: 96px 24px;
+          background: linear-gradient(160deg, var(--green-xdark) 0%, #0a3325 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        /* Road dashes background */
+        .journey-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          width: 4px;
+          background: repeating-linear-gradient(
+            180deg,
+            rgba(245,208,32,0.3) 0px,
+            rgba(245,208,32,0.3) 24px,
+            transparent 24px,
+            transparent 48px
+          );
+          transform: translateX(-50%);
+        }
+        .journey-header {
+          text-align: center;
+          max-width: 600px;
+          margin: 0 auto 72px;
+          position: relative;
+          z-index: 1;
+        }
+        .journey-header .section-label { color: var(--yellow); }
+        .journey-header .section-label-dot { background: var(--yellow); }
+        .journey-header .section-title { color: white; }
+        .journey-header .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+        .journey-steps {
+          max-width: 800px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+        }
+        .journey-step {
+          display: grid;
+          grid-template-columns: 1fr 60px 1fr;
+          gap: 0;
+          align-items: center;
+          margin-bottom: 32px;
+        }
+        .journey-step:nth-child(odd) .j-content { grid-column: 1; text-align: right; }
+        .journey-step:nth-child(odd) .j-empty { grid-column: 3; }
+        .journey-step:nth-child(even) .j-content { grid-column: 3; text-align: left; }
+        .journey-step:nth-child(even) .j-empty { grid-column: 1; }
+        .j-marker {
+          grid-column: 2;
+          display: flex;
+          justify-content: center;
+        }
+        .j-sign {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          font-weight: 900;
+          border: 3px solid rgba(255,255,255,0.2);
+        }
+        .j-sign.s1 { background: var(--yellow); color: var(--green-xdark); }
+        .j-sign.s2 { background: var(--green); color: white; }
+        .j-sign.s3 { background: #2563eb; color: white; }
+        .j-sign.s4 { background: white; color: var(--green-xdark); }
+        .j-content {
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: var(--radius);
+          padding: 24px;
+          backdrop-filter: blur(4px);
+          transition: background 0.2s;
+        }
+        .j-content:hover { background: rgba(255,255,255,0.1); }
+        .j-step-num {
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+          color: var(--yellow);
+          margin-bottom: 6px;
+        }
+        .j-step-title {
+          font-family: var(--heading);
+          font-size: 20px;
+          font-weight: 800;
+          color: white;
+          margin-bottom: 8px;
+        }
+        .j-step-desc {
+          font-size: 14px;
+          color: rgba(255,255,255,0.55);
+          line-height: 1.6;
+        }
+        .j-step-time {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-top: 12px;
+          background: rgba(245,208,32,0.1);
+          color: var(--yellow);
+          padding: 4px 12px;
+          border-radius: 999px;
+          font-size: 12px;
+          font-weight: 700;
+        }
+        .j-empty { min-height: 1px; }
+
+        /* ── Guides Section ── */
+        .guides-section {
+          padding: 96px 24px;
+          background: var(--card-bg);
+        }
+        .guides-header {
+          max-width: 1200px;
+          margin: 0 auto 56px;
+          text-align: center;
+        }
+        .guides-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .guide-card {
+          background: white;
+          border: 2px solid var(--border);
+          border-radius: var(--radius);
+          padding: 32px 28px;
+          text-decoration: none;
+          color: var(--text);
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .guide-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px rgba(0,107,63,0.1);
+        }
+        .guide-card-emoji {
+          font-size: 32px;
+          margin-bottom: 16px;
+          display: block;
+        }
+        .guide-card-title {
+          font-family: var(--heading);
           font-size: 20px;
           font-weight: 800;
           color: var(--text);
           margin-bottom: 8px;
         }
-        .step-detail {
-          font-size: 13px;
-          font-weight: 700;
+        .guide-card-desc {
+          font-size: 14px;
+          color: var(--muted);
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+        .guide-card-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
           color: var(--green);
-          margin-bottom: 10px;
+          font-weight: 700;
+          font-size: 14px;
         }
-        .step-text { font-size: 15px; color: var(--muted); line-height: 1.6; margin: 0; }
+        .guide-card:hover .guide-card-link { text-decoration: underline; }
 
-        /* connector arrows between steps */
-        .steps-grid .step-card:not(:last-child)::after {
-          content: '→';
-          position: absolute;
-          right: -20px;
-          top: 40px;
-          font-size: 20px;
-          color: var(--green-mid);
-          font-weight: 900;
-          z-index: 10;
+        /* ── CTA Banner ── */
+        .cta-banner {
+          padding: 96px 24px;
+          background: white;
+          text-align: center;
         }
-
-        /* ── Comparison ── */
-        .comparison { padding: 96px 20px; background: var(--green-bg); }
-        .comparison-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
+        .cta-banner-inner {
           max-width: 800px;
           margin: 0 auto;
-        }
-        .comp-card {
-          background: white;
-          border-radius: 20px;
-          padding: 32px;
-          border: 2px solid var(--border);
-        }
-        .comp-card.good { border-color: var(--green); }
-        .comp-card-header {
-          font-size: 16px;
-          font-weight: 800;
-          color: #aaa;
-          margin-bottom: 24px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-        .comp-card.good .comp-card-header { color: var(--green); }
-        .comp-icon { font-size: 20px; }
-        .comp-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          margin-bottom: 16px;
-          font-size: 15px;
-          line-height: 1.5;
-        }
-        .comp-x { color: #ef4444; font-weight: 700; font-size: 18px; flex-shrink: 0; }
-        .comp-check { color: var(--green); font-weight: 700; font-size: 18px; flex-shrink: 0; }
-        .comp-text-bad { color: #777; }
-        .comp-text-good { color: var(--text); font-weight: 600; }
-
-        /* ── Demo section ── */
-        .demo-section { padding: 96px 20px; background: white; }
-
-        /* ── Testimonials ── */
-        .testimonials { padding: 96px 20px; background: var(--green-bg); }
-        .testimonials-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-top: 0;
-        }
-        .testimonial-card {
-          background: white;
-          border-radius: 20px;
-          padding: 28px;
-          border: 2px solid var(--border);
-          transition: box-shadow 0.2s;
-        }
-        .testimonial-card:hover { box-shadow: 0 8px 32px rgba(0,107,63,0.10); }
-        .t-stars { color: #f5d020; font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
-        .t-quote {
-          font-size: 15px;
-          line-height: 1.7;
-          color: #444;
-          font-style: italic;
-          margin: 0 0 20px;
-        }
-        .t-author { display: flex; align-items: center; gap: 12px; }
-        .t-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
           background: var(--green);
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 800;
-          font-size: 15px;
-          flex-shrink: 0;
-        }
-        .t-name { font-weight: 700; font-size: 14px; color: var(--text); }
-        .t-city { font-size: 12px; color: #888; }
-
-        /* ── Pricing ── */
-        .pricing {
-          padding: 96px 20px;
-          background: linear-gradient(160deg, #0d1f17 0%, #1a3a26 100%);
-        }
-        .pricing-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
-          max-width: 780px;
-          margin: 0 auto;
-        }
-        .price-card {
-          border-radius: 24px;
-          padding: 36px 32px;
-          border: 1px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.06);
-        }
-        .price-card.featured {
-          background: var(--green);
-          border-color: transparent;
-          box-shadow: 0 20px 60px rgba(0,107,63,0.45);
+          border-radius: 28px;
+          padding: 64px 40px;
           position: relative;
+          overflow: hidden;
         }
-        .featured-badge {
+        .cta-banner-inner::before {
+          content: '';
           position: absolute;
-          top: 20px;
-          right: 20px;
-          background: var(--yellow);
-          color: #0d1f17;
-          font-size: 11px;
-          font-weight: 800;
-          padding: 4px 12px;
-          border-radius: 999px;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
+          top: -60px;
+          right: -60px;
+          width: 200px;
+          height: 200px;
+          background: rgba(245,208,32,0.15);
+          border-radius: 50%;
         }
-        .price-tier {
-          font-size: 12px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.14em;
-          color: rgba(255,255,255,0.5);
-          margin-bottom: 12px;
+        .cta-banner-inner::after {
+          content: '';
+          position: absolute;
+          bottom: -40px;
+          left: -40px;
+          width: 150px;
+          height: 150px;
+          background: rgba(255,255,255,0.05);
+          border-radius: 50%;
         }
-        .price-amount {
-          font-size: clamp(2rem, 5vw, 3rem);
+        .cta-banner-title {
+          font-family: var(--heading);
+          font-size: clamp(1.8rem, 4vw, 2.6rem);
           font-weight: 900;
           color: white;
-          line-height: 1;
-          margin-bottom: 4px;
+          margin-bottom: 16px;
+          position: relative;
+          z-index: 1;
         }
-        .price-period { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 28px; }
-        .price-feature {
-          display: flex;
-          gap: 10px;
-          margin-bottom: 12px;
-          font-size: 15px;
-          color: rgba(255,255,255,0.75);
+        .cta-banner-sub {
+          font-size: 17px;
+          color: rgba(255,255,255,0.8);
+          margin-bottom: 32px;
+          position: relative;
+          z-index: 1;
         }
-        .price-feature.featured-f { color: rgba(255,255,255,0.92); }
-        .price-checkmark { color: #4ade96; font-weight: 700; }
-        .price-checkmark.wh { color: #a7f3d0; }
-        .price-btn-ghost {
-          display: block;
-          margin-top: 28px;
-          background: rgba(255,255,255,0.1);
-          color: white;
-          padding: 14px;
-          border-radius: 999px;
-          font-weight: 700;
-          text-decoration: none;
-          text-align: center;
-          border: 1px solid rgba(255,255,255,0.15);
-          transition: background 0.15s;
-          font-size: 15px;
-        }
-        .price-btn-ghost:hover { background: rgba(255,255,255,0.18); }
-        .price-btn-solid {
-          display: block;
-          margin-top: 28px;
-          background: white;
-          color: var(--green);
-          padding: 16px;
-          border-radius: 999px;
-          font-weight: 800;
-          text-decoration: none;
-          text-align: center;
-          font-size: 16px;
-          transition: background 0.15s, transform 0.1s;
-        }
-        .price-btn-solid:hover { background: #e6f4ee; transform: translateY(-1px); }
+        .cta-banner .btn-yellow { position: relative; z-index: 1; }
 
-        /* ── Footer ── */
-        .footer {
-          background: #081610;
-          color: rgba(255,255,255,0.45);
-          padding: 56px 20px 32px;
-        }
-        .footer-grid {
-          display: grid;
-          grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
-          gap: 40px;
-          margin-bottom: 48px;
-        }
-        .footer-logo {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 14px;
-        }
-        .footer-logo-circle {
-          width: 34px;
-          height: 34px;
-          background: var(--green);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .footer-logo-text { color: white; font-weight: 900; font-size: 18px; letter-spacing: -0.03em; }
-        .footer-tagline { font-size: 13px; line-height: 1.6; max-width: 200px; }
-        .footer-col-title { color: white; font-weight: 700; font-size: 13px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.1em; }
-        .footer-link-row { margin-bottom: 8px; }
-        .footer-link-row a {
-          color: rgba(255,255,255,0.45);
-          text-decoration: none;
-          font-size: 14px;
-          transition: color 0.15s;
-        }
-        .footer-link-row a:hover { color: rgba(255,255,255,0.85); }
-        .footer-bottom {
-          border-top: 1px solid rgba(255,255,255,0.08);
-          padding-top: 24px;
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 8px;
-          font-size: 13px;
-        }
-
-        /* ── Mobile Responsive ── */
-        @media (max-width: 768px) {
-          .nav { display: none; }
-
-          .hero { padding: 48px 16px 0; }
-          .hero-grid {
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .cat-grid { grid-template-columns: repeat(2, 1fr); }
+          .guides-grid { grid-template-columns: 1fr; }
+          .quiz-section-inner {
             grid-template-columns: 1fr;
             gap: 40px;
           }
-          .hero-h1 { font-size: 2.2rem; }
-          .hero-sub { font-size: 16px; }
-          .hero-card { max-width: 100%; margin: 0; }
-          .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 16px; }
-          .btn-primary-lg { width: 100%; text-align: center; padding: 17px 32px; }
-
-          .stats-grid { grid-template-columns: 1fr; gap: 20px; }
-          .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 20px 0; }
-          .stat-item:last-child { border-bottom: none; }
-
-          .hiw { padding: 64px 16px; }
-          .steps-grid { grid-template-columns: 1fr; gap: 16px; }
-          .steps-grid .step-card::after { display: none; }
-
-          .comparison { padding: 64px 16px; }
-          .comparison-grid { grid-template-columns: 1fr; }
-
-          .testimonials { padding: 64px 16px; }
-          .testimonials-grid { grid-template-columns: 1fr; }
-
-          .pricing { padding: 64px 16px; }
-          .pricing-grid { grid-template-columns: 1fr; }
-
-          .footer { padding: 48px 16px 24px; }
-          .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-
-          .demo-section { padding: 64px 16px; }
-
-          .section-sub { font-size: 15px; }
+          .quiz-info {
+            position: static;
+            text-align: center;
+          }
+          .quiz-info-badges { justify-content: center; }
+          .road-progress { max-width: 400px; margin: 40px auto 0; }
         }
+        @media (max-width: 768px) {
+          .hero-content { padding: 100px 20px 60px; }
+          .hero-h1 { font-size: 2.4rem; }
+          .hero-floats { flex-direction: column; align-items: center; gap: 12px; }
+          .hero-float-card { width: 100%; max-width: 280px; justify-content: center; }
+          .trust-bar-inner { gap: 16px; }
+          .trust-item { font-size: 12px; }
 
-        @media (max-width: 480px) {
-          .header-inner { gap: 12px; }
-          .hero-h1 { font-size: 1.9rem; }
-          .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+          .journey-step {
+            grid-template-columns: 40px 1fr;
+            gap: 16px;
+          }
+          .j-marker { grid-column: 1; grid-row: 1; }
+          .j-sign { width: 36px; height: 36px; font-size: 16px; }
+          .journey-step:nth-child(odd) .j-content,
+          .journey-step:nth-child(even) .j-content {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: left;
+          }
+          .j-empty { display: none; }
+          .journey-section::before { left: 44px; }
+
+          .cta-banner-inner { padding: 48px 24px; }
+        }
+        @media (max-width: 520px) {
+          .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+          .cat-grid { grid-template-columns: 1fr; }
+          .hero-cta-group { flex-direction: column; }
+          .btn-yellow { width: 100%; justify-content: center; }
+          .btn-ghost-white { width: 100%; justify-content: center; }
         }
       `}</style>
 
-      {/* ─── HEADER ─── */}
-      <header className="site-header">
-        <div className="container header-inner">
-          {/* Logo */}
-          <a href="/" className="logo">
-            <div className="logo-circle">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <circle cx="11" cy="11" r="9" stroke="white" strokeWidth="2.2"/>
-                <circle cx="11" cy="11" r="2.8" fill="white"/>
-                <line x1="11" y1="2" x2="11" y2="8.2" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-                <line x1="3.6" y1="15" x2="8.5" y2="12.3" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-                <line x1="18.4" y1="15" x2="13.5" y2="12.3" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <span className="logo-text">Huvet</span>
-          </a>
-
-          {/* Nav */}
-          <nav className="nav">
-            <Link href="/korkortsfragor">Guider</Link>
-            <Link href="/mc">MC</Link>
-            <Link href="/moped">Moped</Link>
-            <a href="#pricing">Priser</a>
-          </nav>
-
-          {/* CTA */}
-          <a href="#demo" className="btn-primary">Börja gratis</a>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* ─── HERO ─── */}
       <section className="hero">
-        <div className="hero-grid">
-          {/* Left */}
-          <div>
-            <div className="hero-badge">
-              <span className="hero-dot"/>
-              Godkänd av 2 341 körkortselever
+        <div className="hero-bg">
+          <Image
+            src="/hero.jpg"
+            alt="Övningskörning på svensk landsväg"
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="hero-overlay" />
+
+        <div className="hero-content">
+          <div className="hero-achievement">
+            <div className="hero-achievement-icon">🏆</div>
+            <span>94% av eleverna klarar provet med Huvet</span>
+          </div>
+
+          <h1 className="hero-h1">
+            Klara körkortsprovet.<br />
+            <span className="yellow">Första gången.</span>
+          </h1>
+
+          <p className="hero-sub">
+            450+ riktiga teorifrågor, smart träning som hittar dina svagheter,
+            och förklaringar som faktiskt fastnar. Helt gratis att börja.
+          </p>
+
+          <div className="hero-cta-group">
+            <a href="#demo" className="btn-yellow">
+              Börja öva gratis
+              <span>→</span>
+            </a>
+            <a href="#journey" className="btn-ghost-white">
+              Se hur det funkar
+            </a>
+          </div>
+
+          <div className="hero-floats">
+            <div className="hero-float-card">
+              <div className="hero-float-icon green">📝</div>
+              <div>
+                <div className="hero-float-value">450+</div>
+                <div className="hero-float-label">Teorifrågor</div>
+              </div>
             </div>
+            <div className="hero-float-card">
+              <div className="hero-float-icon yellow">⚡</div>
+              <div>
+                <div className="hero-float-value">12 min</div>
+                <div className="hero-float-label">Genomsnittlig session</div>
+              </div>
+            </div>
+            <div className="hero-float-card">
+              <div className="hero-float-icon white">🎯</div>
+              <div>
+                <div className="hero-float-value">100%</div>
+                <div className="hero-float-label">Gratis att börja</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <h1 className="hero-h1">
-              Klara körkortsprovet<br/>
-              <span className="accent">på första försöket</span>
-            </h1>
+        <div className="hero-road" />
+      </section>
 
-            <p className="hero-sub">
-              Huvet analyserar dina svaga punkter och ger dig ett exakt träningsupplägg.
-              Ingen slumpmässig drill.
+      {/* ─── TRUST BAR ─── */}
+      <section className="trust-bar">
+        <div className="trust-bar-inner">
+          <div className="trust-item"><span className="trust-dot" /> 450+ frågor</div>
+          <div className="trust-item"><span className="trust-dot" /> 94% klarar provet</div>
+          <div className="trust-item"><span className="trust-dot" /> 100% gratis</div>
+          <div className="trust-item"><span className="trust-dot" /> Uppdaterat 2026</div>
+        </div>
+      </section>
+
+      {/* ─── STATS ─── */}
+      <section className="stats-section">
+        <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center', marginBottom: 56 }}>
+          <div className="section-label">
+            <span className="section-label-dot" />
+            Dina resultat med Huvet
+          </div>
+          <h2 className="section-title">Siffror som talar</h2>
+          <p className="section-desc" style={{ margin: '0 auto' }}>
+            Tusentals körkortselever har redan klarat provet med Huvet. Här är varför.
+          </p>
+        </div>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <div className="stat-card-icon g">📚</div>
+            <div className="stat-card-value">450+</div>
+            <div className="stat-card-label">Teorifrågor</div>
+            <div className="stat-progress">
+              <div className="stat-progress-fill green" style={{ width: '90%' }} />
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-card-icon y">🏆</div>
+            <div className="stat-card-value" style={{ color: '#d4af00' }}>94%</div>
+            <div className="stat-card-label">Klarar provet</div>
+            <div className="stat-progress">
+              <div className="stat-progress-fill yellow" style={{ width: '94%' }} />
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-card-icon g">⏱️</div>
+            <div className="stat-card-value">12 min</div>
+            <div className="stat-card-label">Genomsnittlig session</div>
+            <div className="stat-progress">
+              <div className="stat-progress-fill green" style={{ width: '50%' }} />
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-card-icon b">🗂️</div>
+            <div className="stat-card-value">38</div>
+            <div className="stat-card-label">Kategorier</div>
+            <div className="stat-progress">
+              <div className="stat-progress-fill green" style={{ width: '76%' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── QUIZ DEMO ─── */}
+      <section id="demo" className="quiz-section">
+        <div className="quiz-section-inner">
+          <div className="quiz-info">
+            <div className="section-label">
+              <span className="section-label-dot" />
+              Testa direkt
+            </div>
+            <h2 className="section-title">5 riktiga teorifrågor</h2>
+            <p className="section-desc">
+              Svara och se direkt hur Huvet förklarar varje fråga. Precis som
+              på riktiga körkortsprovet — fast med bättre förklaringar.
             </p>
 
-            <div className="hero-cta-row">
-              <a href="#demo" className="btn-primary-lg">Börja gratis →</a>
-              <div className="social-proof">
-                <span className="stars">★★★★★</span>
-                <span><strong>4.9/5</strong> · 2 341 elever har klarat körkortet</span>
+            <div className="quiz-info-badges">
+              <div className="qi-badge">
+                <span className="qi-badge-icon g">✓</span>
+                Ingen inloggning
+              </div>
+              <div className="qi-badge">
+                <span className="qi-badge-icon y">⚡</span>
+                2 min att göra
+              </div>
+              <div className="qi-badge">
+                <span className="qi-badge-icon g">📖</span>
+                Förklaringar på varje fråga
               </div>
             </div>
-          </div>
 
-          {/* Right: quiz preview card */}
-          <div>
-            <div className="hero-card">
-              <div className="hero-card-header">
-                <div className="hero-card-title">Din träning idag · Fråga 3 av 5</div>
-                <div className="hero-card-q">Körkortsprovet — Väjningsplikt</div>
-                <div className="progress-bar">
-                  <div className="progress-fill"/>
-                </div>
-              </div>
-              <div className="hero-card-body">
-                <div className="question-text">
-                  Vem har väjningsplikt vid en rondell?
-                </div>
-
-                <div className="answer-opt">
-                  <span className="opt-circle">A</span>
-                  Fordon inne i rondellen
-                </div>
-                <div className="answer-opt correct">
-                  <span className="opt-circle correct-c">✓</span>
-                  Fordon som kör in i rondellen
-                </div>
-                <div className="answer-opt">
-                  <span className="opt-circle">C</span>
-                  Störst fordon har företräde
-                </div>
-
-                <div className="score-chip">
-                  <span className="score-label">Provredo</span>
-                  <div className="score-bar-wrap">
-                    <div className="score-bar-fill"/>
+            {/* Mini road progress */}
+            <div className="road-progress">
+              <div className="road-progress-title">🛣️ Din resa till körkort</div>
+              <div className="road-steps">
+                <div className="road-step">
+                  <div className="road-step-line">
+                    <div className="road-step-dot done">✓</div>
+                    <div className="road-step-connector done-c" />
                   </div>
-                  <span className="score-pct">68%</span>
+                  <div className="road-step-content">
+                    <div className="road-step-title">Testa quizet</div>
+                    <div className="road-step-sub">Gör 5 frågor nu →</div>
+                  </div>
+                </div>
+                <div className="road-step">
+                  <div className="road-step-line">
+                    <div className="road-step-dot active">2</div>
+                    <div className="road-step-connector" />
+                  </div>
+                  <div className="road-step-content">
+                    <div className="road-step-title">Hitta dina svagheter</div>
+                    <div className="road-step-sub">Diagnostik-analys av dina ämnen</div>
+                  </div>
+                </div>
+                <div className="road-step">
+                  <div className="road-step-line">
+                    <div className="road-step-dot future">3</div>
+                    <div className="road-step-connector" />
+                  </div>
+                  <div className="road-step-content">
+                    <div className="road-step-title">Träna smart</div>
+                    <div className="road-step-sub">Fokusera på det du behöver</div>
+                  </div>
+                </div>
+                <div className="road-step">
+                  <div className="road-step-line">
+                    <div className="road-step-dot future">🏁</div>
+                  </div>
+                  <div className="road-step-content">
+                    <div className="road-step-title">Klara provet!</div>
+                    <div className="road-step-sub">94% lyckas med Huvet</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Road stripe divider */}
-        <div style={{ marginTop: 64, height: 36, background: '#0d1f17', position: 'relative', overflow: 'hidden' }}>
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: 0,
-            right: 0,
-            transform: 'translateY(-50%)',
-            height: 4,
-            backgroundImage: 'repeating-linear-gradient(90deg, #f5d020 0px, #f5d020 40px, transparent 40px, transparent 68px)',
-          }}/>
-        </div>
-      </section>
-
-      {/* ─── STATS STRIP ─── */}
-      <section className="stats-strip">
-        <div className="stats-grid">
-          <div className="stat-item">
-            <div className="stat-value">94%</div>
-            <div className="stat-label">godkänns</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-value">450+</div>
-            <div className="stat-label">frågor</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-value">38</div>
-            <div className="stat-label">kategorier</div>
+          <div>
+            <QuizDemo />
           </div>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
-      <section id="how-it-works" className="hiw">
-        <div className="container-sm" style={{ textAlign: 'center' }}>
-          <span className="section-tag">Hur det funkar</span>
-          <h2 className="section-h2">Tre steg till godkänt</h2>
-          <p className="section-sub">Ingen slumpmässig drill. Bara rätt frågor, i rätt ordning, för dig.</p>
-
-          <div className="steps-grid">
-            <div className="step-card">
-              <div className="step-number">01</div>
-              <div className="step-title">Gör en snabb diagnos</div>
-              <div className="step-detail">5 frågor · 2 minuter</div>
-              <p className="step-text">
-                Ett kort diagnosquiz avslöjar exakt vilka ämnen du är svag på — så du inte slösar tid på det du redan kan.
-              </p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">02</div>
-              <div className="step-title">Träna dina svaga punkter</div>
-              <div className="step-detail">Personaliserat upplägg</div>
-              <p className="step-text">
-                Huvet skapar ett träningsupplägg anpassat just för dig. Du övar på rätt saker och ser din progress i realtid.
-              </p>
-            </div>
-            <div className="step-card">
-              <div className="step-number">03</div>
-              <div className="step-title">Klara provet</div>
-              <div className="step-detail">Genomsnitt 3,5 veckor</div>
-              <p className="step-text">
-                Med korta dagliga sessioner tar du dig till godkänt på minsta möjliga tid. 94% av Huvets elever klarar provet.
-              </p>
-            </div>
+      {/* ─── CATEGORIES ─── */}
+      <section id="kategorier" className="categories-section">
+        <div className="categories-header">
+          <div className="section-label">
+            <span className="section-label-dot" />
+            Öva per ämne
           </div>
-        </div>
-      </section>
-
-      {/* ─── COMPARISON ─── */}
-      <section className="comparison">
-        <div className="container-sm" style={{ textAlign: 'center' }}>
-          <span className="section-tag">Varför Huvet</span>
-          <h2 className="section-h2">Huvet vs. att studera ensam</h2>
-          <p className="section-sub" style={{ marginBottom: 48 }}>Sluta slösa tid på metoder som inte funkar.</p>
-
-          <div className="comparison-grid">
-            {/* Bad column */}
-            <div className="comp-card">
-              <div className="comp-card-header">
-                <span className="comp-icon">✗</span>
-                Utan Huvet
-              </div>
-              <div className="comp-item">
-                <span className="comp-x">✗</span>
-                <span className="comp-text-bad">Bläddrar igenom alla 450 frågor i slumpmässig ordning</span>
-              </div>
-              <div className="comp-item">
-                <span className="comp-x">✗</span>
-                <span className="comp-text-bad">Vet inte vilka ämnen du missar mest</span>
-              </div>
-              <div className="comp-item">
-                <span className="comp-x">✗</span>
-                <span className="comp-text-bad">Svår läroboksstil — hård att ta till sig</span>
-              </div>
-              <div className="comp-item">
-                <span className="comp-x">✗</span>
-                <span className="comp-text-bad">Ingen feedback — vet inte om du är redo</span>
-              </div>
-            </div>
-
-            {/* Good column */}
-            <div className="comp-card good">
-              <div className="comp-card-header">
-                <span className="comp-icon">✓</span>
-                Med Huvet
-              </div>
-              <div className="comp-item">
-                <span className="comp-check">✓</span>
-                <span className="comp-text-good">Personaliserat upplägg baserat på dina svagheter</span>
-              </div>
-              <div className="comp-item">
-                <span className="comp-check">✓</span>
-                <span className="comp-text-good">Tydlig ämnesanalys visar exakt vad du ska fokusera på</span>
-              </div>
-              <div className="comp-item">
-                <span className="comp-check">✓</span>
-                <span className="comp-text-good">Förklaringar på vanlig svenska — sitter snabbt</span>
-              </div>
-              <div className="comp-item">
-                <span className="comp-check">✓</span>
-                <span className="comp-text-good">Realtidspoäng visar när du är provredo</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── INTERACTIVE QUIZ ─── */}
-      <section id="demo" className="demo-section">
-        <div className="container-sm" style={{ textAlign: 'center' }}>
-          <span className="section-tag" style={{ background: '#006B3F', color: 'white' }}>Testa direkt — ingen inloggning</span>
-          <h2 className="section-h2">5 riktiga teorifrågor</h2>
-          <p className="section-sub">
-            Svara och se direkt hur Huvet förklarar varje svar. Precis som i riktiga provet.
-          </p>
-          <QuizDemo />
-        </div>
-      </section>
-
-      {/* ─── TESTIMONIALS ─── */}
-      <section className="testimonials">
-        <div className="container-sm" style={{ textAlign: 'center' }}>
-          <span className="section-tag">Elever berättar</span>
-          <h2 className="section-h2">2 341 har klarat körkortet med Huvet</h2>
-          <p className="section-sub" style={{ marginBottom: 48 }}>Riktiga elever, riktiga resultat.</p>
-
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="t-stars">★★★★★</div>
-              <p className="t-quote">
-                "Misslyckades tre gånger med ordinarie övning. Med Huvet klarade jag på en vecka.
-                Ärlat talat galet hur bra det funkar."
-              </p>
-              <div className="t-author">
-                <div className="t-avatar">S</div>
-                <div>
-                  <div className="t-name">Sofia, 19</div>
-                  <div className="t-city">Stockholm</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="t-stars">★★★★★</div>
-              <p className="t-quote">
-                "Visste inte ens att väjningsreglerna var mitt svaga ämne förrän Huvet pekade ut det.
-                Sedan gick det snabbt."
-              </p>
-              <div className="t-author">
-                <div className="t-avatar">M</div>
-                <div>
-                  <div className="t-name">Marcus, 23</div>
-                  <div className="t-city">Göteborg</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="t-stars">★★★★★</div>
-              <p className="t-quote">
-                "Förklaringarna är på svenska på riktigt — inte den där torra läroboksstilen.
-                Sitter mycket bättre i minnet."
-              </p>
-              <div className="t-author">
-                <div className="t-avatar">Y</div>
-                <div>
-                  <div className="t-name">Yasmin, 21</div>
-                  <div className="t-city">Malmö</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PRICING ─── */}
-      <section id="pricing" className="pricing">
-        <div className="container-sm" style={{ textAlign: 'center' }}>
-          <span className="section-tag" style={{ background: 'rgba(255,255,255,0.12)', color: '#4ade96' }}>Prisplan</span>
-          <h2 className="section-h2" style={{ color: 'white' }}>Börja gratis. Uppgradera när du vill.</h2>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 17, marginBottom: 48 }}>
-            Inget kreditkort krävs för att komma igång.
-          </p>
-
-          <div className="pricing-grid">
-            {/* Free */}
-            <div className="price-card">
-              <div className="price-tier">Gratis</div>
-              <div className="price-amount">0 kr</div>
-              <div className="price-period">7 dagars full tillgång</div>
-              <div className="price-feature">
-                <span className="price-checkmark">✓</span>
-                50 övningsfrågor
-              </div>
-              <div className="price-feature">
-                <span className="price-checkmark">✓</span>
-                Diagnostiktest
-              </div>
-              <div className="price-feature">
-                <span className="price-checkmark">✓</span>
-                Grundläggande feedback
-              </div>
-              <div className="price-feature">
-                <span className="price-checkmark">✓</span>
-                Provsimuleringsläge
-              </div>
-              <a href="#demo" className="price-btn-ghost">Kom igång gratis</a>
-            </div>
-
-            {/* Pro */}
-            <div className="price-card featured">
-              <div className="featured-badge">Populärast</div>
-              <div className="price-tier" style={{ color: 'rgba(255,255,255,0.7)' }}>Pro</div>
-              <div className="price-amount">79 kr</div>
-              <div className="price-period">/mån · efter 7 dagars gratis provperiod</div>
-              <div className="price-feature featured-f">
-                <span className="price-checkmark wh">✓</span>
-                Alla 450+ frågor
-              </div>
-              <div className="price-feature featured-f">
-                <span className="price-checkmark wh">✓</span>
-                Personlig träningsplan
-              </div>
-              <div className="price-feature featured-f">
-                <span className="price-checkmark wh">✓</span>
-                Detaljerad ämnesanalys
-              </div>
-              <div className="price-feature featured-f">
-                <span className="price-checkmark wh">✓</span>
-                Obegränsade provsimuleringar
-              </div>
-              <div className="price-feature featured-f">
-                <span className="price-checkmark wh">✓</span>
-                MC &amp; Moped-frågor ingår
-              </div>
-              <div className="price-feature featured-f">
-                <span className="price-checkmark wh">✓</span>
-                Avbryt när som helst
-              </div>
-              <a href="#demo" className="price-btn-solid">Testa 7 dagar gratis →</a>
-            </div>
-          </div>
-
-          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: 13, marginTop: 28 }}>
-            Ingen bindningstid. Avbryt när som helst.
+          <h2 className="section-title">Alla kategorier</h2>
+          <p className="section-desc" style={{ margin: '0 auto' }}>
+            Välj ett ämne och börja öva direkt. Varje kategori har detaljerade förklaringar.
           </p>
         </div>
+        <div className="cat-grid">
+          <Link href="/vagmarken" className="cat-card">
+            <div className="cat-card-icon sign">!</div>
+            <div className="cat-card-title">Vägmärken</div>
+            <div className="cat-card-count">120+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/trafikregler" className="cat-card">
+            <div className="cat-card-icon circle">§</div>
+            <div className="cat-card-title">Trafikregler</div>
+            <div className="cat-card-count">85+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/hastighetsgranser" className="cat-card">
+            <div className="cat-card-icon speed">50</div>
+            <div className="cat-card-title">Hastighetsgränser</div>
+            <div className="cat-card-count">45+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/riskutbildning" className="cat-card">
+            <div className="cat-card-icon risk">⚠️</div>
+            <div className="cat-card-title">Riskutbildning</div>
+            <div className="cat-card-count">60+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/ovningskörning" className="cat-card">
+            <div className="cat-card-icon rect">🚗</div>
+            <div className="cat-card-title">Övningskörning</div>
+            <div className="cat-card-count">40+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/korkortsfragor" className="cat-card">
+            <div className="cat-card-icon circle">?</div>
+            <div className="cat-card-title">Körkortsfrågor</div>
+            <div className="cat-card-count">450+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/mc" className="cat-card">
+            <div className="cat-card-icon rect">🏍️</div>
+            <div className="cat-card-title">MC-körkort</div>
+            <div className="cat-card-count">50+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+          <Link href="/moped" className="cat-card">
+            <div className="cat-card-icon triangle" style={{ fontSize: '14px', paddingTop: '12px' }}>🛵</div>
+            <div className="cat-card-title">Mopedkörkort</div>
+            <div className="cat-card-count">35+ frågor</div>
+            <span className="cat-card-arrow">→</span>
+          </Link>
+        </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-grid">
-            {/* Brand */}
-            <div>
-              <div className="footer-logo">
-                <div className="footer-logo-circle">
-                  <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
-                    <circle cx="11" cy="11" r="9" stroke="white" strokeWidth="2.2"/>
-                    <circle cx="11" cy="11" r="2.8" fill="white"/>
-                    <line x1="11" y1="2" x2="11" y2="8.2" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-                    <line x1="3.6" y1="15" x2="8.5" y2="12.3" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-                    <line x1="18.4" y1="15" x2="13.5" y2="12.3" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <span className="footer-logo-text">Huvet</span>
+      {/* ─── JOURNEY TIMELINE ─── */}
+      <section id="journey" className="journey-section">
+        <div className="journey-header">
+          <div className="section-label">
+            <span className="section-label-dot" />
+            Din resa till körkort
+          </div>
+          <h2 className="section-title">Från nybörjare till godkänd</h2>
+          <p className="section-desc">
+            Huvet guidar dig genom varje steg. Smart, snabbt, och utan onödig stress.
+          </p>
+        </div>
+
+        <div className="journey-steps">
+          <div className="journey-step">
+            <div className="j-content">
+              <div className="j-step-num">Steg 1</div>
+              <div className="j-step-title">Snabb diagnos</div>
+              <div className="j-step-desc">
+                Svara på 5 frågor. Huvet analyserar direkt vilka ämnen du behöver fokusera på.
               </div>
-              <p className="footer-tagline">
-                Klara teorin. Kör vidare.<br/>
-                Byggt för svenska körkortselever.
-              </p>
+              <div className="j-step-time">⏱️ 2 minuter</div>
             </div>
+            <div className="j-marker">
+              <div className="j-sign s1">1</div>
+            </div>
+            <div className="j-empty" />
+          </div>
 
-            {/* Produkt */}
-            <div>
-              <div className="footer-col-title">Produkt</div>
-              {['Träna', 'Diagnostik', 'Provsimulering'].map(l => (
-                <div key={l} className="footer-link-row">
-                  <a href="#demo">{l}</a>
-                </div>
-              ))}
-              <div className="footer-link-row">
-                <a href="#pricing">Prisplan</a>
+          <div className="journey-step">
+            <div className="j-empty" />
+            <div className="j-marker">
+              <div className="j-sign s2">2</div>
+            </div>
+            <div className="j-content">
+              <div className="j-step-num">Steg 2</div>
+              <div className="j-step-title">Personlig träningsplan</div>
+              <div className="j-step-desc">
+                Får ett upplägg baserat på dina svagheter. Ingen slösad tid på det du redan kan.
               </div>
-            </div>
-
-            {/* Guider */}
-            <div>
-              <div className="footer-col-title">Guider</div>
-              {[
-                { href: '/teoriprov', label: 'Teoriprov' },
-                { href: '/korprov', label: 'Körprov' },
-                { href: '/ovningskörning', label: 'Övningskörning' },
-                { href: '/korkortstips', label: 'Körkortslips' },
-                { href: '/vagmarken', label: 'Vägmärken' },
-                { href: '/korkortsfragor', label: 'Körkortsfrågor' },
-                { href: '/mc', label: 'MC-körkort' },
-                { href: '/moped', label: 'Mopedkörkort' },
-              ].map(item => (
-                <div key={item.href} className="footer-link-row">
-                  <Link href={item.href}>{item.label}</Link>
-                </div>
-              ))}
-            </div>
-
-            {/* Info */}
-            <div>
-              <div className="footer-col-title">Info</div>
-              {['Om oss', 'Kontakt', 'Integritetspolicy'].map(l => (
-                <div key={l} className="footer-link-row">
-                  <a href="#">{l}</a>
-                </div>
-              ))}
+              <div className="j-step-time">📊 Anpassat för dig</div>
             </div>
           </div>
 
-          <div className="footer-bottom">
-            <span>© 2026 Huvet (huvet.se). Alla rättigheter förbehållna.</span>
-            <span>🇸🇪 Gjort i Sverige</span>
+          <div className="journey-step">
+            <div className="j-content">
+              <div className="j-step-num">Steg 3</div>
+              <div className="j-step-title">Daglig övning</div>
+              <div className="j-step-desc">
+                12 minuter om dagen. Korta sessioner som bygger självförtroende och kunskap.
+              </div>
+              <div className="j-step-time">⚡ 12 min/dag</div>
+            </div>
+            <div className="j-marker">
+              <div className="j-sign s3">3</div>
+            </div>
+            <div className="j-empty" />
+          </div>
+
+          <div className="journey-step">
+            <div className="j-empty" />
+            <div className="j-marker">
+              <div className="j-sign s4">🏁</div>
+            </div>
+            <div className="j-content">
+              <div className="j-step-num">Resultat</div>
+              <div className="j-step-title">Klara provet!</div>
+              <div className="j-step-desc">
+                94% av Huvets elever klarar körkortsprovet på första försöket. Du kan också.
+              </div>
+              <div className="j-step-time">🏆 94% godkänns</div>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* ─── GUIDES ─── */}
+      <section className="guides-section">
+        <div className="guides-header">
+          <div className="section-label">
+            <span className="section-label-dot" />
+            Guider
+          </div>
+          <h2 className="section-title">Allt du behöver veta</h2>
+          <p className="section-desc" style={{ margin: '0 auto' }}>
+            Djupgående guider om teoriprovet, körprovet och allt däremellan.
+          </p>
+        </div>
+        <div className="guides-grid">
+          <Link href="/korprov" className="guide-card">
+            <span className="guide-card-emoji">🚗</span>
+            <div className="guide-card-title">Körprov — Komplett guide</div>
+            <div className="guide-card-desc">
+              Allt om uppkörningen: vad som testas, vanliga misstag och hur du förbereder dig bäst.
+            </div>
+            <span className="guide-card-link">Läs guiden →</span>
+          </Link>
+          <Link href="/teoriprov" className="guide-card">
+            <span className="guide-card-emoji">📝</span>
+            <div className="guide-card-title">Teoriprov — Så klarar du det</div>
+            <div className="guide-card-desc">
+              70 frågor, 65 minuter. Lär dig formatet, rätt studieteknik och vad som brukar komma.
+            </div>
+            <span className="guide-card-link">Läs guiden →</span>
+          </Link>
+          <Link href="/ovningskörning" className="guide-card">
+            <span className="guide-card-emoji">🛣️</span>
+            <div className="guide-card-title">Övningskörning — Regler & tips</div>
+            <div className="guide-card-desc">
+              Privat eller via trafikskola? Krav, regler och hur du samlar körminuter effektivt.
+            </div>
+            <span className="guide-card-link">Läs guiden →</span>
+          </Link>
+          <Link href="/riskutbildning" className="guide-card">
+            <span className="guide-card-emoji">⚠️</span>
+            <div className="guide-card-title">Riskutbildning 1 & 2</div>
+            <div className="guide-card-desc">
+              Obligatoriskt för alla. Vad ingår, hur bokar du, och vad kostar det?
+            </div>
+            <span className="guide-card-link">Läs guiden →</span>
+          </Link>
+          <Link href="/korkort-kostnad" className="guide-card">
+            <span className="guide-card-emoji">💰</span>
+            <div className="guide-card-title">Körkort — Vad kostar det?</div>
+            <div className="guide-card-desc">
+              Komplett prisguide: körskola, teoriprov, uppkörning, riskettan och halkbanan.
+            </div>
+            <span className="guide-card-link">Läs guiden →</span>
+          </Link>
+          <Link href="/intensivkurs" className="guide-card">
+            <span className="guide-card-emoji">⚡</span>
+            <div className="guide-card-title">Intensivkurs körkort</div>
+            <div className="guide-card-desc">
+              Ta körkort på 2-4 veckor. Fungerar det? Fördelar, nackdelar och vad det kostar.
+            </div>
+            <span className="guide-card-link">Läs guiden →</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ─── CTA BANNER ─── */}
+      <section className="cta-banner">
+        <div className="cta-banner-inner">
+          <h2 className="cta-banner-title">Redo att klara provet?</h2>
+          <p className="cta-banner-sub">
+            Börja med 5 gratisfrågor och se exakt var du står. Ingen inloggning krävs.
+          </p>
+          <a href="#demo" className="btn-yellow">
+            Börja öva gratis →
+          </a>
+        </div>
+      </section>
+
+      <SiteFooter />
     </>
   );
 }

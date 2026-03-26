@@ -62,5 +62,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: absoluteUrl('/korkort-kostnad'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.92,
+    },
+    {
+      url: absoluteUrl('/ovningsprov'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: absoluteUrl('/riskutbildning'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl('/trafikregler'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.92,
+    },
+    {
+      url: absoluteUrl('/hastighetsgranser'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl('/intensivkurs'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.92,
+    },
   ];
 }
