@@ -893,6 +893,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── SEO INTERNAL LINKS ─── */}
+      <section style={{ padding: '3rem 2.5rem', borderTop: '1px solid #f0f0f0' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif", fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.25rem', color: '#333' }}>
+            Populära körkorts&shy;guider
+          </h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem 0.75rem' }}>
+            {[
+              { href: '/teoriprov', label: 'Teoriprov övning' },
+              { href: '/vagmarken', label: 'Vägmärken' },
+              { href: '/trafikregler', label: 'Trafikregler' },
+              { href: '/hastighetsgranser', label: 'Hastighetsgränser' },
+              { href: '/korprov', label: 'Körprov' },
+              { href: '/riskutbildning', label: 'Riskutbildning' },
+              { href: '/riskettan', label: 'Riskettan' },
+              { href: '/risktvaan', label: 'Risktvåan' },
+              { href: '/halkkörning', label: 'Halkbana' },
+              { href: '/ovningskörning', label: 'Övningskörning' },
+              { href: '/intensivkurs', label: 'Intensivkurs körkort' },
+              { href: '/korkort-kostnad', label: 'Körkort kostnad' },
+              { href: '/teoriprov-tips', label: 'Teoriprov tips' },
+              { href: '/uppkorning-tips', label: 'Uppkörning tips' },
+              { href: '/korkortstips', label: 'Körkortstips' },
+              { href: '/korkortsfragor', label: 'Körkortsfrågor' },
+              { href: '/ovningsprov', label: 'Övningsprov' },
+              { href: '/moped', label: 'Mopedkörkort' },
+              { href: '/mc', label: 'MC-körkort' },
+              { href: '/vagmarken-guide', label: 'Vägmärken guide' },
+              { href: '/trafikregler-guide', label: 'Trafikregler guide' },
+              { href: '/hastighetsgranser-guide', label: 'Hastigheter guide' },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                style={{
+                  fontSize: '0.78rem',
+                  color: '#555',
+                  textDecoration: 'none',
+                  padding: '0.35rem 0.75rem',
+                  borderRadius: '8px',
+                  background: '#f5f5f5',
+                  border: '1px solid #eee',
+                  transition: 'all 0.15s',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <SiteFooter />
     </>
   );
