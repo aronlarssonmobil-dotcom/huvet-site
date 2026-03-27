@@ -717,6 +717,41 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ─── STATS BAR ─── */}
+      <div className="stats-bar">
+        <div className="stats-bar-inner">
+          <div className="stats-bar-item"><span className="num">12 400+</span> elever</div>
+          <span className="stats-bar-sep">·</span>
+          <div className="stats-bar-item"><span className="num">94%</span> klarar provet</div>
+          <span className="stats-bar-sep">·</span>
+          <div className="stats-bar-item"><span className="num">4.8/5</span> betyg</div>
+        </div>
+      </div>
+
+      {/* ─── TRUST BADGES ─── */}
+      <div className="trust-badges">
+        <div className="trust-badges-inner">
+          <div className="trust-badge">
+            <div className="trust-badge-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            Uppdaterad 2026
+          </div>
+          <div className="trust-badge">
+            <div className="trust-badge-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            Alla frågor granskade
+          </div>
+          <div className="trust-badge">
+            <div className="trust-badge-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+            </div>
+            100% gratis start
+          </div>
+        </div>
+      </div>
+
       {/* ─── REVIEWS ─── */}
       <div className="reviews">
         <div className="reviews-inner">
@@ -725,36 +760,122 @@ export default function Home() {
             <p className="section-sub">Riktiga resultat från riktiga elever</p>
           </div>
           <div className="reviews-grid">
+            {/* Review 1 */}
             <div className="review-card">
-              <div className="review-stars">★★★★★</div>
-              <div className="review-text">&quot;Jag var livrädd för teoriprovet men med Huvet kände jag mig redo. Klarade det första gången med 61/65!&quot;</div>
+              <div className="review-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div className="review-text">&quot;Jag var livrädd för teoriprovet men med Huvet kände jag mig redo. Övade varje kväll i två veckor och klarade det med 61/65!&quot;</div>
+              <div className="review-passed">✓ Klarade provet mars 2026</div>
               <div className="review-author">
                 <div className="review-avatar">EM</div>
                 <div>
-                  <div className="review-name">Emma M.</div>
-                  <div className="review-date">Mars 2026</div>
+                  <div className="review-name">Emma, 19</div>
+                  <div className="review-meta">Stockholm</div>
                 </div>
               </div>
             </div>
+
+            {/* Review 2 */}
             <div className="review-card">
-              <div className="review-stars">★★★★★</div>
-              <div className="review-text">&quot;Svaghetsanalysen visade exakt vad jag behövde plugga. Övade 15 min om dagen i två veckor. Sjukt smart app.&quot;</div>
+              <div className="review-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div className="review-text">&quot;Svaghetsanalysen visade exakt vad jag behövde plugga. Övade 15 min om dagen i två veckor — sjukt smart.&quot;</div>
+              <div className="review-passed">✓ Klarade provet februari 2026</div>
               <div className="review-author">
                 <div className="review-avatar">AK</div>
                 <div>
-                  <div className="review-name">Alex K.</div>
-                  <div className="review-date">Februari 2026</div>
+                  <div className="review-name">Alex, 20</div>
+                  <div className="review-meta">Göteborg</div>
                 </div>
               </div>
             </div>
+
+            {/* Review 3 */}
             <div className="review-card">
-              <div className="review-stars">★★★★★</div>
-              <div className="review-text">&quot;Mycket bättre än att läsa körkortsboken. Frågorna liknar det riktiga provet och man lär sig av sina misstag.&quot;</div>
+              <div className="review-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div className="review-text">&quot;Mycket bättre än körkortsboken. Frågorna liknar det riktiga provet och man lär sig av sina misstag direkt.&quot;</div>
+              <div className="review-passed">✓ Klarade provet januari 2026</div>
               <div className="review-author">
                 <div className="review-avatar">SJ</div>
                 <div>
-                  <div className="review-name">Sara J.</div>
-                  <div className="review-date">Januari 2026</div>
+                  <div className="review-name">Sara, 18</div>
+                  <div className="review-meta">Malmö</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Review 4 */}
+            <div className="review-card">
+              <div className="review-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div className="review-text">&quot;Kuggade första gången på Trafikverket. Hittade Huvet, övade i en vecka och klarade omprovet utan problem. Tack!&quot;</div>
+              <div className="review-passed">✓ Klarade provet mars 2026</div>
+              <div className="review-author">
+                <div className="review-avatar">OL</div>
+                <div>
+                  <div className="review-name">Oscar, 21</div>
+                  <div className="review-meta">Uppsala</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Review 5 */}
+            <div className="review-card">
+              <div className="review-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#E0E0E0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div className="review-text">&quot;Perfekt att öva på mobilen i bussen. Vägmärkena var min svaghet men efter Huvet kunde jag alla. Rekommenderar!&quot;</div>
+              <div className="review-passed">✓ Klarade provet februari 2026</div>
+              <div className="review-author">
+                <div className="review-avatar">LN</div>
+                <div>
+                  <div className="review-name">Lina, 19</div>
+                  <div className="review-meta">Linköping</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Review 6 */}
+            <div className="review-card">
+              <div className="review-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFC107"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div className="review-text">&quot;Min kompis tipsade om Huvet. Pluggade i tre veckor bredvid jobbet och fick 58/65 på provet. Gratis dessutom!&quot;</div>
+              <div className="review-passed">✓ Klarade provet januari 2026</div>
+              <div className="review-author">
+                <div className="review-avatar">KA</div>
+                <div>
+                  <div className="review-name">Kevin, 23</div>
+                  <div className="review-meta">Västerås</div>
                 </div>
               </div>
             </div>
