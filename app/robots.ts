@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/api/', '/betalning/', '/tack/'],
     },
     sitemap: 'https://huvet.se/sitemap.xml',
     host: 'https://huvet.se',

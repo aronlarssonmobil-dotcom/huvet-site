@@ -22,11 +22,32 @@ export const metadata: Metadata = {
     "Klara körkortsprovet med Huvet. Öva med 450+ riktiga teorifrågor, vägmärken, körkortsfrågor och körprov-förberedelse. 94% av eleverna klarar provet. Gratis.",
   keywords: ["körkortsprov", "teoriprov", "körkortsfrågor", "vägmärken", "körkort 2026", "teoriprov övning", "körprov tips", "övningskörning"],
   metadataBase: new URL("https://huvet.se"),
+  alternates: {
+    canonical: "https://huvet.se/",
+  },
   openGraph: {
     title: "Huvet — Klara körkortsprovet första gången | Teoriprov 2026",
     description: "450+ körkortsfrågor, vägmärken och teoriprov-övning. 94% klarar provet med Huvet.",
     locale: "sv_SE",
     type: "website",
+    url: "https://huvet.se/",
+    siteName: "Huvet",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Huvet — Klara körkortsprovet första gången | Teoriprov 2026",
+    description: "450+ körkortsfrågor, vägmärken och teoriprov-övning. 94% klarar provet med Huvet.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 };
 
