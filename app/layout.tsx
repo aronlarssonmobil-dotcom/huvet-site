@@ -32,11 +32,20 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://huvet.se/",
     siteName: "Huvet",
+    images: [
+      {
+        url: "https://huvet.se/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Huvet — Klara körkortsprovet första gången",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Huvet — Klara körkortsprovet första gången | Teoriprov 2026",
     description: "450+ körkortsfrågor, vägmärken och teoriprov-övning. 94% klarar provet med Huvet.",
+    images: ["https://huvet.se/api/og"],
   },
   robots: {
     index: true,

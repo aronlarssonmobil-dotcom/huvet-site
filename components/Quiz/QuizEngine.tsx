@@ -3,7 +3,9 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Question, QuizCategory, categoryLabels, categoryColors } from '../../lib/questions/types';
 import { loadProgress, saveProgress, updateStreak, awardXP, recordAnswer } from '../../lib/progress';
+import { hasReachedLimit, incrementQuestionCount, getRemainingQuestions, isPremium, DAILY_LIMIT } from '../../lib/paywall';
 import ShareResult from '../ShareResult';
+import PaywallOverlay from '../PaywallOverlay';
 import { getRoadSign } from '../RoadSigns';
 
 type QuizMode = 'practice' | 'exam';
@@ -69,6 +71,7 @@ export default function QuizEngine({
   const [combo, setCombo] = useState(0);
   const [xpPopup, setXpPopup] = useState<{ amount: number; visible: boolean }>({ amount: 0, visible: false });
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showPaywall, setShowPaywall] = useState(false);
   const streakUpdated = useRef(false);
 
   // Update streak on first render
@@ -103,6 +106,13 @@ export default function QuizEngine({
   const handleAnswer = useCallback(
     (optionIndex: number) => {
       if (answerState.selectedIndex !== null) return;
+
+      // Paywall check
+      if (hasReachedLimit()) {
+        setShowPaywall(true);
+        return;
+      }
+      incrementQuestionCount();
 
       const isCorrect = optionIndex === currentQuestion.correctIndex;
       const newAnswers = [...answers, optionIndex];
@@ -348,8 +358,34 @@ export default function QuizEngine({
   }
 
   // ─── QUESTION SCREEN ───
+  const remaining = getRemainingQuestions();
+
   return (
     <div style={{ maxWidth: 600, margin: '0 auto', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
+      {showPaywall && <PaywallOverlay />}
+
+      {/* Remaining questions indicator */}
+      {!isPremium() && remaining <= 5 && remaining > 0 && (
+        <div style={{
+          background: '#FFF3E0',
+          border: '1px solid #FFB74D',
+          borderRadius: 10,
+          padding: '0.6rem 1rem',
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          fontSize: '0.82rem',
+        }}>
+          <span style={{ color: '#E65100', fontWeight: 600 }}>
+            ⚡ {remaining} gratisfrågor kvar idag
+          </span>
+          <a href="/priser" style={{ color: '#00C853', fontWeight: 700, textDecoration: 'none', fontSize: '0.8rem' }}>
+            Uppgradera →
+          </a>
+        </div>
+      )}
+
       {/* Progress bar + timer */}
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
