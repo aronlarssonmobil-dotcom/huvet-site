@@ -345,6 +345,73 @@ export default function Home() {
           line-height: 1.6;
         }
 
+        /* ── STATS BAR ── */
+        .stats-bar {
+          padding: 2.5rem 2rem;
+          background: #111;
+          text-align: center;
+        }
+        .stats-bar-inner {
+          max-width: 800px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+        .stats-bar-item {
+          font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+          font-size: 1.05rem;
+          font-weight: 600;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .stats-bar-item .num {
+          color: #00E676;
+          font-weight: 700;
+        }
+        .stats-bar-sep {
+          color: #333;
+          font-size: 1.2rem;
+          user-select: none;
+        }
+
+        /* ── TRUST BADGES ── */
+        .trust-badges {
+          padding: 2rem 2rem;
+          background: #fafafa;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        .trust-badges-inner {
+          max-width: 900px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+        .trust-badge {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.82rem;
+          font-weight: 500;
+          color: #555;
+        }
+        .trust-badge-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 8px;
+          background: #E8F5E9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
         /* ── REVIEWS ── */
         .reviews {
           padding: 5rem 2.5rem;
@@ -364,12 +431,17 @@ export default function Home() {
           border-radius: 16px;
           padding: 1.75rem;
           border: 1px solid #f0f0f0;
+          transition: all 0.25s ease;
+        }
+        .review-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+          border-color: #e0e0e0;
         }
         .review-stars {
-          color: #FFC107;
-          font-size: 0.9rem;
+          display: flex;
+          gap: 2px;
           margin-bottom: 0.75rem;
-          letter-spacing: 1px;
         }
         .review-text {
           font-size: 0.85rem;
@@ -377,14 +449,24 @@ export default function Home() {
           color: #555;
           margin-bottom: 1rem;
         }
+        .review-passed {
+          font-size: 0.72rem;
+          font-weight: 600;
+          color: #00C853;
+          background: #E8F5E9;
+          display: inline-block;
+          padding: 0.2rem 0.55rem;
+          border-radius: 6px;
+          margin-bottom: 0.75rem;
+        }
         .review-author {
           display: flex;
           align-items: center;
           gap: 0.6rem;
         }
         .review-avatar {
-          width: 32px;
-          height: 32px;
+          width: 34px;
+          height: 34px;
           border-radius: 50%;
           background: #E8F5E9;
           display: flex;
@@ -398,7 +480,7 @@ export default function Home() {
           font-weight: 600;
           font-size: 0.78rem;
         }
-        .review-date {
+        .review-meta {
           font-size: 0.68rem;
           color: #999;
         }
@@ -469,6 +551,10 @@ export default function Home() {
           .quiz-layout { grid-template-columns: 1fr; }
           .cat-grid { grid-template-columns: 1fr; }
           .reviews-grid { grid-template-columns: 1fr; }
+          .stats-bar-inner { gap: 1rem; }
+          .stats-bar-item { font-size: 0.9rem; }
+          .trust-badges-inner { gap: 1rem; }
+          .trust-badge { font-size: 0.75rem; }
           .cta-inner { padding: 3rem 1.5rem; }
         }
       `}</style>

@@ -77,13 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: absoluteUrl('/riskutbildning'),
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: absoluteUrl('/trafikregler'),
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 0.92,
     },
     {
@@ -97,6 +97,67 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.92,
+    },
+    // New SEO content pages
+    {
+      url: absoluteUrl('/vagmarken-guide'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: absoluteUrl('/trafikregler-guide'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: absoluteUrl('/hastighetsgranser-guide'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: absoluteUrl('/ovningsprov-guide'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: absoluteUrl('/korkort-kostnad-guide'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: absoluteUrl('/riskettan'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.87,
+    },
+    {
+      url: absoluteUrl('/risktvaan'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.87,
+    },
+    {
+      url: absoluteUrl('/halkkörning'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.87,
+    },
+    {
+      url: absoluteUrl('/teoriprov-tips'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl('/uppkorning-tips'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
   ];
 }

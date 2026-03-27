@@ -88,10 +88,14 @@ export default function SiteFooter() {
           <div>
             <div className="footer-col-title">Guider</div>
             <ul className="footer-links">
-              <li><Link href="/korprov">Körprov</Link></li>
-              <li><Link href="/korkort-kostnad">Kostnad</Link></li>
-              <li><Link href="/intensivkurs">Intensivkurs</Link></li>
-              <li><Link href="/riskutbildning">Riskutbildning</Link></li>
+              <li><Link href="/vagmarken-guide">Vägmärken guide</Link></li>
+              <li><Link href="/trafikregler-guide">Trafikregler guide</Link></li>
+              <li><Link href="/hastighetsgranser-guide">Hastighetsgränser</Link></li>
+              <li><Link href="/korkort-kostnad-guide">Körkort kostnad</Link></li>
+              <li><Link href="/riskettan">Riskettan</Link></li>
+              <li><Link href="/risktvaan">Risktvåan</Link></li>
+              <li><Link href="/teoriprov-tips">Teoriprov-tips</Link></li>
+              <li><Link href="/uppkorning-tips">Uppkörning-tips</Link></li>
             </ul>
           </div>
           <div>
