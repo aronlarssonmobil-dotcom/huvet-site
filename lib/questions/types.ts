@@ -21,6 +21,8 @@ export type Question = {
   options: string[];
   correctIndex: number;
   explanation: string;
+  /** Key into roadSignComponents for visual sign display */
+  signKey?: string;
 };
 
 export const categoryLabels: Record<QuizCategory, string> = {

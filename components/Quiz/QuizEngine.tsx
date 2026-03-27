@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Question, QuizCategory, categoryLabels, categoryColors } from '../../lib/questions/types';
 import { loadProgress, saveProgress, updateStreak, awardXP, recordAnswer } from '../../lib/progress';
 import ShareResult from '../ShareResult';
+import { getRoadSign } from '../RoadSigns';
 
 type QuizMode = 'practice' | 'exam';
 
@@ -452,6 +453,25 @@ export default function QuizEngine({
       }}>
         {currentQuestion.question}
       </h3>
+
+      {/* Road sign SVG */}
+      {currentQuestion.signKey && (() => {
+        const SignComponent = getRoadSign(currentQuestion.signKey);
+        if (!SignComponent) return null;
+        return (
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '1.5rem',
+            padding: '1.25rem',
+            background: '#f8faf9',
+            borderRadius: 16,
+            border: '1px solid #e8f0ec',
+          }}>
+            <SignComponent size={100} />
+          </div>
+        );
+      })()}
 
       {/* Options */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.25rem' }}>
