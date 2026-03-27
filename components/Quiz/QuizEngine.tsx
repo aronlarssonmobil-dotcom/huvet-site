@@ -212,7 +212,7 @@ export default function QuizEngine({
   // ─── CONFETTI COMPONENT ───
   const ConfettiEffect = () => {
     if (!showConfetti) return null;
-    const colors = ['#006B3F', '#f5d020', '#1DB954', '#FF6B6B', '#4ECDC4', '#FFD93D', '#6BCB77', '#FF8E53'];
+    const colors = ['#006B3F', '#f5d020', '#00C853', '#FF6B6B', '#4ECDC4', '#FFD93D', '#6BCB77', '#FF8E53'];
     const pieces = Array.from({ length: 50 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -380,7 +380,7 @@ export default function QuizEngine({
           <span style={{ color: '#E65100', fontWeight: 600 }}>
             ⚡ {remaining} gratisfrågor kvar idag
           </span>
-          <a href="/priser" style={{ color: '#1DB954', fontWeight: 700, textDecoration: 'none', fontSize: '0.8rem' }}>
+          <a href="/priser" style={{ color: '#00C853', fontWeight: 700, textDecoration: 'none', fontSize: '0.8rem' }}>
             Uppgradera →
           </a>
         </div>

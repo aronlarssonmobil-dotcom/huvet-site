@@ -99,7 +99,7 @@ export default function ExitIntentPopup() {
         <Link href="/ovningsprov" style={{
           display: 'block',
           padding: '0.95rem',
-          background: 'linear-gradient(135deg, #1DB954, #24D963)',
+          background: 'linear-gradient(135deg, #00C853, #00E676)',
           color: '#fff',
           borderRadius: 12,
           fontWeight: 700,
