@@ -40,6 +40,17 @@ const allGuides: Record<string, Guide> = {
   '/steg-for-steg': { href: '/steg-for-steg', title: 'Steg för steg', description: 'Komplett guide — alla 10 steg till körkort' },
   '/nervos-uppkorning': { href: '/nervos-uppkorning', title: 'Nervös inför uppkörning', description: 'Tips och tekniker mot nervositet' },
   '/fornya-korkort': { href: '/fornya-korkort', title: 'Förnya körkort', description: 'Giltighetstid, kostnad och EU-regler' },
+  '/korkort-c': { href: '/korkort-c', title: 'C-körkort lastbil', description: 'Krav, YKB, kostnad och utbildning' },
+  '/automatiskt-korkort': { href: '/automatiskt-korkort', title: 'Automatiskt körkort', description: 'Automat vs manuell — regler och val' },
+  '/hogersregeln': { href: '/hogersregeln', title: 'Högerregeln', description: 'Förklaring, exempel och undantag' },
+  '/stopplikt-vs-vajningsplikt': { href: '/stopplikt-vs-vajningsplikt', title: 'Stopplikt vs väjningsplikt', description: 'Skillnaden förklarad med exempel' },
+  '/syntest-korkort': { href: '/syntest-korkort', title: 'Syntest körkort', description: 'Krav, kostnad och tips för syntestet' },
+  '/trafikforsakring': { href: '/trafikforsakring', title: 'Trafikförsäkring', description: 'Obligatorisk försäkring — vad den täcker' },
+  '/bilinspektion': { href: '/bilinspektion', title: 'Bilinspektion', description: 'Besiktning — regler, kostnad och tips' },
+  '/korning-i-regn': { href: '/korning-i-regn', title: 'Körning i regn', description: 'Vattenplaning, bromssträcka och sikt' },
+  '/korning-pa-motorvag': { href: '/korning-pa-motorvag', title: 'Körning på motorväg', description: 'Påfart, filbyte och motorvägsregler' },
+  '/korning-i-morker': { href: '/korning-i-morker', title: 'Körning i mörker', description: 'Belysning, vilt och mörkerrisker' },
+  '/blinkers-regler': { href: '/blinkers-regler', title: 'Blinkers regler', description: 'När du måste blinka — alla situationer' },
 };
 
 const relatedMap: Record<string, string[]> = {
@@ -76,6 +87,17 @@ const relatedMap: Record<string, string[]> = {
   '/steg-for-steg': ['/korkort-kostnad', '/hur-lang-tid', '/teoriprov', '/korprov'],
   '/nervos-uppkorning': ['/korprov', '/boka-uppkorning', '/vanliga-fel-korprov', '/korkortstips'],
   '/fornya-korkort': ['/digitalt-korkort', '/b-korkort', '/korkort-kostnad', '/nya-regler-2026'],
+  '/korkort-c': ['/b-korkort', '/korkort-alder', '/korkort-kostnad', '/mc'],
+  '/automatiskt-korkort': ['/b-korkort', '/korkort-kostnad', '/korprov', '/teoriprov'],
+  '/hogersregeln': ['/trafikregler', '/stopplikt-vs-vajningsplikt', '/vagmarken', '/teoriprov'],
+  '/stopplikt-vs-vajningsplikt': ['/hogersregeln', '/trafikregler', '/vagmarken', '/teoriprov'],
+  '/syntest-korkort': ['/korkortstillstand', '/b-korkort', '/korkort-alder', '/korkort-kostnad'],
+  '/trafikforsakring': ['/b-korkort', '/korkort-kostnad', '/rattfylleri', '/trafikregler'],
+  '/bilinspektion': ['/trafikforsakring', '/b-korkort', '/korkort-kostnad', '/trafikregler'],
+  '/korning-i-regn': ['/korning-i-morker', '/korning-pa-motorvag', '/hastighetsgranser', '/riskutbildning'],
+  '/korning-pa-motorvag': ['/hastighetsgranser', '/korning-i-regn', '/korning-i-morker', '/trafikregler'],
+  '/korning-i-morker': ['/korning-i-regn', '/korning-pa-motorvag', '/riskutbildning', '/hastighetsgranser'],
+  '/blinkers-regler': ['/trafikregler', '/hogersregeln', '/korning-pa-motorvag', '/vagmarken'],
 };
 
 type RelatedGuidesProps = {
