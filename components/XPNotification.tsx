@@ -107,7 +107,7 @@ export default function XPNotification({ xpGained, newAchievements = [], onDone 
             <TrophyIcon size={22} color="#FFD600" />
           </div>
           <div>
-            <div style={{ fontSize: '11px', color: '#00C853', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.1em' }}>
+            <div style={{ fontSize: '11px', color: '#1DB954', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.1em' }}>
               Achievement Unlocked
             </div>
             <div style={{ fontSize: '15px', fontWeight: 700 }}>{currentAchievement.name}</div>

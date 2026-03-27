@@ -24,7 +24,7 @@ export function TrophyIcon({ size = 20, color = '#FFD600' }: { size?: number; co
   );
 }
 
-export function CheckBadgeIcon({ size = 20, color = '#00C853' }: { size?: number; color?: string }) {
+export function CheckBadgeIcon({ size = 20, color = '#1DB954' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill={color}/>

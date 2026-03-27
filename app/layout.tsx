@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -32,11 +34,20 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://huvet.se/",
     siteName: "Huvet",
+    images: [
+      {
+        url: "https://huvet.se/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Huvet — Klara körkortsprovet första gången",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Huvet — Klara körkortsprovet första gången | Teoriprov 2026",
     description: "450+ körkortsfrågor, vägmärken och teoriprov-övning. 94% klarar provet med Huvet.",
+    images: ["https://huvet.se/api/og"],
   },
   robots: {
     index: true,
@@ -137,6 +148,11 @@ export default function RootLayout({
     <html lang="sv" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <head>
         <script
+          defer
+          data-domain="huvet.se"
+          src="https://plausible.io/js/script.js"
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
@@ -151,6 +167,8 @@ export default function RootLayout({
       </head>
       <body style={{ margin: 0, padding: 0, fontFamily: "var(--font-inter), 'Inter', system-ui, sans-serif", color: '#111', background: '#fff', WebkitFontSmoothing: 'antialiased' }}>
         {children}
+        <ExitIntentPopup />
+        <StickyMobileCTA />
       </body>
     </html>
   );

@@ -9,8 +9,8 @@ export const metadata = {
 
 const CheckCircle = () => (
   <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="30" stroke="#00C853" strokeWidth="3" fill="rgba(0,200,83,0.08)" />
-    <path d="M20 33l8 8 16-16" stroke="#00C853" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="32" cy="32" r="30" stroke="#1DB954" strokeWidth="3" fill="rgba(0,200,83,0.08)" />
+    <path d="M20 33l8 8 16-16" stroke="#1DB954" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -53,7 +53,7 @@ export default function TackPage() {
         .tack-btn {
           display: inline-block;
           padding: 0.85rem 2rem;
-          background: linear-gradient(135deg, #00C853, #00E676);
+          background: linear-gradient(135deg, #1DB954, #24D963);
           color: #fff;
           font-size: 0.9rem;
           font-weight: 600;

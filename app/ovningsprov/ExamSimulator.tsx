@@ -18,6 +18,8 @@ const categories: { key: QuizCategory; icon: string }[] = [
   { key: 'riskbeteende', icon: '⚡' },
   { key: 'motorvag', icon: '🛤️' },
   { key: 'morkerkörning', icon: '🌙' },
+  { key: 'cykel-moped', icon: '🚲' },
+  { key: 'forsta-hjalpen', icon: '🏥' },
 ];
 
 export default function ExamSimulator() {

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { signs, categories } from '@/lib/signs-data';
 
 const siteUrl = 'https://huvet.se';
 
@@ -7,7 +8,25 @@ function absoluteUrl(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const signPages: MetadataRoute.Sitemap = signs
+    .filter(s => s.hasIndividualPage)
+    .map(s => ({
+      url: absoluteUrl(`/vagmarken/${s.slug}`),
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }));
+
+  const categoryPages: MetadataRoute.Sitemap = categories.map(c => ({
+    url: absoluteUrl(`/vagmarken/${c.slug}`),
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
   return [
+    ...categoryPages,
+    ...signPages,
     { url: absoluteUrl('/'), lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
     { url: absoluteUrl('/teoriprov'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
     { url: absoluteUrl('/korprov'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
@@ -60,9 +79,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl('/rattfylleri'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: absoluteUrl('/parkering'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: absoluteUrl('/priser'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: absoluteUrl('/om-oss'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     // Extra discovered pages
     { url: absoluteUrl('/hogersregeln'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.82 },
     { url: absoluteUrl('/stopplikt-vs-vajningsplikt'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.82 },
     { url: absoluteUrl('/syntest-korkort'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.82 },
+    // Previously missing pages
+    { url: absoluteUrl('/bilinspektion'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.82 },
+    { url: absoluteUrl('/blinkers-regler'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.82 },
+    { url: absoluteUrl('/korning-i-morker'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/korning-i-regn'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/korning-pa-motorvag'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/trafikforsakring'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.82 },
+    { url: absoluteUrl('/teori'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: absoluteUrl('/teori/fordonskanndom'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/teori/forsta-hjalpen'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/teori/korning'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/teori/miljo'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/teori/sakerhet'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/teori/trafikregler'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: absoluteUrl('/teori/vagmarken'), lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
   ];
 }

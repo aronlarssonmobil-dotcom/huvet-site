@@ -45,7 +45,7 @@ export default function SiteHeader() {
           color: #fff;
         }
         .nav-cta {
-          background: #00C853 !important;
+          background: #1DB954 !important;
           color: #fff !important;
           padding: 0.6rem 1.5rem !important;
           border-radius: 10px !important;
@@ -54,7 +54,7 @@ export default function SiteHeader() {
           transition: background 0.2s, transform 0.2s !important;
         }
         .nav-cta:hover {
-          background: #00E676 !important;
+          background: #24D963 !important;
           transform: translateY(-1px) !important;
         }
         .nav-burger {
@@ -103,7 +103,7 @@ export default function SiteHeader() {
         }
         .nav-mobile a:hover { background: rgba(255,255,255,0.08); }
         .nav-mobile-cta {
-          background: #00C853 !important;
+          background: #1DB954 !important;
           color: #fff !important;
           text-align: center;
           border-radius: 14px !important;
@@ -125,7 +125,8 @@ export default function SiteHeader() {
           <Link href="/teoriprov">Teoriprov</Link>
           <Link href="/vagmarken">Vägmärken</Link>
           <Link href="/trafikregler">Trafikregler</Link>
-          <a href="#demo" className="nav-cta">Börja öva</a>
+          <Link href="/priser">Priser</Link>
+          <a href="/ovningsprov" className="nav-cta">Börja öva</a>
         </div>
         <button
           className={`nav-burger ${menuOpen ? 'open' : ''}`}
@@ -146,7 +147,8 @@ export default function SiteHeader() {
         <Link href="/korkort-kostnad">Körkort kostnad</Link>
         <Link href="/mc">MC-körkort</Link>
         <Link href="/moped">Mopedkörkort</Link>
-        <a href="#demo" className="nav-mobile-cta">Börja öva gratis</a>
+        <Link href="/priser">Priser</Link>
+        <a href="/ovningsprov" className="nav-mobile-cta">Börja öva gratis</a>
       </div>
     </>
   );

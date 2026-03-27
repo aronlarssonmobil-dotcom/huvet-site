@@ -170,7 +170,7 @@ export default function GamificationDashboard() {
         }
         .gf-cat-bar-fill {
           height: 100%;
-          background: #00C853;
+          background: #1DB954;
           border-radius: 100px;
           transition: width 0.4s ease;
         }
@@ -225,8 +225,8 @@ export default function GamificationDashboard() {
           transition: all 0.15s;
         }
         .gf-show-more:hover {
-          border-color: #00C853;
-          color: #00C853;
+          border-color: #1DB954;
+          color: #1DB954;
         }
         .gf-section-title {
           font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
@@ -274,7 +274,7 @@ export default function GamificationDashboard() {
             </div>
             <div className="gf-stat-card">
               <div className="gf-stat-icon" style={{ background: '#E8F5E9' }}>
-                <svg width={22} height={22} viewBox="0 0 24 24" fill="#00C853">
+                <svg width={22} height={22} viewBox="0 0 24 24" fill="#1DB954">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                 </svg>
               </div>
@@ -335,7 +335,7 @@ export default function GamificationDashboard() {
           {categoryEntries.length > 0 && (
             <>
               <div className="gf-section-title">
-                <svg width={18} height={18} viewBox="0 0 24 24" fill="#00C853">
+                <svg width={18} height={18} viewBox="0 0 24 24" fill="#1DB954">
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
                 </svg>
                 Framsteg per kategori

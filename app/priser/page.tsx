@@ -92,7 +92,7 @@ export default function PriserPage() {
           position: relative;
         }
         .pricing-hero h1 span {
-          color: #00E676;
+          color: #24D963;
         }
         .pricing-hero p {
           color: rgba(255,255,255,0.65);
@@ -129,7 +129,7 @@ export default function PriserPage() {
         }
 
         .pricing-card.featured {
-          border: 2px solid #00C853;
+          border: 2px solid #1DB954;
           box-shadow: 0 8px 40px rgba(0,200,83,0.15);
           position: relative;
           transform: scale(1.03);
@@ -144,7 +144,7 @@ export default function PriserPage() {
           top: -13px;
           left: 50%;
           transform: translateX(-50%);
-          background: linear-gradient(135deg, #00C853, #00E676);
+          background: linear-gradient(135deg, #1DB954, #24D963);
           color: #fff;
           font-size: 0.7rem;
           font-weight: 700;
@@ -165,8 +165,8 @@ export default function PriserPage() {
           margin-bottom: 1.25rem;
         }
         .card-icon.free { background: #f0f0f0; color: #666; }
-        .card-icon.premium { background: rgba(0,200,83,0.12); color: #00C853; }
-        .card-icon.garanti { background: rgba(0,200,83,0.12); color: #00C853; }
+        .card-icon.premium { background: rgba(0,200,83,0.12); color: #1DB954; }
+        .card-icon.garanti { background: rgba(0,200,83,0.12); color: #1DB954; }
 
         .card-name {
           font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
@@ -209,7 +209,7 @@ export default function PriserPage() {
           color: #444;
           padding: 0.45rem 0;
         }
-        .card-features li .check { color: #00C853; }
+        .card-features li .check { color: #1DB954; }
         .card-features li .x { color: #ccc; }
         .card-features li.disabled { color: #bbb; }
 
@@ -233,7 +233,7 @@ export default function PriserPage() {
         }
         .card-btn.outline:hover { border-color: #bbb; background: #fafafa; }
         .card-btn.primary {
-          background: linear-gradient(135deg, #00C853, #00E676);
+          background: linear-gradient(135deg, #1DB954, #24D963);
           color: #fff;
           box-shadow: 0 4px 15px rgba(0,200,83,0.3);
         }
@@ -324,7 +324,7 @@ export default function PriserPage() {
 
         {/* Premium — featured */}
         <div className="pricing-card featured">
-          <div className="card-badge">Populärast</div>
+          <div className="card-badge">🔥 Mest populär</div>
           <div className="card-icon premium"><StarIcon /></div>
           <h3 className="card-name">Premium</h3>
           <p className="card-desc">Allt du behöver för att klara provet</p>
@@ -372,6 +372,57 @@ export default function PriserPage() {
         </div>
       </div>
 
+      {/* Garanti-badge */}
+      <div style={{
+        maxWidth: 600,
+        margin: '0 auto 3rem',
+        padding: '0 1.5rem',
+      }}>
+        <div style={{
+          background: '#f0faf5',
+          border: '2px solid #1DB954',
+          borderRadius: 16,
+          padding: '1.5rem 2rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1rem',
+          textAlign: 'left',
+        }}>
+          <div style={{
+            width: 48,
+            height: 48,
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #1DB954, #24D963)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+            color: '#fff',
+          }}>
+            <ShieldIcon />
+          </div>
+          <div>
+            <p style={{
+              fontFamily: "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
+              fontWeight: 700,
+              fontSize: '1rem',
+              color: '#111',
+              margin: '0 0 0.25rem',
+            }}>
+              Klarar du inte provet? Pengarna tillbaka.
+            </p>
+            <p style={{
+              color: '#666',
+              fontSize: '0.85rem',
+              margin: 0,
+              lineHeight: 1.5,
+            }}>
+              Med Garanti-planen: om du inte klarar provet inom 6 månader återbetalar vi hela beloppet.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <section className="pricing-faq">
         <h2>Vanliga frågor</h2>
         <div className="faq-item">
@@ -389,6 +440,22 @@ export default function PriserPage() {
         <div className="faq-item">
           <p className="faq-q">Kan jag uppgradera från Gratis till Premium?</p>
           <p className="faq-a">Absolut. Du kan uppgradera när som helst. Din statistik och framsteg sparas.</p>
+        </div>
+        <div className="faq-item">
+          <p className="faq-q">Hur många frågor ingår gratis?</p>
+          <p className="faq-a">Du kan svara på 20 frågor per dag helt gratis. Det räcker för att komma igång och testa plattformen. Med Premium får du obegränsat övande.</p>
+        </div>
+        <div className="faq-item">
+          <p className="faq-q">Hur länge har jag tillgång efter köp?</p>
+          <p className="faq-a">För alltid. Du betalar en gång och din tillgång upphör aldrig. Vi lägger också till nya frågor regelbundet som du får tillgång till automatiskt.</p>
+        </div>
+        <div className="faq-item">
+          <p className="faq-q">Fungerar Huvet på mobilen?</p>
+          <p className="faq-a">Ja! Huvet är fullt optimerat för mobil, surfplatta och dator. Öva var du vill, när du vill.</p>
+        </div>
+        <div className="faq-item">
+          <p className="faq-q">Är frågorna uppdaterade för 2026?</p>
+          <p className="faq-a">Ja. Alla frågor uppdateras kontinuerligt och följer Transportstyrelsens senaste riktlinjer och regler.</p>
         </div>
       </section>
 

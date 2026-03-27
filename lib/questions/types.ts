@@ -9,7 +9,9 @@ export type QuizCategory =
   | 'fordon-teknik'
   | 'riskbeteende'
   | 'motorvag'
-  | 'morkerkörning';
+  | 'morkerkörning'
+  | 'cykel-moped'
+  | 'forsta-hjalpen';
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
@@ -37,6 +39,8 @@ export const categoryLabels: Record<QuizCategory, string> = {
   riskbeteende: 'Riskbeteende',
   motorvag: 'Motorväg',
   morkerkörning: 'Mörkerkörning',
+  'cykel-moped': 'Cykel & Moped',
+  'forsta-hjalpen': 'Första Hjälpen',
 };
 
 export const categoryColors: Record<QuizCategory, string> = {
@@ -51,4 +55,6 @@ export const categoryColors: Record<QuizCategory, string> = {
   riskbeteende: '#e11d48',
   motorvag: '#0369a1',
   morkerkörning: '#1e293b',
+  'cykel-moped': '#f97316',
+  'forsta-hjalpen': '#ef4444',
 };

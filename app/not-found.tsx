@@ -1,4 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sidan hittades inte — Huvet',
+  description: 'Sidan du letar efter finns inte. Öva på körkortsprovet med Huvet.',
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

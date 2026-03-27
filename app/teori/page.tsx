@@ -200,7 +200,7 @@ export default function TeoriOverviewPage() {
           padding: 0 1.5rem;
         }
         .teori-bottom-cta-inner {
-          background: linear-gradient(135deg, #006B3F, #00C853);
+          background: linear-gradient(135deg, #006B3F, #1DB954);
           padding: 2.5rem;
           border-radius: 16px;
           text-align: center;

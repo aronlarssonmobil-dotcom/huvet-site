@@ -79,7 +79,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
         }
         .theory-info-box {
           background: #f0faf5;
-          border-left: 4px solid #00C853;
+          border-left: 4px solid #1DB954;
           padding: 1.25rem 1.5rem;
           border-radius: 0 12px 12px 0;
           margin: 1.5rem 0;
@@ -121,7 +121,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
           color: #333;
         }
         .theory-cta {
-          background: linear-gradient(135deg, #006B3F, #00C853);
+          background: linear-gradient(135deg, #006B3F, #1DB954);
           padding: 2.5rem;
           border-radius: 16px;
           text-align: center;

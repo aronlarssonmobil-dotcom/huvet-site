@@ -101,6 +101,7 @@ export default function SiteFooter() {
           <div>
             <div className="footer-col-title">Huvet</div>
             <ul className="footer-links">
+              <li><Link href="/priser">Se priser →</Link></li>
               <li><a href="#">Om oss</a></li>
               <li><a href="#">Kontakt</a></li>
               <li><a href="#">Integritetspolicy</a></li>

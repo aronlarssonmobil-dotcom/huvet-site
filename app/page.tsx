@@ -4,9 +4,95 @@ import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 import Image from "next/image";
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Huvet",
+    url: "https://huvet.se",
+    description: "Klara körkortsprovet första gången med Huvet. 450+ teorifrågor, vägmärken och övningsprov.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://huvet.se/ovningsprov",
+      "query-input": "required name=search_term_string",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Huvet",
+    url: "https://huvet.se",
+    logo: "https://huvet.se/logo.svg",
+    sameAs: [],
+    description: "Sveriges smartaste körkortsutbildning online. Öva teoriprov med 450+ frågor och klara provet första gången.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "Körkortsteoriprov — Övning med Huvet",
+    description: "Komplett digital förberedelse för Sveriges körkortsteoriprov. 450+ frågor inom alla kategorier: trafikregler, vägmärken, väjningsplikt, riskbeteende och fordon.",
+    provider: {
+      "@type": "Organization",
+      name: "Huvet",
+      url: "https://huvet.se",
+    },
+    educationalLevel: "Beginner",
+    inLanguage: "sv",
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "SEK",
+      availability: "https://schema.org/InStock",
+    },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      courseWorkload: "PT20H",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Hur många frågor är det på teoriprovet?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Teoriprovet för B-körkort innehåller 70 frågor. Du behöver minst 52 rätt för att bli godkänd. Provet tar 50 minuter.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Är Huvet gratis?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ja, Huvet är helt gratis att använda. Du kan öva med 450+ teorifrågor, vägmärken och övningsprov utan kostnad.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Hur länge behöver man plugga för teoriprovet?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "De flesta behöver 2-4 veckor med daglig övning (15-30 min/dag). Med Huvet kan du fokusera på dina svaga områden och bli redo snabbare.",
+        },
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <>
+      {structuredData.map((data, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
       <style>{`
         /* ── HERO ── */
         .hero {
@@ -57,7 +143,7 @@ export default function Home() {
         .hero-badge .dot {
           width: 8px;
           height: 8px;
-          background: #00C853;
+          background: #1DB954;
           border-radius: 50%;
         }
         .hero-title {
@@ -71,7 +157,7 @@ export default function Home() {
           letter-spacing: -1px;
         }
         .hero-title .green {
-          color: #00E676;
+          color: #24D963;
         }
         .hero-sub {
           font-size: 1.1rem;
@@ -87,7 +173,7 @@ export default function Home() {
           margin-bottom: 3rem;
         }
         .btn-hero {
-          background: #00C853;
+          background: #1DB954;
           color: #fff;
           padding: 1rem 2.25rem;
           border-radius: 14px;
@@ -101,7 +187,7 @@ export default function Home() {
           display: inline-block;
         }
         .btn-hero:hover {
-          background: #00E676;
+          background: #24D963;
           transform: translateY(-2px);
           box-shadow: 0 8px 30px rgba(0,200,83,0.35);
         }
@@ -134,7 +220,7 @@ export default function Home() {
           color: #fff;
         }
         .hero-stat-num .accent {
-          color: #00E676;
+          color: #24D963;
         }
         .hero-stat-label {
           font-size: 0.7rem;
@@ -192,7 +278,7 @@ export default function Home() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #00C853;
+          color: #1DB954;
           font-size: 0.75rem;
           flex-shrink: 0;
         }
@@ -263,7 +349,7 @@ export default function Home() {
           margin-top: 0.75rem;
           font-size: 0.7rem;
           font-weight: 600;
-          color: #00C853;
+          color: #1DB954;
           background: #E8F5E9;
           padding: 0.25rem 0.6rem;
           border-radius: 6px;
@@ -325,13 +411,13 @@ export default function Home() {
           font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
         }
         .step-dot.done {
-          background: #00C853;
+          background: #1DB954;
           color: #fff;
         }
         .step-dot.next {
           background: #222;
-          color: #00C853;
-          border: 2px solid #00C853;
+          color: #1DB954;
+          border: 2px solid #1DB954;
         }
         .step-title {
           font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
@@ -370,7 +456,7 @@ export default function Home() {
           gap: 0.5rem;
         }
         .stats-bar-item .num {
-          color: #00E676;
+          color: #24D963;
           font-weight: 700;
         }
         .stats-bar-sep {
@@ -452,7 +538,7 @@ export default function Home() {
         .review-passed {
           font-size: 0.72rem;
           font-weight: 600;
-          color: #00C853;
+          color: #1DB954;
           background: #E8F5E9;
           display: inline-block;
           padding: 0.2rem 0.55rem;
@@ -523,7 +609,7 @@ export default function Home() {
           position: relative;
         }
         .cta-btn {
-          background: #00C853;
+          background: #1DB954;
           color: #fff;
           padding: 1rem 2.5rem;
           border-radius: 14px;
@@ -538,7 +624,7 @@ export default function Home() {
           text-decoration: none;
         }
         .cta-btn:hover {
-          background: #00E676;
+          background: #24D963;
           transform: translateY(-2px);
           box-shadow: 0 8px 30px rgba(0,200,83,0.3);
         }
@@ -733,19 +819,19 @@ export default function Home() {
         <div className="trust-badges-inner">
           <div className="trust-badge">
             <div className="trust-badge-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1DB954" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             Uppdaterad 2026
           </div>
           <div className="trust-badge">
             <div className="trust-badge-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1DB954" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             </div>
             Alla frågor granskade
           </div>
           <div className="trust-badge">
             <div className="trust-badge-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1DB954" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
             </div>
             100% gratis start
           </div>
