@@ -4,9 +4,95 @@ import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 import Image from "next/image";
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Huvet",
+    url: "https://huvet.se",
+    description: "Klara körkortsprovet första gången med Huvet. 450+ teorifrågor, vägmärken och övningsprov.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://huvet.se/ovningsprov",
+      "query-input": "required name=search_term_string",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Huvet",
+    url: "https://huvet.se",
+    logo: "https://huvet.se/logo.svg",
+    sameAs: [],
+    description: "Sveriges smartaste körkortsutbildning online. Öva teoriprov med 450+ frågor och klara provet första gången.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "Körkortsteoriprov — Övning med Huvet",
+    description: "Komplett digital förberedelse för Sveriges körkortsteoriprov. 450+ frågor inom alla kategorier: trafikregler, vägmärken, väjningsplikt, riskbeteende och fordon.",
+    provider: {
+      "@type": "Organization",
+      name: "Huvet",
+      url: "https://huvet.se",
+    },
+    educationalLevel: "Beginner",
+    inLanguage: "sv",
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "SEK",
+      availability: "https://schema.org/InStock",
+    },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      courseWorkload: "PT20H",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Hur många frågor är det på teoriprovet?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Teoriprovet för B-körkort innehåller 70 frågor. Du behöver minst 52 rätt för att bli godkänd. Provet tar 50 minuter.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Är Huvet gratis?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ja, Huvet är helt gratis att använda. Du kan öva med 450+ teorifrågor, vägmärken och övningsprov utan kostnad.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Hur länge behöver man plugga för teoriprovet?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "De flesta behöver 2-4 veckor med daglig övning (15-30 min/dag). Med Huvet kan du fokusera på dina svaga områden och bli redo snabbare.",
+        },
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <>
+      {structuredData.map((data, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
       <style>{`
         /* ── HERO ── */
         .hero {

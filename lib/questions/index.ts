@@ -11,6 +11,8 @@ import { fordonTeknikQuestions } from './fordon-teknik';
 import { riskbeteendeQuestions } from './riskbeteende';
 import { motorvagQuestions } from './motorvag';
 import { morkerkorningQuestions } from './morkerkörning';
+import { cykelMopedQuestions } from './cykel-moped';
+import { forstaHjalpenQuestions } from './forsta-hjalpen';
 
 import { Question, QuizCategory } from './types';
 
@@ -26,6 +28,8 @@ export const allQuestions: Question[] = [
   ...riskbeteendeQuestions,
   ...motorvagQuestions,
   ...morkerkorningQuestions,
+  ...cykelMopedQuestions,
+  ...forstaHjalpenQuestions,
 ];
 
 export function getQuestionsByCategory(category: QuizCategory): Question[] {
@@ -54,4 +58,6 @@ export {
   riskbeteendeQuestions,
   motorvagQuestions,
   morkerkorningQuestions,
+  cykelMopedQuestions,
+  forstaHjalpenQuestions,
 };
