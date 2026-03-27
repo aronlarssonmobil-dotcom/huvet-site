@@ -33,7 +33,7 @@ export default function HastighetsgranserPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', fontFamily: 'system-ui, sans-serif', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F' }}>Huvet</Link> › Hastighetsgränser
+          <Link href="/" style={{ color: '#1DB954' }}>Huvet</Link> › Hastighetsgränser
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -50,12 +50,12 @@ export default function HastighetsgranserPage() {
                 <span style={{ fontSize: '1.5rem' }}>{ikon}</span>
                 <span style={{ fontWeight: 500 }}>{typ}</span>
               </div>
-              <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#006B3F' }}>{hastighet}</span>
+              <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#1DB954' }}>{hastighet}</span>
             </div>
           ))}
         </div>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Viktiga undantag</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Viktiga undantag</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', marginBottom: '2rem' }}>
           <li>Tillfälliga skyltar (t.ex. vägarbete) gäller alltid framför fasta skyltar.</li>
           <li>På vägar utan hastighetsskylt gäller <strong>bashastigheten</strong> — 50 km/h inom tättbebyggt, 70 km/h utanför.</li>
@@ -63,7 +63,7 @@ export default function HastighetsgranserPage() {
           <li>Fordonets registrerade maxhastighet får inte överskridas.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vanliga frågor</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vanliga frågor</h2>
         <div>
           {jsonLd.mainEntity.map((q) => (
             <div key={q.name} style={{ borderBottom: '1px solid #e6f4ee', padding: '1rem 0' }}>
@@ -74,15 +74,15 @@ export default function HastighetsgranserPage() {
         </div>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Öva på hastighetsfrågor</h3>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Öva på hastighetsfrågor</h3>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Starta körkortsövning →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/trafikregler" style={{ color: '#006B3F' }}>← Trafikregler</Link>
-          <Link href="/vagmarken" style={{ color: '#006B3F', marginLeft: 'auto' }}>Vägmärken →</Link>
+          <Link href="/trafikregler" style={{ color: '#1DB954' }}>← Trafikregler</Link>
+          <Link href="/vagmarken" style={{ color: '#1DB954', marginLeft: 'auto' }}>Vägmärken →</Link>
         </nav>
       </main>
     </>

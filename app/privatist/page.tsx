@@ -145,7 +145,7 @@ export default function PrivatistPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -156,7 +156,7 @@ export default function PrivatistPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Träna gratis
           </Link>
         </div>
@@ -169,7 +169,7 @@ export default function PrivatistPage() {
             { label: 'Hem', href: '/' },
             { label: 'Ta körkort som privatist' },
           ]} />
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Privatist 2026
           </div>
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: '900', lineHeight: '1.08', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
@@ -184,7 +184,7 @@ export default function PrivatistPage() {
             {facts.map((f) => (
               <div key={f.label} style={{ background: 'white', border: '2px solid #dceee5', borderRadius: '16px', padding: '20px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
-                <div style={{ fontSize: '17px', fontWeight: '900', color: '#006B3F', lineHeight: 1.2 }}>{f.label}</div>
+                <div style={{ fontSize: '17px', fontWeight: '900', color: '#1DB954', lineHeight: 1.2 }}>{f.label}</div>
                 <div style={{ fontSize: '12px', color: '#5a6b62', marginTop: '4px' }}>{f.sub}</div>
               </div>
             ))}
@@ -229,7 +229,7 @@ export default function PrivatistPage() {
                 'Genomfört introduktionskurs (3 timmar) tillsammans med eleven',
               ].map((req) => (
                 <div key={req} style={{ display: 'flex', gap: '10px', alignItems: 'center', padding: '12px 16px', background: '#f0f7f3', borderRadius: '12px' }}>
-                  <div style={{ minWidth: '24px', height: '24px', background: '#006B3F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '12px', fontWeight: '800' }}>✓</div>
+                  <div style={{ minWidth: '24px', height: '24px', background: '#1DB954', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '12px', fontWeight: '800' }}>✓</div>
                   <span style={{ fontSize: '15px', color: '#0d1f17' }}>{req}</span>
                 </div>
               ))}
@@ -273,7 +273,7 @@ export default function PrivatistPage() {
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, border: '2px solid #dceee5', borderRadius: '16px', overflow: 'hidden', fontSize: '15px' }}>
                 <thead>
-                  <tr style={{ background: '#006B3F', color: 'white' }}>
+                  <tr style={{ background: '#1DB954', color: 'white' }}>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: '700' }}>Kategori</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: '700' }}>Privatist</th>
                     <th style={{ padding: '14px 16px', textAlign: 'left', fontWeight: '700' }}>Trafikskola</th>
@@ -283,7 +283,7 @@ export default function PrivatistPage() {
                   {comparisonData.map((row, i) => (
                     <tr key={row.category} style={{ background: i % 2 === 0 ? '#f0f7f3' : 'white' }}>
                       <td style={{ padding: '12px 16px', fontWeight: '700', color: '#0d1f17', borderTop: '1px solid #dceee5' }}>{row.category}</td>
-                      <td style={{ padding: '12px 16px', color: '#006B3F', fontWeight: '600', borderTop: '1px solid #dceee5' }}>{row.privatist}</td>
+                      <td style={{ padding: '12px 16px', color: '#1DB954', fontWeight: '600', borderTop: '1px solid #dceee5' }}>{row.privatist}</td>
                       <td style={{ padding: '12px 16px', color: '#5a6b62', borderTop: '1px solid #dceee5' }}>{row.trafikskola}</td>
                     </tr>
                   ))}
@@ -299,7 +299,7 @@ export default function PrivatistPage() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
               <div style={{ background: '#f0f7f3', border: '2px solid #dceee5', borderRadius: '16px', padding: '24px' }}>
-                <div style={{ fontWeight: '800', color: '#006B3F', fontSize: '18px', marginBottom: '16px' }}>Fördelar</div>
+                <div style={{ fontWeight: '800', color: '#1DB954', fontSize: '18px', marginBottom: '16px' }}>Fördelar</div>
                 {[
                   'Mycket lägre kostnad (spara 10 000–15 000 kr)',
                   'Flexibilitet — kör när det passar dig',
@@ -308,7 +308,7 @@ export default function PrivatistPage() {
                   'Tryggt att öva med någon du känner',
                 ].map((pro) => (
                   <div key={pro} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '8px' }}>
-                    <span style={{ color: '#006B3F', fontWeight: '800', fontSize: '16px' }}>+</span>
+                    <span style={{ color: '#1DB954', fontWeight: '800', fontSize: '16px' }}>+</span>
                     <span style={{ fontSize: '14px', color: '#0d1f17', lineHeight: '1.5' }}>{pro}</span>
                   </div>
                 ))}
@@ -349,18 +349,18 @@ export default function PrivatistPage() {
               ].map((row) => (
                 <div key={row.item} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #dceee5' }}>
                   <span style={{ color: '#0d1f17', fontSize: '15px' }}>{row.item}</span>
-                  <span style={{ fontWeight: '700', color: '#006B3F', fontSize: '15px' }}>{row.cost}</span>
+                  <span style={{ fontWeight: '700', color: '#1DB954', fontSize: '15px' }}>{row.cost}</span>
                 </div>
               ))}
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 0 0', marginTop: '4px' }}>
                 <span style={{ fontWeight: '900', color: '#0d1f17', fontSize: '16px' }}>Totalt</span>
-                <span style={{ fontWeight: '900', color: '#006B3F', fontSize: '16px' }}>ca 5 345–9 645 kr</span>
+                <span style={{ fontWeight: '900', color: '#1DB954', fontSize: '16px' }}>ca 5 345–9 645 kr</span>
               </div>
             </div>
           </div>
 
           {/* CTA block */}
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white', marginBottom: '48px' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white', marginBottom: '48px' }}>
             <div style={{ fontSize: '28px', fontWeight: '900', marginBottom: '12px', letterSpacing: '-0.03em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
               Plugga teori smart som privatist
             </div>

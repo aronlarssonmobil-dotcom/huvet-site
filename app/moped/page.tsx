@@ -71,7 +71,7 @@ const facts = [
             { step: '4', text: 'Körprov (praktisk körning i trafik)' },
           ].map(s => (
             <div key={s.step} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <div style={{ width: '28px', height: '28px', background: '#006B3F', borderRadius: '8px', color: 'white', fontSize: '12px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div style={{ width: '28px', height: '28px', background: '#1DB954', borderRadius: '8px', color: 'white', fontSize: '12px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 {s.step}
               </div>
               <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#444', lineHeight: '1.5' }}>{s.text}</p>
@@ -79,7 +79,7 @@ const facts = [
           ))}
         </div>
         <div style={{ marginTop: '16px', background: '#f0f7f3', borderRadius: '12px', padding: '14px 16px', border: '2px solid #e2efe9' }}>
-          <p style={{ fontSize: '13px', color: '#006B3F', fontWeight: '700', margin: '0 0 4px' }}>💡 Privat övning</p>
+          <p style={{ fontSize: '13px', color: '#1DB954', fontWeight: '700', margin: '0 0 4px' }}>💡 Privat övning</p>
           <p style={{ fontSize: '13px', color: '#555', margin: 0, lineHeight: '1.6' }}>
             Privat övningskörning för moped klass I är tillåten med handledare (24 år, B-körkort i 5 år). Trafikskola krävs inte, men rekommenderas.
           </p>
@@ -141,7 +141,7 @@ const facts = [
           ].map(item => (
             <div key={item.label} style={{ background: '#fafcfb', borderRadius: '12px', padding: '16px', border: '2px solid #e2efe9' }}>
               <div style={{ fontSize: '12px', color: '#888', fontWeight: '700', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{item.label}</div>
-              <div style={{ fontSize: '18px', fontWeight: '900', color: '#006B3F', marginBottom: '2px' }}>{item.cost}</div>
+              <div style={{ fontSize: '18px', fontWeight: '900', color: '#1DB954', marginBottom: '2px' }}>{item.cost}</div>
               <div style={{ fontSize: '12px', color: '#aaa' }}>{item.note}</div>
             </div>
           ))}
@@ -180,6 +180,16 @@ export default function MopedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur gammal måste man vara för att köra moped?', acceptedAnswer: { '@type': 'Answer', text: 'Du måste vara 15 år för att köra moped klass I (EU-moped, max 45 km/h) och ha AM-körkort. Moped klass II (EU-moped, max 30 km/h) får köras från 15 år utan körkort men kräver traktorkort.' } },
+          { '@type': 'Question', name: 'Behöver man ta teoriprov för mopedkörkort?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, för AM-körkort (moped klass I) krävs teoriprov och körprov precis som för bilkörkort. Teoriprovet liknar bilteoriprovet men fokuserar på moped-specifika regler.' } },
+          { '@type': 'Question', name: 'Vad kostar mopedkörkort?', acceptedAnswer: { '@type': 'Answer', text: 'AM-körkort kostar totalt 3 000–8 000 kr beroende på om du kör via trafikskola. Teoriprov kostar 400 kr och körprov ca 1 000 kr. Privatövning är billigare men kräver handledare.' } },
+          { '@type': 'Question', name: 'Kan man köra moped med B-körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Ja! Med B-körkort (bilkörkort) har du automatiskt rätt att köra moped klass I och II. Du behöver inte ta ett separat AM-körkort om du redan har B-körkort.' } },
+        ],
+      }) }} />
 
       {/* Header */}
       <header style={{
@@ -189,7 +199,7 @@ export default function MopedPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -200,7 +210,7 @@ export default function MopedPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Börja träna gratis
           </Link>
         </div>
@@ -209,7 +219,7 @@ export default function MopedPage() {
       {/* Hero */}
       <section style={{ background: 'linear-gradient(160deg, #f0f7f3 0%, #fff 60%)', padding: '64px 20px 48px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Mopedkörkort
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '900', lineHeight: '1.1', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em' }}>
@@ -257,7 +267,7 @@ export default function MopedPage() {
             <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '24px', fontSize: '15px' }}>
               Huvet har specifika frågor för mopedkörkort — inkl. moped klass I-regler, hjälmkrav och trimmning.
             </p>
-            <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block', boxShadow: '0 4px 20px rgba(0,107,63,0.4)' }}>
+            <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block', boxShadow: '0 4px 20px rgba(0,107,63,0.4)' }}>
               Börja träna gratis →
             </Link>
           </div>
@@ -266,9 +276,9 @@ export default function MopedPage() {
           <div style={{ marginTop: '32px', background: '#f0f7f3', borderRadius: '20px', padding: '24px 28px', border: '2px solid #e2efe9' }}>
             <div style={{ fontWeight: '800', color: '#0d1f17', marginBottom: '12px', fontSize: '15px' }}>Läs även</div>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <Link href="/mc" style={{ color: '#006B3F', fontWeight: '700', fontSize: '14px', textDecoration: 'none', background: '#e6f4ee', padding: '8px 16px', borderRadius: '999px' }}>MC-körkort (A-behörighet) →</Link>
-              <Link href="/korkortstips" style={{ color: '#006B3F', fontWeight: '700', fontSize: '14px', textDecoration: 'none', background: '#e6f4ee', padding: '8px 16px', borderRadius: '999px' }}>15 körkortstips →</Link>
-              <Link href="/korkortsfragor" style={{ color: '#006B3F', fontWeight: '700', fontSize: '14px', textDecoration: 'none', background: '#e6f4ee', padding: '8px 16px', borderRadius: '999px' }}>Vanliga körkortsfrågor →</Link>
+              <Link href="/mc" style={{ color: '#1DB954', fontWeight: '700', fontSize: '14px', textDecoration: 'none', background: '#e6f4ee', padding: '8px 16px', borderRadius: '999px' }}>MC-körkort (A-behörighet) →</Link>
+              <Link href="/korkortstips" style={{ color: '#1DB954', fontWeight: '700', fontSize: '14px', textDecoration: 'none', background: '#e6f4ee', padding: '8px 16px', borderRadius: '999px' }}>15 körkortstips →</Link>
+              <Link href="/korkortsfragor" style={{ color: '#1DB954', fontWeight: '700', fontSize: '14px', textDecoration: 'none', background: '#e6f4ee', padding: '8px 16px', borderRadius: '999px' }}>Vanliga körkortsfrågor →</Link>
             </div>
           </div>
         </div>

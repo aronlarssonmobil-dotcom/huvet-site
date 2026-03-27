@@ -104,10 +104,20 @@ const variableCosts = [
 export default function KostnadPage() {
   return (
     <div style={{ fontFamily: "'Inter', system-ui, sans-serif", background: "#fff", color: "#0d1f17", minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur mycket kostar ett körkort 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Total kostnad för B-körkort 2026 är 15 000–30 000 kr. Via trafikskola kostar det typiskt 20 000–28 000 kr inkl. allt. Privat med egen bil och handledar kan det bli 8 000–15 000 kr.' } },
+          { '@type': 'Question', name: 'Vad ingår i kostnaden för körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Kostnaderna inkluderar: körkortstillstånd (220 kr), teoriutbildning, teoriprov (400 kr), riskettan, risktvåan, körlektioner och uppkörning (1 000 kr). Trafikskola tar ofta ut en paketpris som inkluderar allt.' } },
+          { '@type': 'Question', name: 'Kan man få bidrag till körkortskostnaden?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, i vissa fall. Arbetsförmedlingen kan bidra till körkort om det är en förutsättning för arbete. CSN ger inte bidrag direkt men studiemedel kan användas. Kolla med din arbetsgivare — vissa erbjuder körkortsförmån.' } },
+          { '@type': 'Question', name: 'Är det billigare att ta körkort privat eller på trafikskola?', acceptedAnswer: { '@type': 'Answer', text: 'Privat övningskörning är billigast om du har tillgång till rätt bil och en godkänd handledare. De flesta sparar 5 000–15 000 kr jämfört med trafikskola. Kombinera gärna privatkörning med några trafikskolelektioner.' } },
+        ],
+      }) }} />
       <header style={{ background: "rgba(255,255,255,0.96)", borderBottom: "1px solid #e2efe9", padding: "0 20px", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: "64px" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ width: "36px", height: "36px", background: "#006B3F", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "36px", height: "36px", background: "#1DB954", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -118,7 +128,7 @@ export default function KostnadPage() {
             </div>
             <span style={{ fontSize: "20px", fontWeight: "900", color: "#0d1f17", letterSpacing: "-0.04em" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: "#006B3F", color: "white", padding: "10px 22px", borderRadius: "999px", fontSize: "14px", fontWeight: "700", textDecoration: "none" }}>
+          <Link href="/#demo" style={{ background: "#1DB954", color: "white", padding: "10px 22px", borderRadius: "999px", fontSize: "14px", fontWeight: "700", textDecoration: "none" }}>
             Träna gratis
           </Link>
         </div>
@@ -126,12 +136,12 @@ export default function KostnadPage() {
 
       <section style={{ background: "linear-gradient(160deg, #f0f7f3 0%, #fff 70%)", padding: "64px 20px 52px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <div style={{ display: "inline-block", background: "#e6f4ee", color: "#006B3F", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.16em", padding: "6px 16px", borderRadius: "999px", marginBottom: "24px" }}>
+          <div style={{ display: "inline-block", background: "#e6f4ee", color: "#1DB954", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.16em", padding: "6px 16px", borderRadius: "999px", marginBottom: "24px" }}>
             Priser uppdaterade 2026
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", fontWeight: "900", lineHeight: "1.05", color: "#0d1f17", margin: "0 0 24px", letterSpacing: "-0.04em" }}>
             Vad kostar körkortet 2026?<br />
-            <span style={{ color: "#006B3F" }}>Komplett prislista</span>
+            <span style={{ color: "#1DB954" }}>Komplett prislista</span>
           </h1>
           <p style={{ fontSize: "18px", lineHeight: "1.75", color: "#555", maxWidth: "640px", margin: "0 0 32px" }}>
             Det korta svaret: mellan <strong>8 000 och 35 000 kr</strong>. Skillnaden beror nästan helt på hur mycket du kör i körskola vs privat. Vi listar alla verkliga priser för 2026 — inga vaga intervall, inga dolda kostnader.
@@ -139,7 +149,7 @@ export default function KostnadPage() {
           {/* Summary range boxes */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
             {[
-              { label: "Privat övningskörning + minimalt körskola", value: "8 000–14 000 kr", color: "#006B3F" },
+              { label: "Privat övningskörning + minimalt körskola", value: "8 000–14 000 kr", color: "#1DB954" },
               { label: "Blandad (privat + körskola)", value: "15 000–22 000 kr", color: "#d97706" },
               { label: "Helt via körskola", value: "25 000–35 000 kr", color: "#dc2626" },
             ].map((s) => (
@@ -174,7 +184,7 @@ export default function KostnadPage() {
                     <div style={{ fontSize: "16px", fontWeight: "800", color: "#0d1f17", marginBottom: "2px" }}>{item.item}</div>
                     <div style={{ fontSize: "12px", color: "#888", fontWeight: "600" }}>Betalas till: {item.who}</div>
                   </div>
-                  <div style={{ fontSize: "18px", fontWeight: "900", color: "#006B3F", whiteSpace: "nowrap" }}>{item.cost}</div>
+                  <div style={{ fontSize: "18px", fontWeight: "900", color: "#1DB954", whiteSpace: "nowrap" }}>{item.cost}</div>
                 </div>
                 <p style={{ fontSize: "14px", color: "#555", margin: 0, lineHeight: "1.6" }}>{item.note}</p>
               </div>
@@ -182,7 +192,7 @@ export default function KostnadPage() {
             {/* Total fixed */}
             <div style={{ background: "#f0f7f3", padding: "16px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "2px solid #c3ddd2" }}>
               <div style={{ fontSize: "15px", fontWeight: "800", color: "#0d1f17" }}>Summa fasta kostnader (1 godkänt försök)</div>
-              <div style={{ fontSize: "20px", fontWeight: "900", color: "#006B3F" }}>≈ 2 265–3 765 kr</div>
+              <div style={{ fontSize: "20px", fontWeight: "900", color: "#1DB954" }}>≈ 2 265–3 765 kr</div>
             </div>
           </div>
         </div>
@@ -206,8 +216,8 @@ export default function KostnadPage() {
                   <p style={{ fontSize: "14px", color: "#555", margin: 0, lineHeight: "1.65" }}>{item.note}</p>
                 </div>
                 <div style={{ background: "#f0f7f3", padding: "12px 24px", borderTop: "1px solid #e2efe9", display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                  <span style={{ color: "#006B3F", fontWeight: "900", flexShrink: 0 }}>💡</span>
-                  <p style={{ fontSize: "13px", color: "#004d2d", margin: 0, lineHeight: "1.55", fontWeight: "600" }}>{item.tip}</p>
+                  <span style={{ color: "#1DB954", fontWeight: "900", flexShrink: 0 }}>💡</span>
+                  <p style={{ fontSize: "13px", color: "#17a34a", margin: 0, lineHeight: "1.55", fontWeight: "600" }}>{item.tip}</p>
                 </div>
               </div>
             ))}
@@ -225,8 +235,8 @@ export default function KostnadPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {/* Cheapest */}
-            <div style={{ background: "white", border: "2px solid #006B3F", borderRadius: "18px", overflow: "hidden" }}>
-              <div style={{ background: "#006B3F", padding: "16px 20px" }}>
+            <div style={{ background: "white", border: "2px solid #1DB954", borderRadius: "18px", overflow: "hidden" }}>
+              <div style={{ background: "#1DB954", padding: "16px 20px" }}>
                 <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "11px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "4px" }}>Billigaste alternativet</div>
                 <div style={{ color: "white", fontSize: "20px", fontWeight: "900" }}>≈ 8 000–12 000 kr</div>
               </div>
@@ -325,7 +335,7 @@ export default function KostnadPage() {
             ].map((tip, i) => (
               <div key={i} style={{ background: "white", borderRadius: "16px", padding: "22px", border: "2px solid #e2efe9" }}>
                 <div style={{ display: "flex", gap: "14px", marginBottom: "10px", flexWrap: "wrap", alignItems: "flex-start" }}>
-                  <span style={{ background: "#e6f4ee", color: "#006B3F", fontSize: "13px", fontWeight: "800", padding: "4px 12px", borderRadius: "999px", whiteSpace: "nowrap" }}>{tip.saving}</span>
+                  <span style={{ background: "#e6f4ee", color: "#1DB954", fontSize: "13px", fontWeight: "800", padding: "4px 12px", borderRadius: "999px", whiteSpace: "nowrap" }}>{tip.saving}</span>
                   <div style={{ fontSize: "16px", fontWeight: "800", color: "#0d1f17", flex: 1 }}>{tip.title}</div>
                 </div>
                 <p style={{ fontSize: "15px", color: "#555", margin: 0, lineHeight: "1.65" }}>{tip.text}</p>
@@ -366,7 +376,7 @@ export default function KostnadPage() {
               <div key={pkg.package} style={{ background: "#fafcfb", borderRadius: "14px", padding: "20px", border: "2px solid #e2efe9" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", flexWrap: "wrap", marginBottom: "10px" }}>
                   <div style={{ fontSize: "17px", fontWeight: "800", color: "#0d1f17" }}>{pkg.package}</div>
-                  <div style={{ fontSize: "17px", fontWeight: "900", color: "#006B3F" }}>{pkg.typical}</div>
+                  <div style={{ fontSize: "17px", fontWeight: "900", color: "#1DB954" }}>{pkg.typical}</div>
                 </div>
                 <p style={{ fontSize: "14px", color: "#444", marginBottom: "10px", lineHeight: "1.6" }}><strong>Inkluderar:</strong> {pkg.includes}</p>
                 <p style={{ fontSize: "14px", color: "#d97706", margin: 0, lineHeight: "1.55" }}>⚠️ {pkg.warning}</p>
@@ -387,14 +397,14 @@ export default function KostnadPage() {
         </div>
 
         {/* CTA */}
-        <div style={{ background: "linear-gradient(135deg, #006B3F 0%, #008a50 100%)", borderRadius: "24px", padding: "44px 36px", textAlign: "center" }}>
+        <div style={{ background: "linear-gradient(135deg, #1DB954 0%, #008a50 100%)", borderRadius: "24px", padding: "44px 36px", textAlign: "center" }}>
           <h3 style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: "900", color: "white", margin: "0 0 14px", letterSpacing: "-0.03em" }}>
             Klara teoriprovet på första försöket
           </h3>
           <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", margin: "0 0 28px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto", lineHeight: "1.6" }}>
             Spara 325 kr och veckor av väntetid. Huvet tränar dig på exakt de ämnen du är svag på.
           </p>
-          <Link href="/#demo" style={{ background: "white", color: "#006B3F", padding: "16px 36px", borderRadius: "999px", fontWeight: "800", fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
+          <Link href="/#demo" style={{ background: "white", color: "#1DB954", padding: "16px 36px", borderRadius: "999px", fontWeight: "800", fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
             Testa gratis →
           </Link>
         </div>
@@ -408,7 +418,7 @@ export default function KostnadPage() {
               { href: "/b-korkort", label: "🚗 B-körkort — guide" },
               { href: "/korkortstips", label: "📚 Körkortslips" },
             ].map((link) => (
-              <Link key={link.href} href={link.href} style={{ background: "#f0f7f3", color: "#006B3F", padding: "8px 16px", borderRadius: "999px", fontSize: "14px", fontWeight: "600", textDecoration: "none", border: "1px solid #c3ddd2" }}>
+              <Link key={link.href} href={link.href} style={{ background: "#f0f7f3", color: "#1DB954", padding: "8px 16px", borderRadius: "999px", fontSize: "14px", fontWeight: "600", textDecoration: "none", border: "1px solid #c3ddd2" }}>
                 {link.label}
               </Link>
             ))}

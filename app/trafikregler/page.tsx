@@ -38,9 +38,19 @@ export default function TrafiktreglerPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Vad är de viktigaste trafikreglerna att kunna på körkortsprovet?', acceptedAnswer: { '@type': 'Answer', text: 'De vanligaste frågorna gäller högerregeln, stopplikt vs vajningsplikt, hastigheter i olika zoner, körning i korsningar, omkörningsregler och alkohol i trafiken. Dessa ämnen återkommer ofta på teoriprovet.' } },
+          { '@type': 'Question', name: 'Vad gäller högerregeln i Sverige?', acceptedAnswer: { '@type': 'Answer', text: 'Högerregeln innebär att du ska väja för fordon som kommer från höger om inget annat anges med vägmärken. Regeln gäller i korsningar utan skyltar eller markeringar. Vid stopplinje eller vajningsplikt gäller skylten istället.' } },
+          { '@type': 'Question', name: 'Vad är skillnaden på stopplikt och vajningsplikt?', acceptedAnswer: { '@type': 'Answer', text: 'Stopplikt (oktagonalt STOP-märke) kräver att du stannar helt och väntar tills det är säkert. Vajningsplikt (triangel med spetsen nedåt) innebär att du måste ge företräde men behöver inte stanna om det är fri väg.' } },
+          { '@type': 'Question', name: 'Vad är promillegränsen i Sverige?', acceptedAnswer: { '@type': 'Answer', text: '0,2 promille alkohol i blodet är gränsen för rattfylleri. Över 1,0 promille är grovt rattfylleri. Narkotikapåverkan är aldrig tillåtet. Sverige har en av Europas striktaste alkohollagar i trafiken.' } },
+        ],
+      }) }} />
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', fontFamily: 'system-ui, sans-serif', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F' }}>Huvet</Link> › Trafikregler
+          <Link href="/" style={{ color: '#1DB954' }}>Huvet</Link> › Trafikregler
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -50,7 +60,7 @@ export default function TrafiktreglerPage() {
           Att kunna trafikreglerna är avgörande för att klara körkortsprovet. Här är de viktigaste reglerna samlade — uppdaterade för 2026.
         </p>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Hastighetsgränser</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Hastighetsgränser</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem', fontSize: '0.95rem' }}>
           <thead>
             <tr style={{ background: '#e6f4ee' }}>
@@ -62,13 +72,13 @@ export default function TrafiktreglerPage() {
             {regler[0].innehall.map(({ regel, hastighet }) => (
               <tr key={regel} style={{ borderBottom: '1px solid #e6f4ee' }}>
                 <td style={{ padding: '0.6rem 1rem' }}>{regel}</td>
-                <td style={{ textAlign: 'right', padding: '0.6rem 1rem', fontWeight: 700, color: '#006B3F' }}>{hastighet}</td>
+                <td style={{ textAlign: 'right', padding: '0.6rem 1rem', fontWeight: 700, color: '#1DB954' }}>{hastighet}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Väjningsplikt och stopplikt</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Väjningsplikt och stopplikt</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem' }}>
           <li><strong>Väjningsplikt (väjningspliktsmarkering):</strong> Du ska väja för trafik på den väg du ansluter till.</li>
           <li><strong>Stopplikt (stoppskylt + heldragen linje):</strong> Du måste stanna fullständigt innan du fortsätter.</li>
@@ -76,7 +86,7 @@ export default function TrafiktreglerPage() {
           <li><strong>Rondell:</strong> Trafik inne i rondellen har alltid företräde. Du väjer när du kör in.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Körfältsregler</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Körfältsregler</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem' }}>
           <li>Håll alltid så långt till höger som möjligt inom körfältet.</li>
           <li>Byt körfält när det är säkert — kontrollera spegel, döda vinkeln, blinkers.</li>
@@ -84,7 +94,7 @@ export default function TrafiktreglerPage() {
           <li>Vid filsammanslagning (blixtlåsregeln) turas du om med fordon i angränsande fil.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Parkering och stannande</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Parkering och stannande</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem' }}>
           <li>Parkering förbjudet inom <strong>10 meter från övergångsställe</strong>.</li>
           <li>Parkering förbjudet inom <strong>10 meter från korsning</strong>.</li>
@@ -93,7 +103,7 @@ export default function TrafiktreglerPage() {
           <li>Gult streckad kantlinje = stannande tillåtet, parkering förbjudet.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Möte och omkörning</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Möte och omkörning</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem' }}>
           <li>Vid möte på smal väg ska båda hålla till höger och sänka hastigheten.</li>
           <li>Omkörning sker alltid till vänster (undantag: spårvagn, cykelfält).</li>
@@ -101,7 +111,7 @@ export default function TrafiktreglerPage() {
           <li>Kontrollera alltid döda vinkeln och blinkers innan omkörning.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alkohol och droger i trafiken</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alkohol och droger i trafiken</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem' }}>
           <li>Rattfylleri: 0,2 promille eller mer i blodet.</li>
           <li>Grovt rattfylleri: 1,0 promille eller mer.</li>
@@ -109,16 +119,16 @@ export default function TrafiktreglerPage() {
         </ul>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Träna på trafikregler-frågor</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Träna på trafikregler-frågor</h3>
           <p style={{ margin: '0 0 1rem' }}>Testa dina kunskaper med riktiga körkortsfrågor om trafikregler.</p>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Öva körkortsfrågorna →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/vagmarken" style={{ color: '#006B3F' }}>← Vägmärken</Link>
-          <Link href="/teoriprov" style={{ color: '#006B3F', marginLeft: 'auto' }}>Teoriprov →</Link>
+          <Link href="/vagmarken" style={{ color: '#1DB954' }}>← Vägmärken</Link>
+          <Link href="/teoriprov" style={{ color: '#1DB954', marginLeft: 'auto' }}>Teoriprov →</Link>
         </nav>
       </main>
     </>

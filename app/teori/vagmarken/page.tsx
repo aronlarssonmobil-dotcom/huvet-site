@@ -191,7 +191,7 @@ export default function TeoriVagmarken() {
 
       <p>
         Vägmärken är trafikens språk. De talar om vad du får göra, vad du inte får göra, och vad du ska vara
-        beredd på. Att kunna alla vägmärken är helt avgörande för att klara <Link href="/ovningsprov" style={{ color: '#006B3F', fontWeight: 500 }}>teoriprovet</Link>.
+        beredd på. Att kunna alla vägmärken är helt avgörande för att klara <Link href="/ovningsprov" style={{ color: '#1DB954', fontWeight: 500 }}>teoriprovet</Link>.
         I det här kapitlet går vi igenom alla kategorier med bilder och förklaringar.
       </p>
 
@@ -211,7 +211,7 @@ export default function TeoriVagmarken() {
       <p>
         Förbudsmärken är <strong>runda</strong> med <strong>röd kant</strong> och vit bakgrund. De anger
         vad du <strong>inte får göra</strong>: inte köra in, inte parkera, inte överskrida en viss hastighet.
-        Ett rött snedstreck genom symbolen förstärker förbudet. Dessa är bland de viktigaste för <Link href="/teori/trafikregler" style={{ color: '#006B3F', fontWeight: 500 }}>trafikreglerna</Link>.
+        Ett rött snedstreck genom symbolen förstärker förbudet. Dessa är bland de viktigaste för <Link href="/teori/trafikregler" style={{ color: '#1DB954', fontWeight: 500 }}>trafikreglerna</Link>.
       </p>
       <SignGrid signs={forbudsSigns} color="#D32F2F" />
 
@@ -229,7 +229,7 @@ export default function TeoriVagmarken() {
         De ger information om vägen — motorväg, tättbebyggt område, övergångsställe, huvudled med mera.
         De förbjuder ingenting men ger viktig information för körningen.
       </p>
-      <SignGrid signs={anvisningsSigns} color="#006B3F" />
+      <SignGrid signs={anvisningsSigns} color="#1DB954" />
 
       <h2>Tilläggstavlor (T-serien)</h2>
       <p>
@@ -244,7 +244,7 @@ export default function TeoriVagmarken() {
         Det finns 92 vanliga vägmärken uppdelade i sex kategorier. Nyckeln till att lära sig dem är att
         förstå systemet: <strong>trianglar varnar, runda med rött förbjuder, runda med blått påbjuder,
         rektangulära informerar</strong>. Öva med bilder och test — det är det snabbaste sättet. Fortsätt
-        till nästa kapitel om <Link href="/teori/fordonskanndom" style={{ color: '#006B3F', fontWeight: 500 }}>fordonskännedom</Link> för
+        till nästa kapitel om <Link href="/teori/fordonskanndom" style={{ color: '#1DB954', fontWeight: 500 }}>fordonskännedom</Link> för
         att lära dig allt om bilens teknik.
       </p>
     </TheoryChapterLayout>

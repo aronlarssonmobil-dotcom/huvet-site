@@ -39,10 +39,10 @@ export default function HastighetsgranserGuidePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/hastighetsgranser" style={{ color: '#006B3F', textDecoration: 'none' }}>Hastighetsgränser</Link> › Guide
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/hastighetsgranser" style={{ color: '#1DB954', textDecoration: 'none' }}>Hastighetsgränser</Link> › Guide
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -52,7 +52,7 @@ export default function HastighetsgranserGuidePage() {
           Hastighetsfrågor är bland de vanligaste på teoriprovet. Det räcker inte att veta att motorväg är 110 km/h — du behöver förstå alla vägtyper, undantag och vad som händer vid tillfälliga skyltar. Här är den kompletta guiden till Sveriges hastighetsgränser.
         </p>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alla hastighetsgränser</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alla hastighetsgränser</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem', fontSize: '0.95rem' }}>
           <thead>
             <tr style={{ background: '#e6f4ee' }}>
@@ -65,14 +65,14 @@ export default function HastighetsgranserGuidePage() {
             {hastigheter.map((h) => (
               <tr key={h.typ} style={{ borderBottom: '1px solid #e6f4ee' }}>
                 <td style={{ padding: '0.6rem 1rem', fontWeight: 600 }}>{h.ikon} {h.typ}</td>
-                <td style={{ textAlign: 'center', padding: '0.6rem 1rem', fontWeight: 700, color: '#006B3F' }}>{h.hastighet}</td>
+                <td style={{ textAlign: 'center', padding: '0.6rem 1rem', fontWeight: 700, color: '#1DB954' }}>{h.hastighet}</td>
                 <td style={{ padding: '0.6rem 1rem', fontSize: '0.85rem', color: '#555' }}>{h.detalj}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Viktiga undantag och regler</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Viktiga undantag och regler</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Tillfälliga vägmärken</strong> (gul bakgrund) gäller alltid framför fasta skyltar. Ofta vid vägarbeten.</li>
           <li><strong>Polisens anvisningar</strong> gäller framför alla skyltar och trafiksignaler.</li>
@@ -81,7 +81,7 @@ export default function HastighetsgranserGuidePage() {
           <li><strong>Körning med dubbdäck:</strong> Inga särskilda hastighetsgränser, men dubbdäck påverkar bromssträckan på torr vägbana.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Fortkörningsböter 2026</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Fortkörningsböter 2026</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem', fontSize: '0.95rem' }}>
           <thead>
             <tr style={{ background: '#fff3e0' }}>
@@ -106,7 +106,7 @@ export default function HastighetsgranserGuidePage() {
           </tbody>
         </table>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Anpassad hastighet — grundregeln</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Anpassad hastighet — grundregeln</h2>
         <p style={{ lineHeight: 1.8, color: '#333' }}>
           Trafikförordningen säger att du alltid ska <strong>anpassa hastigheten till vad trafiksäkerheten kräver</strong>. Det betyder att även om skylten visar 70 km/h, ska du köra långsammare om det:
         </p>
@@ -119,24 +119,24 @@ export default function HastighetsgranserGuidePage() {
         </ul>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Testa dina kunskaper</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Testa dina kunskaper</h3>
           <p style={{ margin: '0 0 1rem' }}>Öva på hastighetsfrågor och andra trafikregler med riktiga körkortsfrågor.</p>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Öva körkortsfrågorna →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/trafikregler-guide" style={{ color: '#006B3F', textDecoration: 'none' }}>← Trafikregler guide</Link>
-          <Link href="/ovningsprov-guide" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Övningsprov-guide →</Link>
+          <Link href="/trafikregler-guide" style={{ color: '#1DB954', textDecoration: 'none' }}>← Trafikregler guide</Link>
+          <Link href="/ovningsprov-guide" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Övningsprov-guide →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/vagmarken-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Vägmärken guide</Link>
+          <Link href="/vagmarken-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Vägmärken guide</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/teoriprov-tips" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Teoriprov-tips</Link>
+          <Link href="/teoriprov-tips" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Teoriprov-tips</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/halkkörning" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Halkkörning</Link>
+          <Link href="/halkkörning" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Halkkörning</Link>
         </div>
       </main>
       <SiteFooter />

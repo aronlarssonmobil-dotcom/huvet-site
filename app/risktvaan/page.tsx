@@ -28,10 +28,10 @@ export default function RisktvaanPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/riskutbildning" style={{ color: '#006B3F', textDecoration: 'none' }}>Riskutbildning</Link> › Risktvåan
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/riskutbildning" style={{ color: '#1DB954', textDecoration: 'none' }}>Riskutbildning</Link> › Risktvåan
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -42,7 +42,7 @@ export default function RisktvaanPage() {
         </p>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '2.5rem' }}>
-          <strong style={{ color: '#006B3F' }}>📋 Snabbfakta om Risktvåan</strong>
+          <strong style={{ color: '#1DB954' }}>📋 Snabbfakta om Risktvåan</strong>
           <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.2rem', lineHeight: 2, color: '#333' }}>
             <li><strong>Längd:</strong> Cirka 3–4 timmar</li>
             <li><strong>Pris:</strong> 2 500–4 500 kr</li>
@@ -53,7 +53,7 @@ export default function RisktvaanPage() {
           </ul>
         </div>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vad ingår i Risktvåan?</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vad ingår i Risktvåan?</h2>
         <p style={{ lineHeight: 1.8, color: '#333', marginBottom: '1rem' }}>
           Risktvåan har både en praktisk och en teoretisk del:
         </p>
@@ -74,7 +74,7 @@ export default function RisktvaanPage() {
           <li>Diskussion om riskbeteenden i trafiken</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Hur förbereder du dig?</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Hur förbereder du dig?</h2>
         <ol style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Ha viss körvana först.</strong> Risktvåan kräver att du kan hantera bilen grundläggande. Boka den efter att du haft minst 10-15 körlektioner.</li>
           <li><strong>Klä dig bekvämt.</strong> Du sitter i bil och kliver in och ut — skor du kan köra i, kläder efter väder.</li>
@@ -83,7 +83,7 @@ export default function RisktvaanPage() {
           <li><strong>Var mentalt redo att lära, inte prestera.</strong> Poängen är att uppleva gränserna — inte att köra perfekt.</li>
         </ol>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Var kan man göra Risktvåan?</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Var kan man göra Risktvåan?</h2>
         <p style={{ lineHeight: 1.8, color: '#333' }}>
           Risktvåan genomförs på <strong>godkända halkbanor</strong> runt om i Sverige. De flesta trafikskolor samarbetar med en halkbana och kan hjälpa dig boka. Några av de största anläggningarna:
         </p>
@@ -94,30 +94,30 @@ export default function RisktvaanPage() {
           <li><strong>Norrland:</strong> Gävle, Umeå, Sundsvall</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vad händer om det inte finns snö?</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vad händer om det inte finns snö?</h2>
         <p style={{ lineHeight: 1.8, color: '#333' }}>
           Halkbanorna använder vatten och specialbehandlad asfalt för att simulera halt väglag. Du behöver alltså <strong>inte vänta på vintern</strong> — halkbanorna fungerar året runt. Sommar eller vinter spelar ingen roll för övningarna.
         </p>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Nästa steg: Uppkörningen</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Nästa steg: Uppkörningen</h3>
           <p style={{ margin: '0 0 1rem' }}>Efter Risktvåan är du redo för det sista steget — uppkörningen. Läs våra tips.</p>
-          <Link href="/uppkorning-tips" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/uppkorning-tips" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Uppkörning-tips →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/riskettan" style={{ color: '#006B3F', textDecoration: 'none' }}>← Riskettan</Link>
-          <Link href="/halkkörning" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Halkkörning →</Link>
+          <Link href="/riskettan" style={{ color: '#1DB954', textDecoration: 'none' }}>← Riskettan</Link>
+          <Link href="/halkkörning" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Halkkörning →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/korkort-kostnad-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Körkort kostnad</Link>
+          <Link href="/korkort-kostnad-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Körkort kostnad</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/trafikregler-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Trafikregler guide</Link>
+          <Link href="/trafikregler-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Trafikregler guide</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/teoriprov-tips" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Teoriprov-tips</Link>
+          <Link href="/teoriprov-tips" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Teoriprov-tips</Link>
         </div>
       </main>
       <SiteFooter />

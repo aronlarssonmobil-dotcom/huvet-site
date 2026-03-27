@@ -45,7 +45,7 @@ export const categoryLabels: Record<QuizCategory, string> = {
 
 export const categoryColors: Record<QuizCategory, string> = {
   vajningsplikt: '#d97706',
-  vagmarken: '#006B3F',
+  vagmarken: '#1DB954',
   hastighet: '#dc2626',
   parkering: '#2563eb',
   'alkohol-droger': '#7c3aed',

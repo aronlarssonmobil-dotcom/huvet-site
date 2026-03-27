@@ -195,7 +195,7 @@ export default function TeoriFordonskanndom() {
       <h2>Säkerhetssystem</h2>
       <p>
         Moderna bilar har ett flertal elektroniska system som hjälper dig vara säker. De viktigaste
-        att kunna för <Link href="/ovningsprov" style={{ color: '#006B3F', fontWeight: 500 }}>teoriprovet</Link>:
+        att kunna för <Link href="/ovningsprov" style={{ color: '#1DB954', fontWeight: 500 }}>teoriprovet</Link>:
       </p>
 
       <h3>ESP/ESC — Elektronisk stabilitetskontroll</h3>
@@ -216,7 +216,7 @@ export default function TeoriFordonskanndom() {
         Moderna bilar har krockkuddar framför förare och passagerare, i sidorna, och ibland i taket.
         De utlöser vid kraftig kollision och minskar skaderisken markant. Krockkudden ersätter
         dock <strong>inte</strong> bilbältet — de är designade att fungera <strong>tillsammans</strong>.
-        Läs mer om detta i kapitlet om <Link href="/teori/sakerhet" style={{ color: '#006B3F', fontWeight: 500 }}>säkerhet</Link>.
+        Läs mer om detta i kapitlet om <Link href="/teori/sakerhet" style={{ color: '#1DB954', fontWeight: 500 }}>säkerhet</Link>.
       </p>
 
       <h3>Varningslampor</h3>
@@ -235,7 +235,7 @@ export default function TeoriFordonskanndom() {
       <p>
         Fordonskännedom handlar om att förstå bilens system så att du kan köra säkert och upptäcka problem
         tidigt. Lär dig bromssträckorna, mönsterdjupen och belysningsreglerna — de dyker ofta upp på
-        provet. I nästa kapitel går vi igenom <Link href="/teori/miljo" style={{ color: '#006B3F', fontWeight: 500 }}>miljö och eco-driving</Link> —
+        provet. I nästa kapitel går vi igenom <Link href="/teori/miljo" style={{ color: '#1DB954', fontWeight: 500 }}>miljö och eco-driving</Link> —
         hur du kör ekonomiskt och miljövänligt.
       </p>
     </TheoryChapterLayout>

@@ -57,7 +57,7 @@ export default function ExamSimulator() {
           style={{
             background: 'none',
             border: 'none',
-            color: '#006B3F',
+            color: '#1DB954',
             fontWeight: 600,
             fontSize: '0.9rem',
             cursor: 'pointer',
@@ -100,7 +100,7 @@ export default function ExamSimulator() {
           style={{
             background: 'none',
             border: 'none',
-            color: '#006B3F',
+            color: '#1DB954',
             fontWeight: 600,
             fontSize: '0.9rem',
             cursor: 'pointer',
@@ -120,7 +120,7 @@ export default function ExamSimulator() {
           <div style={{
             display: 'inline-block',
             padding: '0.3rem 0.8rem',
-            background: '#006B3F',
+            background: '#1DB954',
             color: '#fff',
             borderRadius: 8,
             fontSize: '0.75rem',
@@ -140,7 +140,7 @@ export default function ExamSimulator() {
     <div style={{ maxWidth: 800, margin: '0 auto' }}>
       {/* Exam CTA */}
       <div style={{
-        background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)',
+        background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)',
         borderRadius: 20,
         padding: '2.5rem',
         color: '#fff',

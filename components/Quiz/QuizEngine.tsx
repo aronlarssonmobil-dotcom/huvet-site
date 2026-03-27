@@ -212,7 +212,7 @@ export default function QuizEngine({
   // ─── CONFETTI COMPONENT ───
   const ConfettiEffect = () => {
     if (!showConfetti) return null;
-    const colors = ['#006B3F', '#f5d020', '#1DB954', '#FF6B6B', '#4ECDC4', '#FFD93D', '#6BCB77', '#FF8E53'];
+    const colors = ['#1DB954', '#f5d020', '#1DB954', '#FF6B6B', '#4ECDC4', '#FFD93D', '#6BCB77', '#FF8E53'];
     const pieces = Array.from({ length: 50 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -256,7 +256,7 @@ export default function QuizEngine({
             width: 120,
             height: 120,
             borderRadius: '50%',
-            background: results.passed ? '#006B3F' : '#dc2626',
+            background: results.passed ? '#1DB954' : '#dc2626',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -314,7 +314,7 @@ export default function QuizEngine({
                   <div style={{
                     height: '100%',
                     width: `${catPct}%`,
-                    background: catPct >= 80 ? '#006B3F' : catPct >= 50 ? '#d97706' : '#dc2626',
+                    background: catPct >= 80 ? '#1DB954' : catPct >= 50 ? '#d97706' : '#dc2626',
                     borderRadius: 3,
                     transition: 'width 0.6s ease',
                   }} />
@@ -331,7 +331,7 @@ export default function QuizEngine({
             style={{
               flex: 1,
               padding: '0.85rem 1.5rem',
-              background: '#006B3F',
+              background: '#1DB954',
               color: '#fff',
               border: 'none',
               borderRadius: 14,
@@ -407,7 +407,7 @@ export default function QuizEngine({
           <div style={{
             height: '100%',
             width: `${progressPct}%`,
-            background: '#006B3F',
+            background: '#1DB954',
             borderRadius: 3,
             transition: 'width 0.3s ease',
           }} />
@@ -453,7 +453,7 @@ export default function QuizEngine({
             borderRadius: 999,
             fontSize: '0.85rem',
             fontWeight: 800,
-            color: combo >= 5 ? '#0d1f17' : '#006B3F',
+            color: combo >= 5 ? '#0d1f17' : '#1DB954',
             background: combo >= 5 ? '#f5d020' : '#e6f4ee',
             animation: 'comboScale 400ms ease-out',
             boxShadow: combo >= 5 ? '0 4px 16px rgba(245,208,32,0.4)' : 'none',
@@ -472,7 +472,7 @@ export default function QuizEngine({
         fontSize: '0.75rem',
         fontWeight: 700,
         color: '#fff',
-        background: categoryColors[currentQuestion.category] || '#006B3F',
+        background: categoryColors[currentQuestion.category] || '#1DB954',
         marginBottom: '1rem',
         letterSpacing: '0.02em',
       }}>
@@ -523,8 +523,8 @@ export default function QuizEngine({
           if (showResult && mode === 'practice') {
             if (isCorrectOption) {
               bg = '#e6f4ee';
-              borderColor = '#006B3F';
-              textColor = '#006B3F';
+              borderColor = '#1DB954';
+              textColor = '#1DB954';
             } else if (isSelected && !answerState.isCorrect) {
               bg = '#fef2f2';
               borderColor = '#dc2626';
@@ -532,7 +532,7 @@ export default function QuizEngine({
             }
           } else if (isSelected) {
             bg = '#e6f4ee';
-            borderColor = '#006B3F';
+            borderColor = '#1DB954';
           }
 
           return (
@@ -590,14 +590,14 @@ export default function QuizEngine({
         <div style={{
           padding: '1rem 1.25rem',
           background: answerState.isCorrect ? '#e6f4ee' : '#fef2f2',
-          borderLeft: `4px solid ${answerState.isCorrect ? '#006B3F' : '#dc2626'}`,
+          borderLeft: `4px solid ${answerState.isCorrect ? '#1DB954' : '#dc2626'}`,
           borderRadius: '0 12px 12px 0',
           marginBottom: '1.25rem',
         }}>
           <p style={{
             fontSize: '0.85rem',
             fontWeight: 700,
-            color: answerState.isCorrect ? '#006B3F' : '#dc2626',
+            color: answerState.isCorrect ? '#1DB954' : '#dc2626',
             margin: '0 0 0.25rem',
           }}>
             {answerState.isCorrect ? 'Rätt!' : 'Fel!'}
@@ -615,7 +615,7 @@ export default function QuizEngine({
           style={{
             width: '100%',
             padding: '0.85rem',
-            background: '#006B3F',
+            background: '#1DB954',
             color: '#fff',
             border: 'none',
             borderRadius: 14,

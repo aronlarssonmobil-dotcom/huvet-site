@@ -127,7 +127,7 @@ export default function KorprovPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -138,7 +138,7 @@ export default function KorprovPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Träna teorin gratis
           </Link>
         </div>
@@ -152,7 +152,7 @@ export default function KorprovPage() {
             <span>›</span>
             <span style={{ color: '#0d1f17' }}>Körprov</span>
           </nav>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Körkort 2026
           </div>
           <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.6rem)', fontWeight: '900', lineHeight: '1.05', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em' }}>
@@ -167,7 +167,7 @@ export default function KorprovPage() {
             {facts.map((f) => (
               <div key={f.label} style={{ background: 'white', border: '2px solid #e2efe9', borderRadius: '16px', padding: '20px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
-                <div style={{ fontSize: '20px', fontWeight: '900', color: '#006B3F', lineHeight: 1 }}>{f.label}</div>
+                <div style={{ fontSize: '20px', fontWeight: '900', color: '#1DB954', lineHeight: 1 }}>{f.label}</div>
                 <div style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>{f.sub}</div>
               </div>
             ))}
@@ -201,20 +201,20 @@ export default function KorprovPage() {
                 { href: '/korkortsfragor', label: '→ Körkortsfrågor' },
                 { href: '/vagmarken', label: '→ Vägmärken' },
               ].map(l => (
-                <Link key={l.href} href={l.href} style={{ background: 'white', border: '2px solid #c3ddd2', borderRadius: '999px', padding: '8px 16px', fontSize: '14px', fontWeight: '600', color: '#006B3F', textDecoration: 'none' }}>{l.label}</Link>
+                <Link key={l.href} href={l.href} style={{ background: 'white', border: '2px solid #c3ddd2', borderRadius: '999px', padding: '8px 16px', fontSize: '14px', fontWeight: '600', color: '#1DB954', textDecoration: 'none' }}>{l.label}</Link>
               ))}
             </div>
           </div>
 
           {/* CTA */}
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '24px', padding: '40px', textAlign: 'center', color: 'white' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '24px', padding: '40px', textAlign: 'center', color: 'white' }}>
             <div style={{ fontSize: '28px', fontWeight: '900', marginBottom: '12px', letterSpacing: '-0.03em' }}>
               Klara teorin — kör vidare
             </div>
             <p style={{ fontSize: '16px', opacity: 0.8, marginBottom: '28px', maxWidth: '400px', margin: '0 auto 28px' }}>
               Innan körprovet måste teorin sitta. Huvet analyserar dina svagheter och ger dig ett exakt träningsupplägg.
             </p>
-            <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#006B3F', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
+            <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#1DB954', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
               Börja träna gratis →
             </Link>
           </div>

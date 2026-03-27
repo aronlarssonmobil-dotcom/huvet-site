@@ -90,7 +90,7 @@ export default function ParkeringPage() {
       <header style={{ background: 'rgba(255,255,255,0.96)', borderBottom: '1px solid #dceee5', padding: '0 20px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2" />
                 <circle cx="10" cy="10" r="2.5" fill="white" />
@@ -101,7 +101,7 @@ export default function ParkeringPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: 900, color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
             Trana gratis
           </Link>
         </div>
@@ -112,7 +112,7 @@ export default function ParkeringPage() {
 
         {/* Hero */}
         <section style={{ padding: '2rem 0 2.5rem' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Teoriprovet 2026
           </div>
           <h1 style={{ fontFamily: "var(--font-playfair), 'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4.5vw, 2.8rem)', fontWeight: 800, lineHeight: 1.12, color: '#0d1f17', marginBottom: '1rem' }}>
@@ -165,7 +165,7 @@ export default function ParkeringPage() {
             ].map((item) => (
               <div key={item.skylt} style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem', border: '1px solid #dceee5' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{item.symbol}</div>
-                <h3 style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: '1rem', fontWeight: 700, color: '#006B3F', margin: '0 0 0.4rem' }}>{item.skylt}</h3>
+                <h3 style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: '1rem', fontWeight: 700, color: '#1DB954', margin: '0 0 0.4rem' }}>{item.skylt}</h3>
                 <p style={{ margin: 0, color: '#5a6b62', fontSize: '0.9rem', lineHeight: 1.5 }}>{item.beskrivning}</p>
               </div>
             ))}
@@ -222,7 +222,7 @@ export default function ParkeringPage() {
                 {boterData.map((row) => (
                   <tr key={row.overtrattelse} style={{ borderBottom: '1px solid #dceee5' }}>
                     <td style={{ padding: '0.75rem 1rem' }}>{row.overtrattelse}</td>
-                    <td style={{ textAlign: 'right', padding: '0.75rem 1rem', fontWeight: 700, color: '#006B3F' }}>{row.belopp}</td>
+                    <td style={{ textAlign: 'right', padding: '0.75rem 1rem', fontWeight: 700, color: '#1DB954' }}>{row.belopp}</td>
                   </tr>
                 ))}
               </tbody>
@@ -258,7 +258,7 @@ export default function ParkeringPage() {
           <p style={{ color: '#5a6b62', marginBottom: '1.25rem', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
             Ova pa riktiga korkorsfragor om parkeringsregler och vagmarken.
           </p>
-          <Link href="/korkortsfragor" style={{ display: 'inline-block', background: '#006B3F', color: '#fff', padding: '0.85rem 2rem', borderRadius: '999px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
+          <Link href="/korkortsfragor" style={{ display: 'inline-block', background: '#1DB954', color: '#fff', padding: '0.85rem 2rem', borderRadius: '999px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
             Starta ovning →
           </Link>
         </section>

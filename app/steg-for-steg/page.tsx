@@ -184,7 +184,7 @@ export default function StegForStegPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -198,7 +198,7 @@ export default function StegForStegPage() {
           <nav style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
             <Link href="/teoriprov" style={{ color: '#5a6b62', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>Teoriprov</Link>
             <Link href="/korprov" style={{ color: '#5a6b62', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>Körprov</Link>
-            <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
               Träna gratis
             </Link>
           </nav>
@@ -212,7 +212,7 @@ export default function StegForStegPage() {
             { label: 'Hem', href: '/' },
             { label: 'Ta körkort steg för steg' },
           ]} />
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Komplett guide 2026
           </div>
           <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.6rem)', fontWeight: 900, lineHeight: 1.05, color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
@@ -227,7 +227,7 @@ export default function StegForStegPage() {
             {facts.map((f) => (
               <div key={f.label} style={{ background: 'white', border: '2px solid #dceee5', borderRadius: '16px', padding: '20px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
-                <div style={{ fontSize: '20px', fontWeight: 900, color: '#006B3F', lineHeight: 1 }}>{f.label}</div>
+                <div style={{ fontSize: '20px', fontWeight: 900, color: '#1DB954', lineHeight: 1 }}>{f.label}</div>
                 <div style={{ fontSize: '12px', color: '#5a6b62', marginTop: '4px' }}>{f.sub}</div>
               </div>
             ))}
@@ -261,7 +261,7 @@ export default function StegForStegPage() {
             {/* Timeline line */}
             <div style={{
               position: 'absolute', left: '28px', top: '40px', bottom: '40px',
-              width: '3px', background: 'linear-gradient(180deg, #006B3F 0%, #f5d020 100%)',
+              width: '3px', background: 'linear-gradient(180deg, #1DB954 0%, #f5d020 100%)',
               borderRadius: '2px',
             }} />
 
@@ -276,7 +276,7 @@ export default function StegForStegPage() {
                 {/* Step number circle */}
                 <div style={{
                   width: '56px', height: '56px', borderRadius: '50%',
-                  background: step.num === 10 ? 'linear-gradient(135deg, #f5d020, #f5d020)' : '#006B3F',
+                  background: step.num === 10 ? 'linear-gradient(135deg, #f5d020, #f5d020)' : '#1DB954',
                   color: step.num === 10 ? '#0d1f17' : 'white',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: 900, fontSize: '20px', flexShrink: 0,
@@ -311,7 +311,7 @@ export default function StegForStegPage() {
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: step.link ? '12px' : '0' }}>
                     <span style={{
                       display: 'inline-flex', alignItems: 'center', gap: '4px',
-                      background: '#e6f4ee', color: '#006B3F', fontSize: '13px',
+                      background: '#e6f4ee', color: '#1DB954', fontSize: '13px',
                       fontWeight: 600, padding: '4px 12px', borderRadius: '999px',
                     }}>
                       &#9200; {step.time}
@@ -327,7 +327,7 @@ export default function StegForStegPage() {
 
                   {step.link && (
                     <Link href={step.link} style={{
-                      display: 'inline-block', color: '#006B3F', fontSize: '14px',
+                      display: 'inline-block', color: '#1DB954', fontSize: '14px',
                       fontWeight: 700, textDecoration: 'none',
                     }}>
                       {step.linkText} &rarr;
@@ -349,14 +349,14 @@ export default function StegForStegPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '40px' }}>
             <div style={{ background: '#f0f7f3', border: '1px solid #dceee5', borderRadius: '16px', padding: '24px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#006B3F', margin: '0 0 12px' }}>Privatist (billigaste alternativet)</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1DB954', margin: '0 0 12px' }}>Privatist (billigaste alternativet)</h3>
               <div style={{ fontSize: '28px', fontWeight: 900, color: '#0d1f17', margin: '0 0 8px' }}>~10 000 kr</div>
               <p style={{ fontSize: '14px', color: '#5a6b62', margin: 0, lineHeight: 1.6 }}>
                 Övningskörning med familj/vän, eget teoristrategiskt, minimalt med körlektioner. Kräver engagerad handledare.
               </p>
             </div>
             <div style={{ background: '#f0f7f3', border: '1px solid #dceee5', borderRadius: '16px', padding: '24px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#006B3F', margin: '0 0 12px' }}>Trafikskola (vanligast)</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1DB954', margin: '0 0 12px' }}>Trafikskola (vanligast)</h3>
               <div style={{ fontSize: '28px', fontWeight: 900, color: '#0d1f17', margin: '0 0 8px' }}>~20 000–25 000 kr</div>
               <p style={{ fontSize: '14px', color: '#5a6b62', margin: 0, lineHeight: 1.6 }}>
                 Paketpris med körlektioner, riskutbildning och provbokning. Enklast och mest strukturerat.
@@ -394,7 +394,7 @@ export default function StegForStegPage() {
               { tip: 'Gör simulerade prov innan det riktiga', detail: 'Öva med fullständiga 65-frågorsprov under tidspress. Det bygger vana och minskar stressen på provdagen.' },
             ].map((t, i) => (
               <div key={i} style={{ background: 'white', border: '1px solid #dceee5', borderRadius: '14px', padding: '20px' }}>
-                <div style={{ fontWeight: 700, fontSize: '15px', color: '#006B3F', marginBottom: '6px' }}>&#10003; {t.tip}</div>
+                <div style={{ fontWeight: 700, fontSize: '15px', color: '#1DB954', marginBottom: '6px' }}>&#10003; {t.tip}</div>
                 <p style={{ fontSize: '14px', color: '#5a6b62', margin: 0, lineHeight: 1.6 }}>{t.detail}</p>
               </div>
             ))}
@@ -431,7 +431,7 @@ export default function StegForStegPage() {
       {/* CTA */}
       <section style={{ padding: '0 20px 80px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white' }}>
             <div style={{ fontSize: '28px', fontWeight: 900, marginBottom: '12px', letterSpacing: '-0.03em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
               Redo att börja din körkortsresa?
             </div>

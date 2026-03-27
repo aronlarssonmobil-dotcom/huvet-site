@@ -28,10 +28,10 @@ export default function TrafikregelGuidePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/trafikregler" style={{ color: '#006B3F', textDecoration: 'none' }}>Trafikregler</Link> › Guide
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/trafikregler" style={{ color: '#1DB954', textDecoration: 'none' }}>Trafikregler</Link> › Guide
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -41,7 +41,7 @@ export default function TrafikregelGuidePage() {
           Trafikreglerna i Sverige styrs av trafikförordningen och vägtrafiklagen. För att klara körkortsprovet behöver du ha koll på allt från företrädesregler och hastigheter till parkeringsregler och alkohollagstiftning. Här sammanfattar vi de absolut viktigaste reglerna du måste kunna — sorterat efter ämne.
         </p>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Företrädesregler</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Företrädesregler</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Högerregeln:</strong> Lämna företräde åt fordon från höger i korsningar utan skyltning. Gäller inte mot utfart, gång- eller cykelväg.</li>
           <li><strong>Väjningsplikt:</strong> Triangel-skylt med spetsen nedåt — du ska väja för all trafik på den korsande vägen.</li>
@@ -50,7 +50,7 @@ export default function TrafikregelGuidePage() {
           <li><strong>Rondell:</strong> Trafik inne i rondellen har alltid företräde. Blinka höger när du lämnar.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Hastighetsregler</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Hastighetsregler</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Tättbebyggt område:</strong> 50 km/h (om inget annat skyltas)</li>
           <li><strong>Landsväg:</strong> 70 km/h</li>
@@ -60,7 +60,7 @@ export default function TrafikregelGuidePage() {
           <li>Tillfälliga vägmärken gäller alltid framför fasta skyltar.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Parkering och stannande</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Parkering och stannande</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Stannande:</strong> Max 3 minuter, föraren kvar vid fordonet.</li>
           <li><strong>Parkering:</strong> Mer än 3 minuter eller föraren lämnar fordonet.</li>
@@ -71,7 +71,7 @@ export default function TrafikregelGuidePage() {
           <li><strong>Gul streckad kantlinje:</strong> Parkering förbjudet men stannande OK.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Omkörning</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Omkörning</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li>Omkörning sker alltid till vänster (undantag: spårvagn som ska svänga vänster).</li>
           <li>Du får <strong>inte</strong> köra om vid övergångsställe, korsningar eller heldragen mittlinje.</li>
@@ -79,7 +79,7 @@ export default function TrafikregelGuidePage() {
           <li>Den som blir omkörd får inte öka hastigheten.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alkohol, droger och trötthet</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alkohol, droger och trötthet</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Rattfylleri:</strong> 0,2 promille eller mer — brott.</li>
           <li><strong>Grovt rattfylleri:</strong> 1,0 promille eller mer — allvarligt brott.</li>
@@ -87,7 +87,7 @@ export default function TrafikregelGuidePage() {
           <li><strong>Trötthet:</strong> Lika farligt som alkohol. Stanna och vila om du är trött — en 20-minuters powernap kan rädda liv.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Säkerhetsutrustning</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Säkerhetsutrustning</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Bilbälte:</strong> Obligatoriskt för alla i bilen. Föraren ansvarar för barn under 15.</li>
           <li><strong>Bakåtvänd bilbarnstol:</strong> Barn under 135 cm ska använda barnstol eller bältesstol.</li>
@@ -95,7 +95,7 @@ export default function TrafikregelGuidePage() {
           <li><strong>Reflexväst:</strong> Rekommenderas starkt vid stopp på vägen, särskilt i mörker.</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Övergångsställe och oskyddade trafikanter</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Övergångsställe och oskyddade trafikanter</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li>Fotgängare har alltid företräde på övergångsställen.</li>
           <li>Du måste stanna och låta fotgängare passera — inte bara sakta ner.</li>
@@ -104,24 +104,24 @@ export default function TrafikregelGuidePage() {
         </ul>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Öva på trafikregler-frågor</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Öva på trafikregler-frågor</h3>
           <p style={{ margin: '0 0 1rem' }}>Testa dina kunskaper med riktiga körkortsfrågor om trafikregler och väjningsplikt.</p>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Öva körkortsfrågorna →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/vagmarken-guide" style={{ color: '#006B3F', textDecoration: 'none' }}>← Vägmärken guide</Link>
-          <Link href="/hastighetsgranser-guide" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Hastighetsgränser guide →</Link>
+          <Link href="/vagmarken-guide" style={{ color: '#1DB954', textDecoration: 'none' }}>← Vägmärken guide</Link>
+          <Link href="/hastighetsgranser-guide" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Hastighetsgränser guide →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/ovningsprov-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
+          <Link href="/ovningsprov-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/uppkorning-tips" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Uppkörning-tips</Link>
+          <Link href="/uppkorning-tips" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Uppkörning-tips</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/korkort-kostnad-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Körkort kostnad 2026</Link>
+          <Link href="/korkort-kostnad-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Körkort kostnad 2026</Link>
         </div>
       </main>
       <SiteFooter />

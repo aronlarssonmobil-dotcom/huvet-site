@@ -9,7 +9,7 @@ type SignProps = {
 // === COLORS (Swedish standard) ===
 const RED = '#C8102E';
 const BLUE = '#005BA6';
-const GREEN = '#006B3F';
+const GREEN = '#1DB954';
 const YELLOW = '#FECC00';
 const WHITE = '#FFFFFF';
 const BLACK = '#1A1A1A';

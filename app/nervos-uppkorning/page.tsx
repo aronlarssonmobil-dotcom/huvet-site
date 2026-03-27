@@ -174,7 +174,7 @@ export default function NervosUppkorningPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -188,7 +188,7 @@ export default function NervosUppkorningPage() {
           <nav style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
             <Link href="/teoriprov" style={{ color: '#5a6b62', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>Teoriprov</Link>
             <Link href="/korprov" style={{ color: '#5a6b62', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>Körprov</Link>
-            <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
               Träna gratis
             </Link>
           </nav>
@@ -203,7 +203,7 @@ export default function NervosUppkorningPage() {
             { label: 'Körprov', href: '/korprov' },
             { label: 'Nervös inför uppkörning' },
           ]} />
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Stöd och tips
           </div>
           <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.6rem)', fontWeight: 900, lineHeight: 1.05, color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
@@ -218,7 +218,7 @@ export default function NervosUppkorningPage() {
             {facts.map((f) => (
               <div key={f.label} style={{ background: 'white', border: '2px solid #dceee5', borderRadius: '16px', padding: '20px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
-                <div style={{ fontSize: '20px', fontWeight: 900, color: '#006B3F', lineHeight: 1 }}>{f.label}</div>
+                <div style={{ fontSize: '20px', fontWeight: 900, color: '#1DB954', lineHeight: 1 }}>{f.label}</div>
                 <div style={{ fontSize: '12px', color: '#5a6b62', marginTop: '4px' }}>{f.sub}</div>
               </div>
             ))}
@@ -262,7 +262,7 @@ export default function NervosUppkorningPage() {
                 padding: '24px',
               }}>
                 <div style={{
-                  display: 'inline-block', background: '#006B3F', color: 'white',
+                  display: 'inline-block', background: '#1DB954', color: 'white',
                   fontSize: '12px', fontWeight: 700, padding: '4px 12px',
                   borderRadius: '999px', marginBottom: '12px',
                 }}>
@@ -274,7 +274,7 @@ export default function NervosUppkorningPage() {
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#5a6b62', margin: '0 0 8px' }}>
                   {bt.desc}
                 </p>
-                <p style={{ fontSize: '13px', color: '#006B3F', fontWeight: 600, margin: 0 }}>
+                <p style={{ fontSize: '13px', color: '#1DB954', fontWeight: 600, margin: 0 }}>
                   &#128337; {bt.when}
                 </p>
               </div>
@@ -311,7 +311,7 @@ export default function NervosUppkorningPage() {
           <p style={{ fontSize: '18px', lineHeight: 1.7, color: '#5a6b62', maxWidth: '560px', margin: '0 auto 16px' }}>
             Du har redan klarat den svåraste delen: att lära dig köra. Uppkörningen är bara att visa vad du redan kan. Oavsett vad som händer är det inte hela världen. Du kan alltid göra om det.
           </p>
-          <p style={{ fontSize: '16px', color: '#006B3F', fontWeight: 700 }}>
+          <p style={{ fontSize: '16px', color: '#1DB954', fontWeight: 700 }}>
             Du klarar det. Vi tror på dig.
           </p>
         </div>
@@ -346,7 +346,7 @@ export default function NervosUppkorningPage() {
       {/* CTA */}
       <section style={{ padding: '0 20px 80px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white' }}>
             <div style={{ fontSize: '28px', fontWeight: 900, marginBottom: '12px', letterSpacing: '-0.03em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
               Förbered dig med Huvet
             </div>

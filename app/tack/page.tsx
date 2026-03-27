@@ -24,7 +24,7 @@ function TackContent() {
           width: 80,
           height: 80,
           borderRadius: '50%',
-          background: '#006B3F',
+          background: '#1DB954',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -51,7 +51,7 @@ function TackContent() {
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href="/ovningsprov" style={{
             padding: '0.9rem 2rem',
-            background: '#006B3F',
+            background: '#1DB954',
             color: '#fff',
             borderRadius: 14,
             fontWeight: 700,
@@ -67,7 +67,7 @@ function TackContent() {
               <button type="submit" style={{
                 padding: '0.9rem 1.5rem',
                 background: '#f0f7f3',
-                color: '#006B3F',
+                color: '#1DB954',
                 border: '1px solid #dceee5',
                 borderRadius: 14,
                 fontWeight: 700,

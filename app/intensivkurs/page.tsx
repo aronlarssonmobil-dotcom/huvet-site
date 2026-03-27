@@ -94,14 +94,14 @@ export default function IntensivkursPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* Header */}
-      <header style={{ background: '#006B3F', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <header style={{ background: '#1DB954', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Link href="/" style={{ color: 'white', textDecoration: 'none', fontWeight: '900', fontSize: '20px', letterSpacing: '-0.03em' }}>Huvet</Link>
         <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px' }}>·</span>
         <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Intensivkurs körkort</span>
       </header>
 
       {/* Hero */}
-      <section style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', padding: '64px 20px 56px', textAlign: 'center', color: 'white' }}>
+      <section style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', padding: '64px 20px 56px', textAlign: 'center', color: 'white' }}>
         <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.15)', borderRadius: '999px', padding: '6px 16px', fontSize: '12px', fontWeight: '700', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '20px' }}>
           Körkort på 2–4 veckor
         </div>
@@ -133,7 +133,7 @@ export default function IntensivkursPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px', marginBottom: '24px' }}>
             <div>
-              <div style={{ fontWeight: '800', fontSize: '13px', color: '#006B3F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>✅ Fördelar</div>
+              <div style={{ fontWeight: '800', fontSize: '13px', color: '#1DB954', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>✅ Fördelar</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {pros.map((p, i) => (
                   <div key={i} style={{ background: 'white', border: '2px solid #e2efe9', borderRadius: '16px', padding: '18px' }}>
@@ -166,7 +166,7 @@ export default function IntensivkursPage() {
           </h2>
           {tips.map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: '20px', marginBottom: '28px', paddingBottom: '28px', borderBottom: i < tips.length - 1 ? '1px solid #e2efe9' : 'none' }}>
-              <div style={{ flexShrink: 0, width: '44px', height: '44px', borderRadius: '12px', background: '#e6f4ee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '13px', color: '#006B3F' }}>{t.num}</div>
+              <div style={{ flexShrink: 0, width: '44px', height: '44px', borderRadius: '12px', background: '#e6f4ee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '13px', color: '#1DB954' }}>{t.num}</div>
               <div>
                 <div style={{ fontWeight: '800', fontSize: '17px', color: '#0d1f17', marginBottom: '8px' }}>{t.title}</div>
                 <p style={{ color: '#555', lineHeight: '1.7', fontSize: '15px', margin: 0 }}>{t.body}</p>
@@ -177,14 +177,14 @@ export default function IntensivkursPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', padding: '64px 20px', textAlign: 'center', color: 'white' }}>
+      <section style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', padding: '64px 20px', textAlign: 'center', color: 'white' }}>
         <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: '900', margin: '0 0 12px', letterSpacing: '-0.03em' }}>
           Förbered dig innan kursen startar
         </h2>
         <p style={{ fontSize: '17px', opacity: 0.8, maxWidth: '440px', margin: '0 auto 32px', lineHeight: '1.6' }}>
           Öva teori på Huvet redan idag. Kom in i kursen med försprång — det är skillnaden mellan att klara teoriprovet v.1 och v.3.
         </p>
-        <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#006B3F', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
+        <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#1DB954', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
           Börja träna gratis →
         </Link>
       </section>

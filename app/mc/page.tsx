@@ -111,7 +111,7 @@ const differences = [
             { step: '6', text: 'Körprov (praktiskt prov hos Trafikverket)' },
           ].map(s => (
             <div key={s.step} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <div style={{ width: '28px', height: '28px', background: '#006B3F', borderRadius: '8px', color: 'white', fontSize: '12px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div style={{ width: '28px', height: '28px', background: '#1DB954', borderRadius: '8px', color: 'white', fontSize: '12px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 {s.step}
               </div>
               <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#444', lineHeight: '1.5' }}>{s.text}</p>
@@ -143,6 +143,16 @@ export default function MCPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur tar man MC-körkort i Sverige?', acceptedAnswer: { '@type': 'Answer', text: 'MC-körkort (A-körkort) kräver att du först har B-körkort i minst 2 år om du vill gå direkt till tung MC. Du tar A2-körkort vid 19 år (max 35kW) och A-körkort vid 24 år (obegränsat). Teori + körprov krävs.' } },
+          { '@type': 'Question', name: 'Vad kostar MC-körkort?', acceptedAnswer: { '@type': 'Answer', text: 'MC-körkort kostar normalt 15 000–25 000 kr via trafikskola. Inkluderar teoriutbildning, körlektioner och provavgifter. Priset varierar beroende på hur många lektioner du behöver.' } },
+          { '@type': 'Question', name: 'Kan man ta MC-körkort utan B-körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, du kan ta A1-körkort (lätt MC, max 11kW) från 16 år utan B-körkort. A2 (35kW) tar du vid 19 år. Fullständigt A-körkort (obegränsad effekt) tar du vid 21 år om du haft A2 i 2 år, eller direkt vid 24 år.' } },
+          { '@type': 'Question', name: 'Behöver man genomgå teoriprovet för MC-körkort om man redan har B-körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, du måste genomföra ett separat teoriprov specifikt för MC-körkort. Provet fokuserar på MC-specifika regler, stabilitet, teknik och säkerhet. Öva på MC-specifika frågor inför provet.' } },
+        ],
+      }) }} />
 
       {/* Header */}
       <header style={{
@@ -152,7 +162,7 @@ export default function MCPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -163,7 +173,7 @@ export default function MCPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Börja träna gratis
           </Link>
         </div>
@@ -172,7 +182,7 @@ export default function MCPage() {
       {/* Hero */}
       <section style={{ background: 'linear-gradient(160deg, #f0f7f3 0%, #fff 60%)', padding: '64px 20px 48px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             MC-körkort
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '900', lineHeight: '1.1', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em' }}>
@@ -182,7 +192,7 @@ export default function MCPage() {
             MC-körkortet skiljer sig väsentligt från vanligt B-körkort. Det finns tre klasser (A1, A2, A), obligatorisk trafikskola och specifika teorifrågor. Här är hela bilden.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <div style={{ background: '#e6f4ee', color: '#006B3F', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700' }}>A1 från 16 år</div>
+            <div style={{ background: '#e6f4ee', color: '#1DB954', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700' }}>A1 från 16 år</div>
             <div style={{ background: '#dbeafe', color: '#1d4ed8', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700' }}>A2 från 18 år</div>
             <div style={{ background: '#fee2e2', color: '#dc2626', padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700' }}>A (full) från 20–24 år</div>
           </div>
@@ -236,12 +246,12 @@ export default function MCPage() {
           </div>
 
           {/* CTA */}
-          <div style={{ marginTop: '40px', background: 'linear-gradient(160deg, #006B3F, #004d2d)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white' }}>
+          <div style={{ marginTop: '40px', background: 'linear-gradient(160deg, #1DB954, #17a34a)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white' }}>
             <h3 style={{ fontSize: '22px', fontWeight: '900', marginBottom: '12px' }}>Klara teorin för MC</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '15px' }}>
               Huvet har separata övningsfrågor för MC-teori — inkl. dynamik, säkerhet och MC-specifika trafikregler.
             </p>
-            <Link href="/#demo" style={{ background: 'white', color: '#006B3F', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/#demo" style={{ background: 'white', color: '#1DB954', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
               Börja öva gratis →
             </Link>
           </div>

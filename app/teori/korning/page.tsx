@@ -199,7 +199,7 @@ export default function TeoriKorning() {
       </p>
       <ul>
         <li>Håll uppsikt åt alla håll — speciellt i korsningar</li>
-        <li>Var extra försiktig vid <Link href="/teori/vagmarken" style={{ color: '#006B3F', fontWeight: 500 }}>övergångsställen</Link> och busshållplatser</li>
+        <li>Var extra försiktig vid <Link href="/teori/vagmarken" style={{ color: '#1DB954', fontWeight: 500 }}>övergångsställen</Link> och busshållplatser</li>
         <li>Räkna med plötsliga stopp och fotgängare som kliver ut</li>
         <li>Uppmärksam på cyklister i döda vinkeln vid sväng höger</li>
       </ul>
@@ -232,7 +232,7 @@ export default function TeoriKorning() {
       <p>
         Anpassa alltid hastigheten efter förhållandena. Mörker, regn, is och dimma kräver lägre hastighet
         och större avstånd. Lär dig vattenplaning och sladd — det kan rädda ditt liv.
-        I det sista kapitlet går vi igenom <Link href="/teori/forsta-hjalpen" style={{ color: '#006B3F', fontWeight: 500 }}>första hjälpen</Link> —
+        I det sista kapitlet går vi igenom <Link href="/teori/forsta-hjalpen" style={{ color: '#1DB954', fontWeight: 500 }}>första hjälpen</Link> —
         vad du gör om olyckan trots allt har hänt.
       </p>
     </TheoryChapterLayout>

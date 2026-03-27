@@ -11,7 +11,7 @@ export function SignHeader() {
     }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
               <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -22,7 +22,7 @@ export function SignHeader() {
           </div>
           <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
         </Link>
-        <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+        <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
           Börja träna gratis
         </Link>
       </div>
@@ -119,18 +119,18 @@ export function QuizSection({ questions }: { questions: SignData['quizQuestions'
                 <div key={j} style={{
                   padding: '12px 16px',
                   borderRadius: '10px',
-                  background: j === q.correctIndex ? '#006B3F' : 'white',
+                  background: j === q.correctIndex ? '#1DB954' : 'white',
                   color: j === q.correctIndex ? 'white' : '#333',
                   fontSize: '14px',
                   fontWeight: j === q.correctIndex ? '700' : '400',
-                  border: j === q.correctIndex ? '2px solid #006B3F' : '2px solid #e2efe9',
+                  border: j === q.correctIndex ? '2px solid #1DB954' : '2px solid #e2efe9',
                 }}>
                   {String.fromCharCode(65 + j)}. {opt}
                   {j === q.correctIndex && ' ✓'}
                 </div>
               ))}
             </div>
-            <div style={{ background: '#e6f4ee', borderRadius: '10px', padding: '12px 16px', fontSize: '13px', color: '#006B3F', fontWeight: '600', lineHeight: '1.6' }}>
+            <div style={{ background: '#e6f4ee', borderRadius: '10px', padding: '12px 16px', fontSize: '13px', color: '#1DB954', fontWeight: '600', lineHeight: '1.6' }}>
               💡 {q.explanation}
             </div>
           </div>

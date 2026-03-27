@@ -142,7 +142,7 @@ export default function GoraOmTeoriprovetPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -153,7 +153,7 @@ export default function GoraOmTeoriprovetPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Träna gratis
           </Link>
         </div>
@@ -167,7 +167,7 @@ export default function GoraOmTeoriprovetPage() {
             { label: 'Teoriprov', href: '/teoriprov' },
             { label: 'Göra om teoriprovet' },
           ]} />
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Omprov 2026
           </div>
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: '900', lineHeight: '1.08', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
@@ -182,7 +182,7 @@ export default function GoraOmTeoriprovetPage() {
             {facts.map((f) => (
               <div key={f.label} style={{ background: 'white', border: '2px solid #dceee5', borderRadius: '16px', padding: '20px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
-                <div style={{ fontSize: '20px', fontWeight: '900', color: '#006B3F', lineHeight: 1 }}>{f.label}</div>
+                <div style={{ fontSize: '20px', fontWeight: '900', color: '#1DB954', lineHeight: 1 }}>{f.label}</div>
                 <div style={{ fontSize: '12px', color: '#5a6b62', marginTop: '4px' }}>{f.sub}</div>
               </div>
             ))}
@@ -229,7 +229,7 @@ export default function GoraOmTeoriprovetPage() {
                 ].map((item) => (
                   <div key={item.tries} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: 'white', borderRadius: '10px', border: '1px solid #dceee5' }}>
                     <span style={{ color: '#5a6b62', fontSize: '14px' }}>{item.tries}</span>
-                    <span style={{ fontWeight: '700', color: '#006B3F', fontSize: '14px' }}>{item.cost}</span>
+                    <span style={{ fontWeight: '700', color: '#1DB954', fontSize: '14px' }}>{item.cost}</span>
                   </div>
                 ))}
               </div>
@@ -250,7 +250,7 @@ export default function GoraOmTeoriprovetPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {failReasons.map((r) => (
                 <div key={r.title} style={{ background: '#f0f7f3', border: '1px solid #dceee5', borderRadius: '16px', padding: '20px 24px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ minWidth: '48px', height: '48px', background: '#006B3F', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '900', fontSize: '14px' }}>
+                  <div style={{ minWidth: '48px', height: '48px', background: '#1DB954', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '900', fontSize: '14px' }}>
                     {r.pct}
                   </div>
                   <div>
@@ -319,7 +319,7 @@ export default function GoraOmTeoriprovetPage() {
                 { tip: 'Kontrollera tiden', desc: 'Du har knappt 46 sekunder per fråga. Fastna inte på en svår fråga.' },
               ].map((t) => (
                 <div key={t.tip} style={{ background: 'white', border: '2px solid #dceee5', borderRadius: '14px', padding: '16px' }}>
-                  <div style={{ fontWeight: '800', color: '#006B3F', marginBottom: '4px', fontSize: '15px' }}>{t.tip}</div>
+                  <div style={{ fontWeight: '800', color: '#1DB954', marginBottom: '4px', fontSize: '15px' }}>{t.tip}</div>
                   <p style={{ fontSize: '14px', color: '#5a6b62', margin: 0, lineHeight: '1.5' }}>{t.desc}</p>
                 </div>
               ))}
@@ -327,7 +327,7 @@ export default function GoraOmTeoriprovetPage() {
           </div>
 
           {/* CTA block */}
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white', marginBottom: '48px' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white', marginBottom: '48px' }}>
             <div style={{ fontSize: '28px', fontWeight: '900', marginBottom: '12px', letterSpacing: '-0.03em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
               Klara teoriprovet nästa gång
             </div>

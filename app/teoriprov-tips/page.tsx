@@ -80,10 +80,20 @@ export default function TeoriProvTipsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur många frågor måste man klara på teoriprovet?', acceptedAnswer: { '@type': 'Answer', text: 'Teoriprovet består av 65 frågor och du måste svara rätt på minst 52 (80%) för att bli godkänd. Provet tar max 50 minuter. Varje fråga har 1–4 svarsalternativ och du måste markera alla rätta alternativ.' } },
+          { '@type': 'Question', name: 'Vad är de vanligaste misstagen på teoriprovet?', acceptedAnswer: { '@type': 'Answer', text: 'De vanligaste misstagen är: feltolkning av vägmärken, missar i situationer med högerregeln, felaktiga hastigheter i olika zoner och missuppfattning om körfältsbyte på motorväg. Öva just de kategorier du är svag i.' } },
+          { '@type': 'Question', name: 'Hur länge ska man studera innan teoriprovet?', acceptedAnswer: { '@type': 'Answer', text: 'De flesta behöver 2–6 veckors aktiv träning (30–60 min/dag). Huvet anpassar träningen efter dina svagheter — du kan klara provet snabbare om du fokuserar på rätt saker från start.' } },
+          { '@type': 'Question', name: 'Vad händer om man kugglar teoriprovet?', acceptedAnswer: { '@type': 'Answer', text: 'Du kan boka om teoriprovet direkt. Det kostar 400 kr per försök. Identifiera vilka kategorier du missade och fokusera träningen där. Statistik visar att de flesta klarar provet på andra eller tredje försöket.' } },
+        ],
+      }) }} />
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/teoriprov" style={{ color: '#006B3F', textDecoration: 'none' }}>Teoriprov</Link> › Tips
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/teoriprov" style={{ color: '#1DB954', textDecoration: 'none' }}>Teoriprov</Link> › Tips
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -95,14 +105,14 @@ export default function TeoriProvTipsPage() {
 
         {tips.map((tip) => (
           <section key={tip.nummer} style={{ marginBottom: '2rem', paddingBottom: '1.5rem', borderBottom: '1px solid #f0f0f0' }}>
-            <h2 style={{ color: '#006B3F', fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+            <h2 style={{ color: '#1DB954', fontSize: '1.2rem', marginBottom: '0.5rem' }}>
               {tip.nummer}. {tip.titel}
             </h2>
             <p style={{ lineHeight: 1.8, color: '#333', margin: 0 }}>{tip.text}</p>
           </section>
         ))}
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Bonus: Provdagen — checklista</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Bonus: Provdagen — checklista</h2>
         <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li>✅ Legitimation (giltig ID-handling)</li>
           <li>✅ Bokningsbekräftelse</li>
@@ -114,27 +124,27 @@ export default function TeoriProvTipsPage() {
         </ul>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Redo att öva?</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Redo att öva?</h3>
           <p style={{ margin: '0 0 1rem' }}>Använd Huvets övningsprov och svaghetsanalys för att optimera ditt pluggande.</p>
-          <Link href="/ovningsprov" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginRight: '0.75rem' }}>
+          <Link href="/ovningsprov" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginRight: '0.75rem' }}>
             Starta övningsprov →
           </Link>
-          <Link href="/korkortsfragor" style={{ color: '#006B3F', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block', border: '2px solid #006B3F' }}>
+          <Link href="/korkortsfragor" style={{ color: '#1DB954', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block', border: '2px solid #1DB954' }}>
             Öva ämnesvis
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/halkkörning" style={{ color: '#006B3F', textDecoration: 'none' }}>← Halkkörning</Link>
-          <Link href="/uppkorning-tips" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Uppkörning-tips →</Link>
+          <Link href="/halkkörning" style={{ color: '#1DB954', textDecoration: 'none' }}>← Halkkörning</Link>
+          <Link href="/uppkorning-tips" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Uppkörning-tips →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/vagmarken-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Vägmärken guide</Link>
+          <Link href="/vagmarken-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Vägmärken guide</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/ovningsprov-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
+          <Link href="/ovningsprov-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/trafikregler-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Trafikregler guide</Link>
+          <Link href="/trafikregler-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Trafikregler guide</Link>
         </div>
       </main>
       <SiteFooter />

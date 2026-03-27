@@ -69,7 +69,7 @@ export default function TeoriSakerhet() {
         Sverige har Nollvisionen — målet att ingen ska dödas eller skadas allvarligt i trafiken.
         Det kräver att alla tar sitt ansvar. Säkerhetskapitlet är ett av de viktigaste i hela
         körkortsteorin — frågorna om bilbälte, alkohol och trötthet dyker garanterat upp
-        på <Link href="/ovningsprov" style={{ color: '#006B3F', fontWeight: 500 }}>teoriprovet</Link>.
+        på <Link href="/ovningsprov" style={{ color: '#1DB954', fontWeight: 500 }}>teoriprovet</Link>.
       </p>
 
       <h2>Nollvisionen</h2>
@@ -227,7 +227,7 @@ export default function TeoriSakerhet() {
         Säkerhet i trafiken handlar om bälte, krockkuddar, barnstolar — och framförallt om ditt
         eget beteende. Kör aldrig påverkad, kör aldrig trött, och se alltid till att alla i bilen
         har bälte. Dessa frågor är centrala på provet. I nästa kapitel lär du dig
-        om <Link href="/teori/korning" style={{ color: '#006B3F', fontWeight: 500 }}>körning i olika förhållanden</Link> —
+        om <Link href="/teori/korning" style={{ color: '#1DB954', fontWeight: 500 }}>körning i olika förhållanden</Link> —
         mörker, halt väglag, regn och dimma.
       </p>
     </TheoryChapterLayout>

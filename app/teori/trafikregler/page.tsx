@@ -136,7 +136,7 @@ export default function TeoriTrafikregler() {
 
       <h2>Stopplikt och väjningsplikt</h2>
       <p>
-        Dessa två skyltar reglerar företräde och är bland de vanligaste på <Link href="/ovningsprov" style={{ color: '#006B3F', fontWeight: 500 }}>teoriprovet</Link>.
+        Dessa två skyltar reglerar företräde och är bland de vanligaste på <Link href="/ovningsprov" style={{ color: '#1DB954', fontWeight: 500 }}>teoriprovet</Link>.
         Det är viktigt att förstå skillnaden:
       </p>
 
@@ -230,7 +230,7 @@ export default function TeoriTrafikregler() {
       <p>
         Trafikreglerna är grunden i hela körkortsteorin. Se till att du verkligen förstår högerregeln, skillnaden
         mellan stopplikt och väjningsplikt, och parkeringsavstånden — de kommer garanterat på provet. Läs
-        gärna vidare om <Link href="/teori/vagmarken" style={{ color: '#006B3F', fontWeight: 500 }}>vägmärken</Link> i
+        gärna vidare om <Link href="/teori/vagmarken" style={{ color: '#1DB954', fontWeight: 500 }}>vägmärken</Link> i
         nästa kapitel, eftersom vägmärken och trafikregler hänger ihop.
       </p>
     </TheoryChapterLayout>

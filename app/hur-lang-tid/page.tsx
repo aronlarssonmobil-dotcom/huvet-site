@@ -52,7 +52,7 @@ const weekSchedules = [
     title: "Lugn takt (klara teorin på 6–8 veckor)",
     hours: "20 min/dag",
     totalWeeks: "6–8 veckor",
-    color: "#006B3F",
+    color: "#1DB954",
     suitedFor: "Du som vill ta det lugnt, kanske kombinerar med tidig övningskörning parallellt.",
     schedule: [
       { day: "Mån, Ons, Fre", time: "20–25 min", task: "Träning på ett ämne, 10–15 provfrågor" },
@@ -65,10 +65,20 @@ const weekSchedules = [
 export default function HurLangTidPage() {
   return (
     <div style={{ fontFamily: "'Inter', system-ui, sans-serif", background: "#fff", color: "#0d1f17", minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur lång tid tar det att ta körkort?', acceptedAnswer: { '@type': 'Answer', text: 'I genomsnitt tar det 3–12 månader att ta körkort i Sverige. Med intensivkurs kan man klara det på 3–6 veckor. Nyckeln är att öva ofta och klara teoriprovet tidigt i processen.' } },
+          { '@type': 'Question', name: 'Hur många körlektioner behöver man?', acceptedAnswer: { '@type': 'Answer', text: 'Trafikverket rekommenderar minst 20–30 körlektioner men de flesta tar 30–50 lektioner. Det varierar mycket beroende på individens förmåga och hur mycket man övningskör privat.' } },
+          { '@type': 'Question', name: 'Vad tar längst tid i körkortsprocessen?', acceptedAnswer: { '@type': 'Answer', text: 'Att boka och genomföra uppkörning tar ofta längst tid p.g.a. väntetider på Trafikverket. I storstäder kan väntetiden vara 2–4 månader. Boka uppkörning tidigt — redan när du börjar öva.' } },
+          { '@type': 'Question', name: 'Kan man ta körkort fortare med intensivkurs?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. En intensivkurs komprimerar hela utbildningen till 1–3 veckor med daglig körning och teoriutbildning. Det är dyrare men effektivt om du har begränsat med tid.' } },
+        ],
+      }) }} />
       <header style={{ background: "rgba(255,255,255,0.96)", borderBottom: "1px solid #e2efe9", padding: "0 20px", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: "64px" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ width: "36px", height: "36px", background: "#006B3F", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "36px", height: "36px", background: "#1DB954", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -79,7 +89,7 @@ export default function HurLangTidPage() {
             </div>
             <span style={{ fontSize: "20px", fontWeight: "900", color: "#0d1f17", letterSpacing: "-0.04em" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: "#006B3F", color: "white", padding: "10px 22px", borderRadius: "999px", fontSize: "14px", fontWeight: "700", textDecoration: "none" }}>
+          <Link href="/#demo" style={{ background: "#1DB954", color: "white", padding: "10px 22px", borderRadius: "999px", fontSize: "14px", fontWeight: "700", textDecoration: "none" }}>
             Träna gratis
           </Link>
         </div>
@@ -87,12 +97,12 @@ export default function HurLangTidPage() {
 
       <section style={{ background: "linear-gradient(160deg, #f0f7f3 0%, #fff 70%)", padding: "64px 20px 52px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <div style={{ display: "inline-block", background: "#e6f4ee", color: "#006B3F", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.16em", padding: "6px 16px", borderRadius: "999px", marginBottom: "24px" }}>
+          <div style={{ display: "inline-block", background: "#e6f4ee", color: "#1DB954", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.16em", padding: "6px 16px", borderRadius: "999px", marginBottom: "24px" }}>
             Realistisk guide
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", fontWeight: "900", lineHeight: "1.05", color: "#0d1f17", margin: "0 0 24px", letterSpacing: "-0.04em" }}>
             Hur lång tid tar det<br />
-            <span style={{ color: "#006B3F" }}>att ta körkort?</span>
+            <span style={{ color: "#1DB954" }}>att ta körkort?</span>
           </h1>
           <p style={{ fontSize: "18px", lineHeight: "1.75", color: "#555", maxWidth: "640px", margin: "0 0 32px" }}>
             Det ärliga svaret: teorin tar <strong>40–60 timmars</strong> aktiv inläsning. Hela körkortsprocessen tar <strong>4–18 månader</strong> beroende på väntetider och hur hårt du kör. Här är den konkreta planen.
@@ -129,7 +139,7 @@ export default function HurLangTidPage() {
                 phase: "📖 Teoridelen",
                 time: "2–8 veckor studier + 1–3 veckors väntetid för bokad provtid",
                 bar: 30,
-                color: "#006B3F",
+                color: "#1DB954",
                 body: "Teori handlar om aktiv studietid. Du behöver ca 40–60 timmars faktisk inläsning och träning för att vara redo. Det motsvarar 30 min/dag i 8 veckor, eller 60 min/dag i 4 veckor. Plus 1–3 veckors väntetid på en ledig provtid.",
                 key: "Du styr den här delen helt själv. Planera och boka provet i förväg — det sätter ett motiverande deadline.",
               },
@@ -162,8 +172,8 @@ export default function HurLangTidPage() {
                   <p style={{ fontSize: "15px", color: "#444", margin: "0 0 12px", lineHeight: "1.7" }}>{item.body}</p>
                 </div>
                 <div style={{ background: "#f0f7f3", padding: "12px 24px", borderTop: "1px solid #e2efe9", display: "flex", gap: "8px" }}>
-                  <span style={{ color: "#006B3F", fontWeight: "900" }}>→</span>
-                  <p style={{ fontSize: "14px", color: "#004d2d", margin: 0, lineHeight: "1.55", fontWeight: "600" }}>{item.key}</p>
+                  <span style={{ color: "#1DB954", fontWeight: "900" }}>→</span>
+                  <p style={{ fontSize: "14px", color: "#17a34a", margin: 0, lineHeight: "1.55", fontWeight: "600" }}>{item.key}</p>
                 </div>
               </div>
             ))}
@@ -200,12 +210,12 @@ export default function HurLangTidPage() {
                   <div style={{ fontSize: "15px", fontWeight: "700", color: "#0d1f17", marginBottom: "3px" }}>{row.activity}</div>
                   <div style={{ fontSize: "13px", color: "#888" }}>{row.notes}</div>
                 </div>
-                <div style={{ fontSize: "15px", fontWeight: "900", color: "#006B3F", whiteSpace: "nowrap" }}>{row.hours}</div>
+                <div style={{ fontSize: "15px", fontWeight: "900", color: "#1DB954", whiteSpace: "nowrap" }}>{row.hours}</div>
               </div>
             ))}
             <div style={{ background: "#f0f7f3", padding: "14px 20px", display: "flex", justifyContent: "space-between", borderTop: "2px solid #c3ddd2" }}>
               <span style={{ fontWeight: "800", color: "#0d1f17", fontSize: "15px" }}>Totalt aktiv studietid</span>
-              <span style={{ fontWeight: "900", color: "#006B3F", fontSize: "17px" }}>42–61 timmar</span>
+              <span style={{ fontWeight: "900", color: "#1DB954", fontSize: "17px" }}>42–61 timmar</span>
             </div>
           </div>
 
@@ -280,7 +290,7 @@ export default function HurLangTidPage() {
               </p>
             </div>
             <div style={{ background: "#f0f7f3", border: "2px solid #86efac", borderRadius: "16px", padding: "20px" }}>
-              <div style={{ fontSize: "14px", fontWeight: "800", color: "#006B3F", marginBottom: "10px" }}>✓ Rätt strategi</div>
+              <div style={{ fontSize: "14px", fontWeight: "800", color: "#1DB954", marginBottom: "10px" }}>✓ Rätt strategi</div>
               <p style={{ fontSize: "14px", color: "#444", margin: 0, lineHeight: "1.65" }}>
                 Boka provet 3–4 veckor in i studieperioden. Nära nog för motivation, tillräckligt långt bort för att hinna bli redo. Avboka gratis om du behöver mer tid.
               </p>
@@ -295,7 +305,7 @@ export default function HurLangTidPage() {
               "Du förstår vägmärken och väjningsregler utan att behöva tänka länge.",
             ].map((crit, i) => (
               <div key={i} style={{ background: "#f0f7f3", borderRadius: "12px", padding: "14px 18px", border: "1px solid #c3ddd2", display: "flex", gap: "12px" }}>
-                <span style={{ color: "#006B3F", fontWeight: "900", flexShrink: 0 }}>✓</span>
+                <span style={{ color: "#1DB954", fontWeight: "900", flexShrink: 0 }}>✓</span>
                 <p style={{ fontSize: "15px", color: "#333", margin: 0, lineHeight: "1.6" }}>{crit}</p>
               </div>
             ))}
@@ -323,7 +333,7 @@ export default function HurLangTidPage() {
                 gap: "0",
                 borderBottom: i < 3 ? "1px solid #f0f0f0" : "none",
               }}>
-                <div style={{ background: "#006B3F", color: "white", padding: "18px 20px", display: "flex", alignItems: "center", justifyContent: "center", minWidth: "90px", flexShrink: 0 }}>
+                <div style={{ background: "#1DB954", color: "white", padding: "18px 20px", display: "flex", alignItems: "center", justifyContent: "center", minWidth: "90px", flexShrink: 0 }}>
                   <span style={{ fontSize: "13px", fontWeight: "800", textAlign: "center" }}>{step.month}</span>
                 </div>
                 <div style={{ padding: "18px 20px", flex: 1 }}>
@@ -341,14 +351,14 @@ export default function HurLangTidPage() {
         </div>
 
         {/* CTA */}
-        <div style={{ background: "linear-gradient(135deg, #006B3F 0%, #008a50 100%)", borderRadius: "24px", padding: "44px 36px", textAlign: "center" }}>
+        <div style={{ background: "linear-gradient(135deg, #1DB954 0%, #008a50 100%)", borderRadius: "24px", padding: "44px 36px", textAlign: "center" }}>
           <h3 style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: "900", color: "white", margin: "0 0 14px", letterSpacing: "-0.03em" }}>
             Börja räkna ner nu
           </h3>
           <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", margin: "0 0 28px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto", lineHeight: "1.6" }}>
             Gör ett snabbtest och se exakt vilka ämnen du behöver fokusera på. 5 frågor, direkt.
           </p>
-          <Link href="/#demo" style={{ background: "white", color: "#006B3F", padding: "16px 36px", borderRadius: "999px", fontWeight: "800", fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
+          <Link href="/#demo" style={{ background: "white", color: "#1DB954", padding: "16px 36px", borderRadius: "999px", fontWeight: "800", fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
             Starta diagnosen →
           </Link>
         </div>
@@ -362,7 +372,7 @@ export default function HurLangTidPage() {
               { href: "/b-korkort", label: "🚗 B-körkort — guide" },
               { href: "/korkortstips", label: "📚 Körkortslips" },
             ].map((link) => (
-              <Link key={link.href} href={link.href} style={{ background: "#f0f7f3", color: "#006B3F", padding: "8px 16px", borderRadius: "999px", fontSize: "14px", fontWeight: "600", textDecoration: "none", border: "1px solid #c3ddd2" }}>
+              <Link key={link.href} href={link.href} style={{ background: "#f0f7f3", color: "#1DB954", padding: "8px 16px", borderRadius: "999px", fontSize: "14px", fontWeight: "600", textDecoration: "none", border: "1px solid #c3ddd2" }}>
                 {link.label}
               </Link>
             ))}

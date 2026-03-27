@@ -71,15 +71,15 @@ const pageJsonLd = {
 
 const ageCategories = [
   { category: 'AM', name: 'Moped klass I', age: '15 år', description: 'Moped med max hastighet 45 km/h', color: '#f5d020' },
-  { category: 'A1', name: 'Lätt motorcykel', age: '16 år', description: 'MC max 125cc, max 11 kW', color: '#006B3F' },
-  { category: 'B (övning)', name: 'Övningskörning bil', age: '16 år', description: 'Med handledare och körkortstillstånd', color: '#006B3F' },
-  { category: 'B', name: 'Personbil', age: '18 år', description: 'Bil, max 3 500 kg totalvikt', color: '#006B3F' },
-  { category: 'A2', name: 'Mellantung MC', age: '18 år', description: 'MC max 35 kW (48 hk)', color: '#006B3F' },
-  { category: 'BE', name: 'Bil med tungt släp', age: '18 år', description: 'Bil + släpvagn över 750 kg', color: '#006B3F' },
-  { category: 'C / CE', name: 'Lastbil', age: '21 år', description: 'Lastbil över 3 500 kg', color: '#004d2d' },
-  { category: 'A', name: 'Tung motorcykel', age: '24 år*', description: '* Eller 20 år med 2 års A2-erfarenhet', color: '#004d2d' },
-  { category: 'D / DE', name: 'Buss', age: '24 år', description: 'Buss för persontransport', color: '#004d2d' },
-  { category: 'Handledare', name: 'Handledartillstånd', age: '24 år', description: 'Krav: haft körkort i minst 5 år', color: '#004d2d' },
+  { category: 'A1', name: 'Lätt motorcykel', age: '16 år', description: 'MC max 125cc, max 11 kW', color: '#1DB954' },
+  { category: 'B (övning)', name: 'Övningskörning bil', age: '16 år', description: 'Med handledare och körkortstillstånd', color: '#1DB954' },
+  { category: 'B', name: 'Personbil', age: '18 år', description: 'Bil, max 3 500 kg totalvikt', color: '#1DB954' },
+  { category: 'A2', name: 'Mellantung MC', age: '18 år', description: 'MC max 35 kW (48 hk)', color: '#1DB954' },
+  { category: 'BE', name: 'Bil med tungt släp', age: '18 år', description: 'Bil + släpvagn över 750 kg', color: '#1DB954' },
+  { category: 'C / CE', name: 'Lastbil', age: '21 år', description: 'Lastbil över 3 500 kg', color: '#17a34a' },
+  { category: 'A', name: 'Tung motorcykel', age: '24 år*', description: '* Eller 20 år med 2 års A2-erfarenhet', color: '#17a34a' },
+  { category: 'D / DE', name: 'Buss', age: '24 år', description: 'Buss för persontransport', color: '#17a34a' },
+  { category: 'Handledare', name: 'Handledartillstånd', age: '24 år', description: 'Krav: haft körkort i minst 5 år', color: '#17a34a' },
 ];
 
 const detailedSections = [
@@ -157,7 +157,7 @@ export default function KorkortAlderPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -168,7 +168,7 @@ export default function KorkortAlderPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: 900, color: '#0d1f17', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Träna gratis
           </Link>
         </div>
@@ -181,7 +181,7 @@ export default function KorkortAlderPage() {
             { label: 'Hem', href: '/' },
             { label: 'Körkort ålder' },
           ]} />
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Åldersgränser 2026
           </div>
           <h1 style={{
@@ -220,7 +220,7 @@ export default function KorkortAlderPage() {
             display: 'grid',
             gridTemplateColumns: '80px 1fr 90px',
             gap: '0',
-            background: '#006B3F',
+            background: '#1DB954',
             borderRadius: '14px 14px 0 0',
             padding: '14px 20px',
             color: 'white',
@@ -264,7 +264,7 @@ export default function KorkortAlderPage() {
                 textAlign: 'right',
                 fontWeight: 900,
                 fontSize: '16px',
-                color: '#006B3F',
+                color: '#1DB954',
                 background: '#e6f4ee',
                 padding: '6px 12px',
                 borderRadius: '10px',
@@ -320,7 +320,7 @@ export default function KorkortAlderPage() {
       {/* CTA */}
       <section style={{ background: '#fff', padding: '64px 20px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white' }}>
             <div style={{
               fontSize: '28px',
               fontWeight: 900,

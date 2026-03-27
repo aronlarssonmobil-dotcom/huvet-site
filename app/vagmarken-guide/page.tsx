@@ -99,10 +99,10 @@ export default function VagmarkenGuidePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/vagmarken" style={{ color: '#006B3F', textDecoration: 'none' }}>Vägmärken</Link> › Guide
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/vagmarken" style={{ color: '#1DB954', textDecoration: 'none' }}>Vägmärken</Link> › Guide
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -113,7 +113,7 @@ export default function VagmarkenGuidePage() {
         </p>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '2.5rem' }}>
-          <strong style={{ color: '#006B3F' }}>💡 Visste du?</strong>
+          <strong style={{ color: '#1DB954' }}>💡 Visste du?</strong>
           <p style={{ margin: '0.5rem 0 0', fontSize: '0.95rem', color: '#333' }}>
             Vägmärken på teoriprovet är en av de vanligaste orsakerna till underkänt resultat. Öva särskilt på förbudsmärken och varningsmärken — de utgör majoriteten av frågorna.
           </p>
@@ -121,7 +121,7 @@ export default function VagmarkenGuidePage() {
 
         {vagmarkenKategorier.map((kat) => (
           <section key={kat.namn} style={{ marginBottom: '3rem' }}>
-            <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem', fontSize: '1.4rem' }}>
+            <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem', fontSize: '1.4rem' }}>
               {kat.icon} {kat.namn}
             </h2>
             <p style={{ color: '#444', lineHeight: 1.7, marginBottom: '1rem' }}>{kat.beskrivning}</p>
@@ -135,7 +135,7 @@ export default function VagmarkenGuidePage() {
         ))}
 
         <section style={{ marginBottom: '3rem' }}>
-          <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Så lär du dig vägmärken effektivt</h2>
+          <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Så lär du dig vägmärken effektivt</h2>
           <ol style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
             <li><strong>Lär dig kategorierna först</strong> — färg och form berättar vilken typ av skylt det är.</li>
             <li><strong>Fokusera på de vanligaste</strong> — hastighetsbegränsningar, förbudsmärken och varningsskyltar kommer mest på provet.</li>
@@ -146,7 +146,7 @@ export default function VagmarkenGuidePage() {
         </section>
 
         <section style={{ marginBottom: '3rem' }}>
-          <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vanliga misstag på teoriprovet</h2>
+          <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vanliga misstag på teoriprovet</h2>
           <ul style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
             <li><strong>Blanda ihop förbudsmärken och påbudsmärken</strong> — rund med röd kant = förbud, rund blå = påbud.</li>
             <li><strong>Glömma tilläggstavlor</strong> — de ändrar ofta betydelsen av huvudskylten.</li>
@@ -156,24 +156,24 @@ export default function VagmarkenGuidePage() {
         </section>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Redo att testa dina kunskaper?</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Redo att testa dina kunskaper?</h3>
           <p style={{ margin: '0 0 1rem' }}>Öva på riktiga körkortsfrågor om vägmärken och se hur redo du är för teoriprovet.</p>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Öva körkortsfrågorna →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/trafikregler-guide" style={{ color: '#006B3F', textDecoration: 'none' }}>← Trafikregler guide</Link>
-          <Link href="/hastighetsgranser-guide" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Hastighetsgränser guide →</Link>
+          <Link href="/trafikregler-guide" style={{ color: '#1DB954', textDecoration: 'none' }}>← Trafikregler guide</Link>
+          <Link href="/hastighetsgranser-guide" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Hastighetsgränser guide →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/teoriprov-tips" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Teoriprov-tips</Link>
+          <Link href="/teoriprov-tips" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Teoriprov-tips</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/ovningsprov-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
+          <Link href="/ovningsprov-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/riskettan" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Riskettan</Link>
+          <Link href="/riskettan" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Riskettan</Link>
         </div>
       </main>
       <SiteFooter />

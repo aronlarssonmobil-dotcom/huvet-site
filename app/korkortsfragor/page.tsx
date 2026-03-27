@@ -160,7 +160,7 @@ const categoryColors: Record<string, { bg: string; color: string }> = {
   'Körriktning':     { bg: '#fef9e7', color: '#92400e' },
   'Fordon':          { bg: '#f0fdf4', color: '#166534' },
   'Trafikljus':      { bg: '#fff7ed', color: '#c2410c' },
-  'Körregel':        { bg: '#e6f4ee', color: '#006B3F' },
+  'Körregel':        { bg: '#e6f4ee', color: '#1DB954' },
   'Vinterväghållning':{ bg: '#e0f2fe', color: '#0c4a6e' },
   'Belysning':       { bg: '#fef9e7', color: '#a16207' },
   'Övningskörning':  { bg: '#fdf4ff', color: '#7e22ce' },
@@ -199,7 +199,7 @@ export default function KorkortsfragorPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -210,7 +210,7 @@ export default function KorkortsfragorPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Börja träna gratis
           </Link>
         </div>
@@ -219,7 +219,7 @@ export default function KorkortsfragorPage() {
       {/* Hero */}
       <section style={{ background: 'linear-gradient(160deg, #f0f7f3 0%, #fff 60%)', padding: '64px 20px 48px' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Frågor & Svar
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '900', lineHeight: '1.1', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em' }}>
@@ -228,7 +228,7 @@ export default function KorkortsfragorPage() {
           <p style={{ fontSize: '18px', lineHeight: '1.7', color: '#555', margin: '0 0 32px' }}>
             Dessa frågor dyker upp på nästan varje teoriprov. Lär dig dem — och läs förklaringarna, inte bara svaren.
           </p>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '14px 28px', borderRadius: '999px', fontSize: '15px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '14px 28px', borderRadius: '999px', fontSize: '15px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
             Testa interaktivt med Huvet →
           </Link>
         </div>
@@ -239,7 +239,7 @@ export default function KorkortsfragorPage() {
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {faq.map((item, i) => {
-              const cat = categoryColors[item.category] || { bg: '#f0f7f3', color: '#006B3F' };
+              const cat = categoryColors[item.category] || { bg: '#f0f7f3', color: '#1DB954' };
               return (
                 <div key={i} style={{
                   background: '#fafcfb',
@@ -264,10 +264,10 @@ export default function KorkortsfragorPage() {
 
                   {/* Answer */}
                   <div style={{ background: '#e6f4ee', padding: '14px 28px', borderTop: '1px solid #d4ebe1' }}>
-                    <div style={{ fontSize: '11px', fontWeight: '700', color: '#006B3F', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>
+                    <div style={{ fontSize: '11px', fontWeight: '700', color: '#1DB954', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>
                       ✓ Rätt svar
                     </div>
-                    <p style={{ fontSize: '15px', fontWeight: '700', color: '#004d2d', margin: 0 }}>
+                    <p style={{ fontSize: '15px', fontWeight: '700', color: '#17a34a', margin: 0 }}>
                       {item.a}
                     </p>
                   </div>
@@ -292,7 +292,7 @@ export default function KorkortsfragorPage() {
             <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '24px', fontSize: '15px' }}>
               Huvet tränar dig på exakt de frågor du behöver — och förklarar varje svar lika tydligt som ovan.
             </p>
-            <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block', boxShadow: '0 4px 20px rgba(0,107,63,0.4)' }}>
+            <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block', boxShadow: '0 4px 20px rgba(0,107,63,0.4)' }}>
               Börja träna gratis →
             </Link>
           </div>

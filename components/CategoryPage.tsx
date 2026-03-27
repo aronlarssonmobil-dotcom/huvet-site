@@ -38,9 +38,9 @@ export function CategoryPage({ categorySlug }: { categorySlug: string }) {
       <section style={{ background: `linear-gradient(160deg, ${category.bgColor} 0%, #fff 60%)`, padding: '32px 20px 48px' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <nav style={{ fontSize: '13px', color: '#777', marginBottom: '24px' }}>
-            <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link>
+            <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link>
             {' › '}
-            <Link href="/vagmarken" style={{ color: '#006B3F', textDecoration: 'none' }}>Vägmärken</Link>
+            <Link href="/vagmarken" style={{ color: '#1DB954', textDecoration: 'none' }}>Vägmärken</Link>
             {' › '}
             <span style={{ color: '#555' }}>{category.titleShort}</span>
           </nav>
@@ -137,12 +137,12 @@ export function CategoryPage({ categorySlug }: { categorySlug: string }) {
           </div>
 
           {/* CTA */}
-          <div style={{ background: 'linear-gradient(160deg, #006B3F, #004d2d)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white' }}>
+          <div style={{ background: 'linear-gradient(160deg, #1DB954, #17a34a)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white' }}>
             <h3 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '12px' }}>Testa dina kunskaper om {category.title.toLowerCase()}</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '15px' }}>
               Huvet har quiz-frågor om alla typer av vägmärken.
             </p>
-            <Link href="/#demo" style={{ background: 'white', color: '#006B3F', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/#demo" style={{ background: 'white', color: '#1DB954', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
               Testa gratis nu →
             </Link>
           </div>

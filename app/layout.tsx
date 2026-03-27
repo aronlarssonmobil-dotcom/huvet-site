@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Huvet",
     images: [
       {
-        url: "https://huvet.se/api/og",
+        url: "https://huvet.se/api/og?title=Klara%20k%C3%B6rkortsprovet%20f%C3%B6rsta%20g%C3%A5ngen&subtitle=450%2B%20teorifr%C3%A5gor%20%C2%B7%20Svaghetanalys%20%C2%B7%20Gratis",
         width: 1200,
         height: 630,
         alt: "Huvet — Klara körkortsprovet första gången",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Huvet — Klara körkortsprovet första gången | Teoriprov 2026",
     description: "450+ körkortsfrågor, vägmärken och teoriprov-övning. 94% klarar provet med Huvet.",
-    images: ["https://huvet.se/api/og"],
+    images: ["https://huvet.se/api/og?title=Klara%20k%C3%B6rkortsprovet%20f%C3%B6rsta%20g%C3%A5ngen"],
   },
   robots: {
     index: true,

@@ -74,7 +74,7 @@ export default async function SignPage({ params }: Props) {
     },
   };
 
-  const catColor = category?.color || '#006B3F';
+  const catColor = category?.color || '#1DB954';
   const catBg = category?.bgColor || '#e6f4ee';
 
   return (
@@ -86,13 +86,13 @@ export default async function SignPage({ params }: Props) {
       <section style={{ background: `linear-gradient(160deg, ${catBg} 0%, #fff 60%)`, padding: '32px 20px 48px' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <nav style={{ fontSize: '13px', color: '#777', marginBottom: '24px' }}>
-            <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link>
+            <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link>
             {' › '}
-            <Link href="/vagmarken" style={{ color: '#006B3F', textDecoration: 'none' }}>Vägmärken</Link>
+            <Link href="/vagmarken" style={{ color: '#1DB954', textDecoration: 'none' }}>Vägmärken</Link>
             {' › '}
             {category && (
               <>
-                <Link href={`/vagmarken/${category.slug}`} style={{ color: '#006B3F', textDecoration: 'none' }}>{category.titleShort}</Link>
+                <Link href={`/vagmarken/${category.slug}`} style={{ color: '#1DB954', textDecoration: 'none' }}>{category.titleShort}</Link>
                 {' › '}
               </>
             )}
@@ -214,12 +214,12 @@ export default async function SignPage({ params }: Props) {
           )}
 
           {/* CTA */}
-          <div style={{ background: 'linear-gradient(160deg, #006B3F, #004d2d)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white', marginTop: '48px' }}>
+          <div style={{ background: 'linear-gradient(160deg, #1DB954, #17a34a)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white', marginTop: '48px' }}>
             <h3 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '12px' }}>Kan du alla vägmärken?</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '15px' }}>
               Öva med Huvet och lär dig alla vägmärken inför teoriprovet.
             </p>
-            <Link href="/#demo" style={{ background: 'white', color: '#006B3F', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/#demo" style={{ background: 'white', color: '#1DB954', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
               Testa gratis nu →
             </Link>
           </div>

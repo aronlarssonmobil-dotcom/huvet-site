@@ -34,7 +34,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
     <>
       <style>{`
         .theory-hero {
-          background: linear-gradient(135deg, #006B3F 0%, #004D2C 60%, #003D23 100%);
+          background: linear-gradient(135deg, #1DB954 0%, #004D2C 60%, #003D23 100%);
           padding: 5.5rem 1.5rem 2.5rem;
           color: #fff;
         }
@@ -121,7 +121,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
           color: #333;
         }
         .theory-cta {
-          background: linear-gradient(135deg, #006B3F, #1DB954);
+          background: linear-gradient(135deg, #1DB954, #1DB954);
           padding: 2.5rem;
           border-radius: 16px;
           text-align: center;
@@ -140,7 +140,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
         .theory-cta-btn {
           display: inline-block;
           background: #fff;
-          color: #006B3F;
+          color: #1DB954;
           padding: 0.85rem 2rem;
           border-radius: 12px;
           font-weight: 700;
@@ -170,7 +170,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
           min-width: 180px;
         }
         .theory-nav-btn:hover {
-          border-color: #006B3F;
+          border-color: #1DB954;
           box-shadow: 0 2px 12px rgba(0,107,63,0.1);
         }
         .theory-nav-btn .label {
@@ -182,7 +182,7 @@ export default function TheoryChapterLayout({ currentSlug, children }: TheoryCha
         }
         .theory-nav-btn .title {
           font-weight: 600;
-          color: #006B3F;
+          color: #1DB954;
           font-size: 0.95rem;
         }
         .theory-nav-btn.next {

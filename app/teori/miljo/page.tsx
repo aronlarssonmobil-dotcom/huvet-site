@@ -69,7 +69,7 @@ export default function TeoriMiljo() {
         Biltrafiken påverkar miljön genom avgaser, buller och slitage. Som förare har du ett ansvar — och
         en möjlighet — att minska den påverkan. Eco-driving handlar inte bara om att vara snäll mot planeten:
         det sparar pengar, minskar slitage på bilen och gör dig till en lugnare, säkrare förare. Miljöfrågorna
-        är också ett återkommande tema på <Link href="/ovningsprov" style={{ color: '#006B3F', fontWeight: 500 }}>teoriprovet</Link>.
+        är också ett återkommande tema på <Link href="/ovningsprov" style={{ color: '#1DB954', fontWeight: 500 }}>teoriprovet</Link>.
       </p>
 
       <h2>Eco-driving — grundprinciperna</h2>
@@ -197,7 +197,7 @@ export default function TeoriMiljo() {
       </table>
 
       <p>
-        Miljözon skyltas med <Link href="/teori/vagmarken" style={{ color: '#006B3F', fontWeight: 500 }}>vägmärken</Link> vid
+        Miljözon skyltas med <Link href="/teori/vagmarken" style={{ color: '#1DB954', fontWeight: 500 }}>vägmärken</Link> vid
         infart. Det är ditt ansvar att veta vilken klass din bil uppfyller. Böter för att köra in i en
         förbjuden miljözon är 1 000 kr.
       </p>
@@ -219,7 +219,7 @@ export default function TeoriMiljo() {
         Miljömedveten körning börjar med eco-driving: mjuk acceleration, tidig uppväxling och planering.
         Du sparar både pengar och miljö. Tänk på att katalysatorn behöver värme, att korta resor belastar
         mest, och att miljözoner är verklighet i svenska städer. Nästa kapitel handlar
-        om <Link href="/teori/sakerhet" style={{ color: '#006B3F', fontWeight: 500 }}>säkerhet</Link> — bilbälte,
+        om <Link href="/teori/sakerhet" style={{ color: '#1DB954', fontWeight: 500 }}>säkerhet</Link> — bilbälte,
         krockkuddar och hur alkohol påverkar körningen.
       </p>
     </TheoryChapterLayout>

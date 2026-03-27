@@ -127,6 +127,16 @@ export default function KorkortsTipsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur snabbt kan man ta körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Med intensivkurs och fullt fokus kan man ta körkortet på 3–6 veckor. Normalt tar det 3–12 månader med deltidsövning. Nyckeln är att öva ofta och klara teoriprovet tidigt.' } },
+          { '@type': 'Question', name: 'Vad är det vanligaste misstaget vid uppkörning?', acceptedAnswer: { '@type': 'Answer', text: 'De vanligaste orsakerna till underkänt är: inte kontrollera blind spot/döda vinkeln, för snabb körning i bostadsområden, felaktig inbromsning och osäkerhet i korsningar med högerregeln.' } },
+          { '@type': 'Question', name: 'Är det billigare att ta körkort privat eller via trafikskola?', acceptedAnswer: { '@type': 'Answer', text: 'Privat övningskörning med godkänd handledare är billigare men kräver tillgång till bil och utbildad handledare. Trafikskola kostar mer men ger strukturerad utbildning. Kombinationen ger bäst resultat.' } },
+          { '@type': 'Question', name: 'Hur övar man bäst inför teoriprovet?', acceptedAnswer: { '@type': 'Answer', text: 'Öva dagligen i 30–45 min med fokus på dina svaga kategorier. Huvet analyserar dina misstag och anpassar träningen. Undvik att bara läsa teoriboken — aktivt frågande är effektivare.' } },
+        ],
+      }) }} />
 
       {/* Header */}
       <header style={{
@@ -136,7 +146,7 @@ export default function KorkortsTipsPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -147,7 +157,7 @@ export default function KorkortsTipsPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Börja träna gratis
           </Link>
         </div>
@@ -156,7 +166,7 @@ export default function KorkortsTipsPage() {
       {/* Hero */}
       <section style={{ background: 'linear-gradient(160deg, #f0f7f3 0%, #fff 60%)', padding: '64px 20px 48px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Teoriprovet
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '900', lineHeight: '1.1', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em' }}>
@@ -165,7 +175,7 @@ export default function KorkortsTipsPage() {
           <p style={{ fontSize: '18px', lineHeight: '1.7', color: '#555', margin: '0 0 32px' }}>
             Konkreta, specifika råd baserade på vad som faktiskt fellrar på det svenska teoriprovet. Inte generella studiemetoder — utan exakt vad du behöver veta.
           </p>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '14px 28px', borderRadius: '999px', fontSize: '15px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '14px 28px', borderRadius: '999px', fontSize: '15px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
             Testa dina kunskaper gratis →
           </Link>
         </div>
@@ -184,11 +194,11 @@ export default function KorkortsTipsPage() {
                 position: 'relative',
                 overflow: 'hidden',
               }}>
-                <div style={{ position: 'absolute', top: '16px', right: '20px', fontSize: '52px', fontWeight: '900', color: '#006B3F10', lineHeight: 1 }}>
+                <div style={{ position: 'absolute', top: '16px', right: '20px', fontSize: '52px', fontWeight: '900', color: '#1DB95410', lineHeight: 1 }}>
                   {tip.number}
                 </div>
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ width: '32px', height: '32px', background: '#006B3F', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '12px', fontWeight: '800', flexShrink: 0 }}>
+                  <div style={{ width: '32px', height: '32px', background: '#1DB954', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '12px', fontWeight: '800', flexShrink: 0 }}>
                     {tip.number}
                   </div>
                   <div>
@@ -210,7 +220,7 @@ export default function KorkortsTipsPage() {
             <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '24px', fontSize: '15px' }}>
               Huvet identifierar exakt vilka av dessa tips du fortfarande har kvar att lära — och tränar dig på dem.
             </p>
-            <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block', boxShadow: '0 4px 20px rgba(0,107,63,0.4)' }}>
+            <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block', boxShadow: '0 4px 20px rgba(0,107,63,0.4)' }}>
               Gör gratisquiz nu →
             </Link>
           </div>

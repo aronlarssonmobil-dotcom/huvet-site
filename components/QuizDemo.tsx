@@ -32,7 +32,7 @@ const categoryColors: Record<string, string> = {
   ...Object.fromEntries(
     Object.entries(qCategoryColors).map(([k, v]) => [categoryLabels[k as QuizCategory] || k, v])
   ),
-  'Skyltar': '#006B3F',
+  'Skyltar': '#1DB954',
   'Väjningsplikt': '#d97706',
   'Alkohol & droger': '#7c3aed',
   'Parkering': '#0369a1',
@@ -64,7 +64,7 @@ export default function QuizDemo() {
   if (questions.length === 0) return null;
 
   const q = questions[current];
-  const catColor = categoryColors[q.category] || '#006B3F';
+  const catColor = categoryColors[q.category] || '#1DB954';
 
   const score = answers.filter((a, i) => a === questions[i].correct).length;
 
@@ -174,7 +174,7 @@ export default function QuizDemo() {
           <div style={{
             display: 'inline-block',
             background: passed ? '#e6f4ee' : '#fef3cd',
-            color: passed ? '#006B3F' : '#92400e',
+            color: passed ? '#1DB954' : '#92400e',
             fontWeight: '700',
             fontSize: '15px',
             padding: '6px 18px',
@@ -189,7 +189,7 @@ export default function QuizDemo() {
                 width: '40px',
                 height: '40px',
                 borderRadius: '50%',
-                background: answers[i] === questions[i].correct ? '#006B3F' : '#ef4444',
+                background: answers[i] === questions[i].correct ? '#1DB954' : '#ef4444',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -209,8 +209,8 @@ export default function QuizDemo() {
             Med Huvet Premium får du 200+ fler frågor, detaljerad analys av dina svaga ämnen och personliga träningsplaner.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <a href="#pricing" style={{
-              background: '#006B3F',
+            <a href="/priser" style={{
+              background: '#1DB954',
               color: 'white',
               padding: '16px 32px',
               borderRadius: '999px',
@@ -223,8 +223,8 @@ export default function QuizDemo() {
             </a>
             <button onClick={handleRestart} style={{
               background: 'white',
-              color: '#006B3F',
-              border: '2px solid #006B3F',
+              color: '#1DB954',
+              border: '2px solid #1DB954',
               padding: '14px 32px',
               borderRadius: '999px',
               fontWeight: '700',
@@ -261,7 +261,7 @@ export default function QuizDemo() {
         <div style={{ height: '4px', background: '#e2efe9' }}>
           <div style={{
             height: '100%',
-            background: '#006B3F',
+            background: '#1DB954',
             width: `${((current) / questions.length) * 100}%`,
             transition: 'width 0.3s ease',
           }} />
@@ -313,11 +313,11 @@ export default function QuizDemo() {
               let color = '#0d1f17';
 
               if (selected !== null) {
-                if (isCorrect) { bg = '#e6f4ee'; border = '#006B3F'; color = '#004d2d'; }
+                if (isCorrect) { bg = '#e6f4ee'; border = '#1DB954'; color = '#17a34a'; }
                 else if (isWrong) { bg = '#fef2f2'; border = '#ef4444'; color = '#991b1b'; }
                 else { bg = '#fafafa'; border = '#e2efe9'; color = '#aaa'; }
               } else if (isSelected) {
-                bg = '#e6f4ee'; border = '#006B3F';
+                bg = '#e6f4ee'; border = '#1DB954';
               }
 
               return (
@@ -346,7 +346,7 @@ export default function QuizDemo() {
                     height: '28px',
                     borderRadius: '50%',
                     background: selected !== null
-                      ? isCorrect ? '#006B3F' : isWrong ? '#ef4444' : '#e2efe9'
+                      ? isCorrect ? '#1DB954' : isWrong ? '#ef4444' : '#e2efe9'
                       : '#e2efe9',
                     color: selected !== null && (isCorrect || isWrong) ? 'white' : '#666',
                     display: 'flex',
@@ -419,9 +419,9 @@ export default function QuizDemo() {
               borderRadius: '14px',
               padding: '16px',
               marginBottom: '20px',
-              borderLeft: '4px solid #006B3F',
+              borderLeft: '4px solid #1DB954',
             }}>
-              <div style={{ fontSize: '12px', fontWeight: '700', color: '#006B3F', marginBottom: '6px', textTransform: 'uppercase' as const, letterSpacing: '0.1em' }}>
+              <div style={{ fontSize: '12px', fontWeight: '700', color: '#1DB954', marginBottom: '6px', textTransform: 'uppercase' as const, letterSpacing: '0.1em' }}>
                 Förklaring
               </div>
               <p style={{ fontSize: '14px', color: '#333', lineHeight: '1.6', margin: 0 }}>
@@ -435,7 +435,7 @@ export default function QuizDemo() {
             <button
               onClick={handleNext}
               style={{
-                background: '#006B3F',
+                background: '#1DB954',
                 color: 'white',
                 border: 'none',
                 borderRadius: '999px',

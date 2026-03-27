@@ -274,7 +274,7 @@ export default function Home() {
         .quiz-feature .check {
           width: 24px;
           height: 24px;
-          background: #E8F5E9;
+          background: #e8f8ee;
           border-radius: 8px;
           display: flex;
           align-items: center;
@@ -351,7 +351,7 @@ export default function Home() {
           font-size: 0.7rem;
           font-weight: 600;
           color: #1DB954;
-          background: #E8F5E9;
+          background: #e8f8ee;
           padding: 0.25rem 0.6rem;
           border-radius: 6px;
         }
@@ -492,7 +492,7 @@ export default function Home() {
           width: 28px;
           height: 28px;
           border-radius: 8px;
-          background: #E8F5E9;
+          background: #e8f8ee;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -540,7 +540,7 @@ export default function Home() {
           font-size: 0.72rem;
           font-weight: 600;
           color: #1DB954;
-          background: #E8F5E9;
+          background: #e8f8ee;
           display: inline-block;
           padding: 0.2rem 0.55rem;
           border-radius: 6px;
@@ -555,7 +555,7 @@ export default function Home() {
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: #E8F5E9;
+          background: #e8f8ee;
           display: flex;
           align-items: center;
           justify-content: center;

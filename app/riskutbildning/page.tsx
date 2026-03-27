@@ -100,14 +100,14 @@ export default function RiskutbildningPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* Header */}
-      <header style={{ background: '#006B3F', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <header style={{ background: '#1DB954', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Link href="/" style={{ color: 'white', textDecoration: 'none', fontWeight: '900', fontSize: '20px', letterSpacing: '-0.03em' }}>Huvet</Link>
         <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px' }}>·</span>
         <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Riskutbildning</span>
       </header>
 
       {/* Hero */}
-      <section style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', padding: '64px 20px 56px', textAlign: 'center', color: 'white' }}>
+      <section style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', padding: '64px 20px 56px', textAlign: 'center', color: 'white' }}>
         <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.15)', borderRadius: '999px', padding: '6px 16px', fontSize: '12px', fontWeight: '700', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '20px' }}>
           Obligatorisk del av körkortet
         </div>
@@ -144,7 +144,7 @@ export default function RiskutbildningPage() {
             {parts.map((p, i) => (
               <div key={i} style={{ background: 'white', border: '2px solid #e2efe9', borderRadius: '20px', padding: '28px' }}>
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '16px' }}>
-                  <div style={{ flexShrink: 0, width: '48px', height: '48px', borderRadius: '14px', background: '#e6f4ee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '14px', color: '#006B3F' }}>{p.num}</div>
+                  <div style={{ flexShrink: 0, width: '48px', height: '48px', borderRadius: '14px', background: '#e6f4ee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '14px', color: '#1DB954' }}>{p.num}</div>
                   <div>
                     <h3 style={{ fontWeight: '800', fontSize: '18px', color: '#0d1f17', margin: '0 0 4px' }}>{p.title}</h3>
                     <div style={{ display: 'flex', gap: '16px', fontSize: '13px', color: '#888' }}>
@@ -154,7 +154,7 @@ export default function RiskutbildningPage() {
                   </div>
                 </div>
                 <p style={{ color: '#555', lineHeight: '1.7', fontSize: '15px', margin: '0 0 12px' }}>{p.description}</p>
-                <div style={{ background: '#f0f7f3', borderRadius: '12px', padding: '12px 16px', fontSize: '14px', color: '#006B3F', fontWeight: '600' }}>
+                <div style={{ background: '#f0f7f3', borderRadius: '12px', padding: '12px 16px', fontSize: '14px', color: '#1DB954', fontWeight: '600' }}>
                   💡 {p.tips}
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function RiskutbildningPage() {
           </h2>
           {steps.map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: '20px', marginBottom: '28px', paddingBottom: '28px', borderBottom: i < steps.length - 1 ? '1px solid #e2efe9' : 'none' }}>
-              <div style={{ flexShrink: 0, width: '40px', height: '40px', borderRadius: '50%', background: '#006B3F', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '900', fontSize: '15px' }}>{s.step}</div>
+              <div style={{ flexShrink: 0, width: '40px', height: '40px', borderRadius: '50%', background: '#1DB954', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '900', fontSize: '15px' }}>{s.step}</div>
               <div>
                 <div style={{ fontWeight: '800', fontSize: '16px', color: '#0d1f17', marginBottom: '6px' }}>{s.title}</div>
                 <p style={{ color: '#555', fontSize: '15px', lineHeight: '1.7', margin: 0 }}>{s.body}</p>
@@ -182,14 +182,14 @@ export default function RiskutbildningPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', padding: '64px 20px', textAlign: 'center', color: 'white' }}>
+      <section style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', padding: '64px 20px', textAlign: 'center', color: 'white' }}>
         <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: '900', margin: '0 0 12px', letterSpacing: '-0.03em' }}>
           Klara teoriprovet — nästa steg mot körkortet
         </h2>
         <p style={{ fontSize: '17px', opacity: 0.8, maxWidth: '440px', margin: '0 auto 32px', lineHeight: '1.6' }}>
           Medan du väntar på din riskutbildning: träna på teoriprovet med Huvet. 450+ frågor, personlig analys.
         </p>
-        <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#006B3F', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
+        <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#1DB954', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
           Börja träna gratis →
         </Link>
       </section>

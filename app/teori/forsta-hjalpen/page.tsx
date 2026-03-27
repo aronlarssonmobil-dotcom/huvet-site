@@ -76,8 +76,8 @@ export default function TeoriForstaHjalpen() {
       <p>
         Om en trafikolycka inträffar kan dina handlingar under de första minuterna vara skillnaden
         mellan liv och död. Du behöver inte vara sjukvårdspersonal — men du behöver veta grunderna.
-        Första hjälpen är ett obligatoriskt ämne på <Link href="/ovningsprov" style={{ color: '#006B3F', fontWeight: 500 }}>teoriprovet</Link> och
-        en del av <Link href="/teori/sakerhet" style={{ color: '#006B3F', fontWeight: 500 }}>trafiksäkerheten</Link>.
+        Första hjälpen är ett obligatoriskt ämne på <Link href="/ovningsprov" style={{ color: '#1DB954', fontWeight: 500 }}>teoriprovet</Link> och
+        en del av <Link href="/teori/sakerhet" style={{ color: '#1DB954', fontWeight: 500 }}>trafiksäkerheten</Link>.
       </p>
 
       <h2>Varna — Larma — Rädda</h2>
@@ -253,7 +253,7 @@ export default function TeoriForstaHjalpen() {
 
       <p>
         Du har nu gått igenom alla 7 kapitel av körkortsteori! Gå tillbaka
-        till <Link href="/teori" style={{ color: '#006B3F', fontWeight: 500 }}>översikten</Link> eller
+        till <Link href="/teori" style={{ color: '#1DB954', fontWeight: 500 }}>översikten</Link> eller
         testa dina kunskaper med ett övningsprov.
       </p>
     </TheoryChapterLayout>

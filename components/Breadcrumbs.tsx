@@ -71,7 +71,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                   <Link
                     href={item.href}
                     style={{
-                      color: '#006B3F',
+                      color: '#1DB954',
                       textDecoration: 'none',
                       transition: 'color 0.15s',
                     }}

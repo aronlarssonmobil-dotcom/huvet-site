@@ -99,8 +99,8 @@ export default function CostCalculator() {
                 style={{
                   padding: '0.6rem 1rem',
                   borderRadius: 10,
-                  border: `2px solid ${pkg === key ? '#006B3F' : '#dceee5'}`,
-                  background: pkg === key ? '#006B3F' : '#fff',
+                  border: `2px solid ${pkg === key ? '#1DB954' : '#dceee5'}`,
+                  background: pkg === key ? '#1DB954' : '#fff',
                   color: pkg === key ? '#fff' : '#0d1f17',
                   fontWeight: 600,
                   fontSize: '0.85rem',
@@ -132,9 +132,9 @@ export default function CostCalculator() {
                 style={{
                   padding: '0.5rem 0.85rem',
                   borderRadius: 8,
-                  border: `1.5px solid ${region === key ? '#006B3F' : '#dceee5'}`,
+                  border: `1.5px solid ${region === key ? '#1DB954' : '#dceee5'}`,
                   background: region === key ? '#e6f4ee' : '#fff',
-                  color: region === key ? '#006B3F' : '#5a6b62',
+                  color: region === key ? '#1DB954' : '#5a6b62',
                   fontWeight: 600,
                   fontSize: '0.8rem',
                   cursor: 'pointer',
@@ -151,7 +151,7 @@ export default function CostCalculator() {
         {pkg !== 'trafikskola-paket' && (
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0d1f17', display: 'block', marginBottom: '0.5rem' }}>
-              Antal körlektioner: <span style={{ color: '#006B3F' }}>{extraLessons} st</span>
+              Antal körlektioner: <span style={{ color: '#1DB954' }}>{extraLessons} st</span>
               <span style={{ fontWeight: 400, color: '#5a6b62' }}> ({extraLessons * lessonPrice} kr)</span>
             </label>
             <input
@@ -160,7 +160,7 @@ export default function CostCalculator() {
               max={30}
               value={extraLessons}
               onChange={(e) => setExtraLessons(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#006B3F' }}
+              style={{ width: '100%', accentColor: '#1DB954' }}
             />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: '#5a6b62' }}>
               <span>0 st</span>
@@ -176,7 +176,7 @@ export default function CostCalculator() {
               type="checkbox"
               checked={hasHandledarkurs}
               onChange={(e) => setHasHandledarkurs(e.target.checked)}
-              style={{ accentColor: '#006B3F', width: 18, height: 18 }}
+              style={{ accentColor: '#1DB954', width: 18, height: 18 }}
             />
             <span>Handledaren har redan handledarkurs</span>
           </label>
@@ -214,7 +214,7 @@ export default function CostCalculator() {
             <div style={{
               fontWeight: 700,
               fontSize: '0.95rem',
-              color: item.amount === 0 ? '#006B3F' : '#0d1f17',
+              color: item.amount === 0 ? '#1DB954' : '#0d1f17',
               whiteSpace: 'nowrap',
             }}>
               {item.amount === 0 ? 'Gratis' : `${item.amount.toLocaleString('sv-SE')} kr`}

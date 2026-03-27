@@ -150,6 +150,16 @@ export default function VagmarkenPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur många vägmärken finns det i Sverige?', acceptedAnswer: { '@type': 'Answer', text: 'Det finns cirka 300 officiella vägmärken i Sverige, indelade i kategorierna: varningsskyltar, väjningsplikt/stopplikt, förbudsskyltar, påbudsskyltar, anvisningsskyltar och informationsskyltar.' } },
+          { '@type': 'Question', name: 'Vad betyder ett rött triangelärt vägmärke?', acceptedAnswer: { '@type': 'Answer', text: 'Röda triangulära vägmärken (med spetsen uppåt) är varningsskyltar — de varnar för fara framåt. Röd triangel med spetsen nedåt är vajningsplikt. STOP-märket är ett rött åttahörning.' } },
+          { '@type': 'Question', name: 'Vilka vägmärken är vanligast på körkortsprovet?', acceptedAnswer: { '@type': 'Answer', text: 'De vanligaste på provet är: vajningsplikt, stopplikt, hastighetsbegränsning, omkörningsförbud, cirkulationsplats, parkering förbjuden och gångtrafikanter. Lär dig dessa utantill.' } },
+          { '@type': 'Question', name: 'Hur lär man sig vägmärken effektivt?', acceptedAnswer: { '@type': 'Answer', text: 'Öva kategori för kategori — börja med varningsskyltar, sedan förbud och påbud. Huvet visar vägmärken visuellt och repeterar de du missar oftast. 15 min daglig träning i 2 veckor räcker för de flesta.' } },
+        ],
+      }) }} />
 
       {/* Header */}
       <header style={{
@@ -159,7 +169,7 @@ export default function VagmarkenPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -170,7 +180,7 @@ export default function VagmarkenPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Börja träna gratis
           </Link>
         </div>
@@ -179,7 +189,7 @@ export default function VagmarkenPage() {
       {/* Hero */}
       <section style={{ background: 'linear-gradient(160deg, #f0f7f3 0%, #fff 60%)', padding: '64px 20px 48px' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Vägmärken
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '900', lineHeight: '1.1', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em' }}>
@@ -263,12 +273,12 @@ export default function VagmarkenPage() {
           </div>
 
           {/* CTA */}
-          <div style={{ background: 'linear-gradient(160deg, #006B3F, #004d2d)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white' }}>
+          <div style={{ background: 'linear-gradient(160deg, #1DB954, #17a34a)', borderRadius: '24px', padding: '40px 32px', textAlign: 'center', color: 'white' }}>
             <h3 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '12px' }}>Testa dina vägmärken-kunskaper</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '24px', fontSize: '15px' }}>
               Huvet har 60+ specifika frågor om vägmärken med bildstöd och förklaringar.
             </p>
-            <Link href="/#demo" style={{ background: 'white', color: '#006B3F', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/#demo" style={{ background: 'white', color: '#1DB954', padding: '16px 32px', borderRadius: '999px', fontSize: '16px', fontWeight: '700', textDecoration: 'none', display: 'inline-block' }}>
               Testa gratis nu →
             </Link>
           </div>

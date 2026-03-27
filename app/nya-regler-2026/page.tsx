@@ -173,7 +173,7 @@ export default function NyaReglerPage() {
       <header style={{ background: 'rgba(255,255,255,0.96)', borderBottom: '1px solid #dceee5', padding: '0 20px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2" />
                 <circle cx="10" cy="10" r="2.5" fill="white" />
@@ -184,7 +184,7 @@ export default function NyaReglerPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: 900, color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
             Trana gratis
           </Link>
         </div>
@@ -195,7 +195,7 @@ export default function NyaReglerPage() {
 
         {/* Hero */}
         <section style={{ padding: '2rem 0 2.5rem' }}>
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Uppdaterad mars 2026
           </div>
           <h1 style={{ fontFamily: "var(--font-playfair), 'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4.5vw, 2.8rem)', fontWeight: 800, lineHeight: 1.12, color: '#0d1f17', marginBottom: '1rem' }}>
@@ -217,7 +217,7 @@ export default function NyaReglerPage() {
             ].map((f) => (
               <div key={f.label} style={{ background: '#f0f7f3', border: '1px solid #dceee5', borderRadius: 16, padding: '1.25rem 1rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{f.icon}</div>
-                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#006B3F', lineHeight: 1.2, fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>{f.label}</div>
+                <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1DB954', lineHeight: 1.2, fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>{f.label}</div>
                 <div style={{ fontSize: '0.8rem', color: '#5a6b62', marginTop: '0.25rem' }}>{f.sub}</div>
               </div>
             ))}
@@ -231,7 +231,7 @@ export default function NyaReglerPage() {
           </h2>
           <div style={{ position: 'relative', paddingLeft: '2rem' }}>
             {/* Timeline line */}
-            <div style={{ position: 'absolute', left: '0.65rem', top: '0.5rem', bottom: '0.5rem', width: '3px', background: 'linear-gradient(to bottom, #006B3F 40%, #dceee5 40%)', borderRadius: '2px' }} />
+            <div style={{ position: 'absolute', left: '0.65rem', top: '0.5rem', bottom: '0.5rem', width: '3px', background: 'linear-gradient(to bottom, #1DB954 40%, #dceee5 40%)', borderRadius: '2px' }} />
 
             {timelineEvents.map((event, i) => (
               <div key={i} style={{ position: 'relative', marginBottom: '1.5rem', paddingBottom: i < timelineEvents.length - 1 ? '0.5rem' : 0 }}>
@@ -243,16 +243,16 @@ export default function NyaReglerPage() {
                   width: '14px',
                   height: '14px',
                   borderRadius: '50%',
-                  background: event.status === 'active' ? '#006B3F' : '#dceee5',
+                  background: event.status === 'active' ? '#1DB954' : '#dceee5',
                   border: event.status === 'active' ? '3px solid #e6f4ee' : '3px solid #f0f7f3',
                 }} />
 
-                <div style={{ background: event.status === 'active' ? '#f0f7f3' : 'white', border: `1px solid ${event.status === 'active' ? '#006B3F' : '#dceee5'}`, borderRadius: 16, padding: '1.25rem' }}>
+                <div style={{ background: event.status === 'active' ? '#f0f7f3' : 'white', border: `1px solid ${event.status === 'active' ? '#1DB954' : '#dceee5'}`, borderRadius: 16, padding: '1.25rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
                     <span style={{ fontSize: '1.3rem' }}>{event.icon}</span>
                     <span style={{
                       display: 'inline-block',
-                      background: event.status === 'active' ? '#006B3F' : '#f5d020',
+                      background: event.status === 'active' ? '#1DB954' : '#f5d020',
                       color: event.status === 'active' ? 'white' : '#0d1f17',
                       fontSize: '0.72rem',
                       fontWeight: 700,
@@ -264,7 +264,7 @@ export default function NyaReglerPage() {
                       {event.date}
                     </span>
                     {event.status === 'active' && (
-                      <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#006B3F', textTransform: 'uppercase', letterSpacing: '0.08em' }}>I kraft</span>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#1DB954', textTransform: 'uppercase', letterSpacing: '0.08em' }}>I kraft</span>
                     )}
                     {event.status === 'planned' && (
                       <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#5a6b62', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Kommande</span>
@@ -294,7 +294,7 @@ export default function NyaReglerPage() {
             Andringen baseras pa Transportstyrelsens foreskrift TSFS 2024:91 och trader i kraft den 15 januari 2026. Syftet ar att minska diskriminering och ta bort hinder som saknar medicinsk evidens. Manga personer med neuropsykiatriska funktionsnedsattningar upplevde att kravet var orattvist och forsenande.
           </p>
           <div style={{ background: '#f0f7f3', borderRadius: 16, padding: '1.25rem', border: '1px solid #dceee5', marginBottom: '1rem' }}>
-            <strong style={{ color: '#006B3F', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>Vad innebar detta i praktiken?</strong>
+            <strong style={{ color: '#1DB954', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>Vad innebar detta i praktiken?</strong>
             <ul style={{ margin: '0.75rem 0 0', paddingLeft: '1.25rem', color: '#5a6b62', fontSize: '0.95rem', lineHeight: 1.75 }}>
               <li>Du behover inte langre lamna lakarintyg nar du ansoker om korkortstillstand</li>
               <li>Processen for att fa korkortstillstand blir snabbare och enklare</li>
@@ -468,7 +468,7 @@ export default function NyaReglerPage() {
         </section>
 
         {/* CTA block */}
-        <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: 20, padding: '2.5rem', textAlign: 'center', color: 'white', marginBottom: '3rem' }}>
+        <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: 20, padding: '2.5rem', textAlign: 'center', color: 'white', marginBottom: '3rem' }}>
           <div style={{ fontFamily: "var(--font-playfair), 'Playfair Display', serif", fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', fontWeight: 800, marginBottom: '0.75rem' }}>
             Oavsett nya regler — provet maste klaras
           </div>

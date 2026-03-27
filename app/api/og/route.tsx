@@ -1,8 +1,13 @@
 import { ImageResponse } from 'next/og';
+import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const title = searchParams.get('title') || 'Klara körkortsprovet första gången';
+  const subtitle = searchParams.get('subtitle') || '450+ teorifrågor · Svaghetsanalys · 100% gratis';
+
   return new ImageResponse(
     (
       <div
@@ -55,39 +60,37 @@ export async function GET() {
             }}
           />
           <span style={{ color: '#fff', fontSize: '18px', fontWeight: 600 }}>
-            94% klarar provet
+            huvet.se
           </span>
         </div>
 
         {/* Title */}
         <div
           style={{
-            fontSize: '64px',
+            fontSize: title.length > 50 ? '48px' : '60px',
             fontWeight: 800,
             color: '#fff',
             textAlign: 'center',
-            lineHeight: 1.1,
-            marginBottom: '16px',
+            lineHeight: 1.15,
+            marginBottom: '20px',
+            maxWidth: '900px',
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
           }}
         >
-          <span>Klara körkortsprovet.</span>
-          <span style={{ color: '#24D963' }}>Första gången.</span>
+          {title}
         </div>
 
         {/* Subtitle */}
         <div
           style={{
-            fontSize: '24px',
+            fontSize: '22px',
             color: 'rgba(255,255,255,0.6)',
             textAlign: 'center',
             maxWidth: '700px',
             display: 'flex',
           }}
         >
-          450+ teorifrågor · Svaghetsanalys · 100% gratis
+          {subtitle}
         </div>
 
         {/* Logo */}
@@ -100,11 +103,11 @@ export async function GET() {
             gap: '10px',
           }}
         >
-          <span style={{ fontSize: '28px', fontWeight: 800, color: '#fff' }}>
+          <span style={{ fontSize: '28px', fontWeight: 800, color: '#24D963' }}>
             Huvet
           </span>
           <span style={{ fontSize: '20px', color: 'rgba(255,255,255,0.4)' }}>
-            huvet.se
+            — Klara provet första gången
           </span>
         </div>
       </div>

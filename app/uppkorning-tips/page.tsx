@@ -28,10 +28,10 @@ export default function UppkorningTipsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/korprov" style={{ color: '#006B3F', textDecoration: 'none' }}>Körprov</Link> › Tips
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/korprov" style={{ color: '#1DB954', textDecoration: 'none' }}>Körprov</Link> › Tips
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -42,7 +42,7 @@ export default function UppkorningTipsPage() {
         </p>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '2.5rem' }}>
-          <strong style={{ color: '#006B3F' }}>📋 Snabbfakta om uppkörningen</strong>
+          <strong style={{ color: '#1DB954' }}>📋 Snabbfakta om uppkörningen</strong>
           <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.2rem', lineHeight: 2, color: '#333' }}>
             <li><strong>Kostnad:</strong> 800 kr (+ ev. bilhyra 500–1000 kr)</li>
             <li><strong>Längd:</strong> 30–45 minuter</li>
@@ -52,7 +52,7 @@ export default function UppkorningTipsPage() {
           </ul>
         </div>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vad kontrollanten bedömer</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vad kontrollanten bedömer</h2>
         <p style={{ lineHeight: 1.8, color: '#333' }}>
           Kontrollanten bedömer inte om du kör som en erfaren förare — utan om du kör <strong>säkert och regelrätt</strong>. De viktigaste bedömningskriterierna:
         </p>
@@ -65,7 +65,7 @@ export default function UppkorningTipsPage() {
           <li><strong>Kontroll av fordonet:</strong> Du hanterar bilen smidigt (gas, broms, koppling, styrning).</li>
         </ul>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>10 tips för att klara uppkörningen</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>10 tips för att klara uppkörningen</h2>
         <ol style={{ lineHeight: 2.2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Kör den rutt du ska göra provet på.</strong> De flesta uppkörningar sker i närheten av Trafikverkets kontor. Öva på dessa vägar så att du är bekant med korsningar, rondeller och trafiksituationer.</li>
           <li><strong>Ta en lektion samma dag eller dagen innan.</strong> En uppvärmningslektion precis innan provet ger dig trygghet och hjälper dig komma i &quot;körzonen&quot;.</li>
@@ -79,7 +79,7 @@ export default function UppkorningTipsPage() {
           <li><strong>Backning och parkering — öva extra.</strong> Fickparkering och backning i kurva är vanliga moment. Öva tills du kan dem reflexmässigt.</li>
         </ol>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vanligaste misstagen (och hur du undviker dem)</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Vanligaste misstagen (och hur du undviker dem)</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem', fontSize: '0.95rem' }}>
           <thead>
             <tr style={{ background: '#fff3e0' }}>
@@ -104,30 +104,30 @@ export default function UppkorningTipsPage() {
           </tbody>
         </table>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Om du inte klarar provet</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Om du inte klarar provet</h2>
         <p style={{ lineHeight: 1.8, color: '#333' }}>
           Att inte klara uppkörningen på första försöket är <strong>vanligare än du tror</strong> — nästan hälften behöver göra om den. Det är inget misslyckande. Fråga kontrollanten vad du behöver förbättra, ta några extra körlektioner med fokus på de specifika bristerna, och boka om. Andra gången vet du exakt vad som förväntas.
         </p>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Förbered teorin också</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Förbered teorin också</h3>
           <p style={{ margin: '0 0 1rem' }}>Teoriprovet måste vara klart innan uppkörningen. Öva med riktiga körkortsfrågor.</p>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Öva körkortsfrågorna →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/teoriprov-tips" style={{ color: '#006B3F', textDecoration: 'none' }}>← Teoriprov-tips</Link>
-          <Link href="/vagmarken-guide" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Vägmärken guide →</Link>
+          <Link href="/teoriprov-tips" style={{ color: '#1DB954', textDecoration: 'none' }}>← Teoriprov-tips</Link>
+          <Link href="/vagmarken-guide" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Vägmärken guide →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/korkort-kostnad-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Körkort kostnad</Link>
+          <Link href="/korkort-kostnad-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Körkort kostnad</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/risktvaan" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Risktvåan</Link>
+          <Link href="/risktvaan" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Risktvåan</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/ovningsprov-guide" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
+          <Link href="/ovningsprov-guide" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Övningsprov-guide</Link>
         </div>
       </main>
       <SiteFooter />

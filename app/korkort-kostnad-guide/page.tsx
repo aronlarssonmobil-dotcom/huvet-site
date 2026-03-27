@@ -41,10 +41,10 @@ export default function KorkortKostnadGuidePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div style={{ background: '#006B3F', height: '64px' }}><SiteHeader /></div>
+      <div style={{ background: '#1DB954', height: '64px' }}><SiteHeader /></div>
       <main style={{ maxWidth: '860px', margin: '0 auto', padding: '2rem 1.25rem 4rem', color: '#0d1f17' }}>
         <nav style={{ fontSize: '0.8rem', color: '#555', marginBottom: '1.5rem' }}>
-          <Link href="/" style={{ color: '#006B3F', textDecoration: 'none' }}>Huvet</Link> › <Link href="/korkort-kostnad" style={{ color: '#006B3F', textDecoration: 'none' }}>Körkort kostnad</Link> › Guide
+          <Link href="/" style={{ color: '#1DB954', textDecoration: 'none' }}>Huvet</Link> › <Link href="/korkort-kostnad" style={{ color: '#1DB954', textDecoration: 'none' }}>Körkort kostnad</Link> › Guide
         </nav>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '0.75rem' }}>
@@ -54,7 +54,7 @@ export default function KorkortKostnadGuidePage() {
           Att ta körkort är en av de största investeringarna unga svenskar gör. Totalkostnaden varierar enormt — från runt 12 000 kr om du övar privat till över 30 000 kr om du tar alla lektioner på trafikskola. Här bryter vi ner varje kostnad så du vet exakt vad du kan förvänta dig.
         </p>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alla kostnader i detalj</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Alla kostnader i detalj</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem', fontSize: '0.95rem' }}>
           <thead>
             <tr style={{ background: '#e6f4ee' }}>
@@ -83,7 +83,7 @@ export default function KorkortKostnadGuidePage() {
           </ul>
         </div>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Så sparar du pengar på körkortet</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Så sparar du pengar på körkortet</h2>
         <ol style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Öva privat så mycket som möjligt.</strong> Hitta en handledare (förälder, syskon, kompis med rätt behörighet) och kör regelbundet. Privat övning kostar bara bensin.</li>
           <li><strong>Plugga teori gratis online.</strong> Använd Huvet istället för att köpa dyra teoripaket. Spara 200–500 kr.</li>
@@ -93,7 +93,7 @@ export default function KorkortKostnadGuidePage() {
           <li><strong>Boka riskutbildning tidigt.</strong> Priserna kan variera med säsong — sommar och vår är dyast.</li>
         </ol>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Körkort kostnad per stad (uppskattning 2026)</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Körkort kostnad per stad (uppskattning 2026)</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem', fontSize: '0.95rem' }}>
           <thead>
             <tr style={{ background: '#e6f4ee' }}>
@@ -113,13 +113,13 @@ export default function KorkortKostnadGuidePage() {
               <tr key={s.stad} style={{ borderBottom: '1px solid #e6f4ee' }}>
                 <td style={{ padding: '0.6rem 1rem', fontWeight: 600 }}>{s.stad}</td>
                 <td style={{ textAlign: 'right', padding: '0.6rem 1rem' }}>{s.lektion}</td>
-                <td style={{ textAlign: 'right', padding: '0.6rem 1rem', color: '#006B3F', fontWeight: 600 }}>{s.total}</td>
+                <td style={{ textAlign: 'right', padding: '0.6rem 1rem', color: '#1DB954', fontWeight: 600 }}>{s.total}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        <h2 style={{ color: '#006B3F', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Tidslinje: Steg för steg till körkort</h2>
+        <h2 style={{ color: '#1DB954', borderBottom: '2px solid #e6f4ee', paddingBottom: '0.5rem' }}>Tidslinje: Steg för steg till körkort</h2>
         <ol style={{ lineHeight: 2, paddingLeft: '1.5rem', color: '#333' }}>
           <li><strong>Ansök om körkortstillstånd</strong> (250 kr) — kräver syntest och godkänd foto</li>
           <li><strong>Gå introduktionskurs</strong> (200–400 kr) — krävs för att handledare ska få lära upp dig</li>
@@ -132,24 +132,24 @@ export default function KorkortKostnadGuidePage() {
         </ol>
 
         <div style={{ background: '#e6f4ee', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem' }}>
-          <h3 style={{ marginTop: 0, color: '#006B3F' }}>Plugga teori gratis och spara pengar</h3>
+          <h3 style={{ marginTop: 0, color: '#1DB954' }}>Plugga teori gratis och spara pengar</h3>
           <p style={{ margin: '0 0 1rem' }}>Med Huvet kan du öva på riktiga körkortsfrågor helt gratis — spara pengar på dyra teoripaket.</p>
-          <Link href="/korkortsfragor" style={{ background: '#006B3F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/korkortsfragor" style={{ background: '#1DB954', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', display: 'inline-block' }}>
             Öva gratis →
           </Link>
         </div>
 
         <nav style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e6f4ee', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Link href="/ovningsprov-guide" style={{ color: '#006B3F', textDecoration: 'none' }}>← Övningsprov guide</Link>
-          <Link href="/riskettan" style={{ color: '#006B3F', textDecoration: 'none', marginLeft: 'auto' }}>Riskettan →</Link>
+          <Link href="/ovningsprov-guide" style={{ color: '#1DB954', textDecoration: 'none' }}>← Övningsprov guide</Link>
+          <Link href="/riskettan" style={{ color: '#1DB954', textDecoration: 'none', marginLeft: 'auto' }}>Riskettan →</Link>
         </nav>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <Link href="/risktvaan" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Risktvåan</Link>
+          <Link href="/risktvaan" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Risktvåan</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/halkkörning" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Halkkörning</Link>
+          <Link href="/halkkörning" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Halkkörning</Link>
           <span style={{ color: '#ccc' }}>•</span>
-          <Link href="/uppkorning-tips" style={{ color: '#006B3F', fontSize: '0.85rem', textDecoration: 'none' }}>Uppkörning-tips</Link>
+          <Link href="/uppkorning-tips" style={{ color: '#1DB954', fontSize: '0.85rem', textDecoration: 'none' }}>Uppkörning-tips</Link>
         </div>
       </main>
       <SiteFooter />

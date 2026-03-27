@@ -273,7 +273,7 @@ export default function GamificationDashboard() {
               </div>
             </div>
             <div className="gf-stat-card">
-              <div className="gf-stat-icon" style={{ background: '#E8F5E9' }}>
+              <div className="gf-stat-icon" style={{ background: '#e8f8ee' }}>
                 <svg width={22} height={22} viewBox="0 0 24 24" fill="#1DB954">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                 </svg>
@@ -369,7 +369,7 @@ export default function GamificationDashboard() {
               <div className="gf-achievements-grid">
                 {unlockedAchievements.map((a) => (
                   <div key={a.id} className="gf-ach-card">
-                    <div className="gf-ach-icon" style={{ background: '#E8F5E9' }}>
+                    <div className="gf-ach-icon" style={{ background: '#e8f8ee' }}>
                       <AchievementIcon type={a.icon} size={20} />
                     </div>
                     <div>

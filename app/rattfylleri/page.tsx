@@ -88,7 +88,7 @@ export default function RattfylleriPage() {
       <header style={{ background: 'rgba(255,255,255,0.96)', borderBottom: '1px solid #dceee5', padding: '0 20px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2" />
                 <circle cx="10" cy="10" r="2.5" fill="white" />
@@ -99,7 +99,7 @@ export default function RattfylleriPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: 900, color: '#0d1f17', letterSpacing: '-0.04em' }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
             Trana gratis
           </Link>
         </div>
@@ -162,7 +162,7 @@ export default function RattfylleriPage() {
                   <tr key={row.brott} style={{ borderBottom: '1px solid #dceee5' }}>
                     <td style={{ padding: '0.75rem 0.75rem', fontWeight: 600 }}>{row.brott}</td>
                     <td style={{ padding: '0.75rem 0.75rem' }}>{row.straff}</td>
-                    <td style={{ padding: '0.75rem 0.75rem', color: '#006B3F', fontWeight: 600 }}>{row.korkort}</td>
+                    <td style={{ padding: '0.75rem 0.75rem', color: '#1DB954', fontWeight: 600 }}>{row.korkort}</td>
                   </tr>
                 ))}
               </tbody>
@@ -219,7 +219,7 @@ export default function RattfylleriPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem', border: '1px solid #dceee5' }}>
-              <h3 style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: '1.05rem', fontWeight: 700, color: '#006B3F', margin: '0 0 0.5rem' }}>
+              <h3 style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: '1.05rem', fontWeight: 700, color: '#1DB954', margin: '0 0 0.5rem' }}>
                 Utandningsprov (sallning)
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.25rem', lineHeight: 1.9, color: '#5a6b62', fontSize: '0.92rem' }}>
@@ -229,7 +229,7 @@ export default function RattfylleriPage() {
               </ul>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem', border: '1px solid #dceee5' }}>
-              <h3 style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: '1.05rem', fontWeight: 700, color: '#006B3F', margin: '0 0 0.5rem' }}>
+              <h3 style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif", fontSize: '1.05rem', fontWeight: 700, color: '#1DB954', margin: '0 0 0.5rem' }}>
                 Blodprov / bevisandning
               </h3>
               <ul style={{ margin: 0, paddingLeft: '1.25rem', lineHeight: 1.9, color: '#5a6b62', fontSize: '0.92rem' }}>
@@ -266,7 +266,7 @@ export default function RattfylleriPage() {
           <p style={{ color: '#5a6b62', marginBottom: '1.25rem', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
             Testa dina kunskaper med riktiga korkorsfragor om rattfylleri och trafiksakerhet.
           </p>
-          <Link href="/korkortsfragor" style={{ display: 'inline-block', background: '#006B3F', color: '#fff', padding: '0.85rem 2rem', borderRadius: '999px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
+          <Link href="/korkortsfragor" style={{ display: 'inline-block', background: '#1DB954', color: '#fff', padding: '0.85rem 2rem', borderRadius: '999px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem', fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
             Starta ovning →
           </Link>
         </section>

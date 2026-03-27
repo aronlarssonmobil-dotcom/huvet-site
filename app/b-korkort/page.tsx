@@ -22,13 +22,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://huvet.se/b-korkort" },
 };
 
+const bKorkortFaqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Vad krävs för att ta B-körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Du måste vara minst 18 år, ha ett giltigt körkortstillstånd och klara teoriprovet (52/65) samt uppkörningen. Du behöver även ha genomfört riskettan och risktvåan.' } },
+    { '@type': 'Question', name: 'Hur lång tid tar det att ta B-körkort?', acceptedAnswer: { '@type': 'Answer', text: 'Genomsnittet är 3–12 månader beroende på om du kör privat eller via trafikskola, hur ofta du övar och hur snabbt du klarar teori och uppkörning. Intensivkurser kan gå på 3–6 veckor.' } },
+    { '@type': 'Question', name: 'Hur mycket kostar B-körkort 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Total kostnad är 15 000–30 000 kr. Trafikskola ca 20 000–28 000 kr allt inkluderat. Privat övningskörning med eget fordon kan kosta 8 000–15 000 kr om man redan har tillgång till bil och handledarutbildad person.' } },
+    { '@type': 'Question', name: 'Vad är skillnaden på privat övningskörning och trafikskola?', acceptedAnswer: { '@type': 'Answer', text: 'Privat övningskörning är billigare men kräver en godkänd handledare och tillgång till bil. Trafikskola är dyrare men ger strukturerad utbildning och lärare med pedagogisk utbildning. De flesta kombinerar båda.' } },
+  ],
+};
+
 export default function BKorkortPage() {
   return (
     <div style={{ fontFamily: "'Inter', system-ui, sans-serif", background: "#fff", color: "#0d1f17", minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bKorkortFaqJsonLd) }} />
       <header style={{ background: "rgba(255,255,255,0.96)", borderBottom: "1px solid #e2efe9", padding: "0 20px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: "64px" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ width: "36px", height: "36px", background: "#006B3F", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: "36px", height: "36px", background: "#1DB954", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -39,7 +51,7 @@ export default function BKorkortPage() {
             </div>
             <span style={{ fontSize: "20px", fontWeight: "900", color: "#0d1f17", letterSpacing: "-0.04em" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: "#006B3F", color: "white", padding: "10px 22px", borderRadius: "999px", fontSize: "14px", fontWeight: "700", textDecoration: "none" }}>
+          <Link href="/#demo" style={{ background: "#1DB954", color: "white", padding: "10px 22px", borderRadius: "999px", fontSize: "14px", fontWeight: "700", textDecoration: "none" }}>
             Träna gratis
           </Link>
         </div>
@@ -47,7 +59,7 @@ export default function BKorkortPage() {
 
       <section style={{ background: "linear-gradient(160deg, #f0f7f3 0%, #fff 60%)", padding: "60px 20px 48px" }}>
         <div style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <div style={{ display: "inline-block", background: "#e6f4ee", color: "#006B3F", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.16em", padding: "6px 16px", borderRadius: "999px", marginBottom: "24px" }}>
+          <div style={{ display: "inline-block", background: "#e6f4ee", color: "#1DB954", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.16em", padding: "6px 16px", borderRadius: "999px", marginBottom: "24px" }}>
             Körkortsguide 2026
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: "900", lineHeight: "1.1", color: "#0d1f17", margin: "0 0 20px", letterSpacing: "-0.04em" }}>
@@ -141,8 +153,8 @@ export default function BKorkortPage() {
         <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#444", marginBottom: "20px" }}>
           Körkortsteoriprov för B-körkort består av 65 frågor och du behöver svara rätt på minst 52 (80%) för att bli godkänd. Provet täcker hela trafikkunskapen inklusive väjningsregler, vägmärken, parkeringsregler, alkohol, hastighet, motorväg, och körning i svåra förhållanden.
         </p>
-        <div style={{ background: "#e6f4ee", borderRadius: "16px", padding: "20px", marginBottom: "32px", borderLeft: "4px solid #006B3F" }}>
-          <p style={{ fontSize: "15px", color: "#004d2d", margin: 0, lineHeight: "1.6" }}>
+        <div style={{ background: "#e6f4ee", borderRadius: "16px", padding: "20px", marginBottom: "32px", borderLeft: "4px solid #1DB954" }}>
+          <p style={{ fontSize: "15px", color: "#17a34a", margin: 0, lineHeight: "1.6" }}>
             <strong>💡 Huvet-tips:</strong> Gör ett diagnostiktest direkt och identifiera dina svaga ämnen. De flesta elever missar framförallt väjningsregler i korsningar, parkeringsregler och hastighetsregler. Fokusera träningen dit.
           </p>
         </div>
@@ -167,12 +179,12 @@ export default function BKorkortPage() {
               background: i % 2 === 0 ? "white" : "#fafcfb",
             }}>
               <span style={{ fontSize: "15px", fontWeight: "600", color: "#0d1f17" }}>{row.label}</span>
-              <span style={{ fontSize: "15px", fontWeight: "800", color: "#006B3F" }}>{row.range}</span>
+              <span style={{ fontSize: "15px", fontWeight: "800", color: "#1DB954" }}>{row.range}</span>
             </div>
           ))}
         </div>
         <p style={{ fontSize: "15px", color: "#666", marginBottom: "40px", lineHeight: "1.7" }}>
-          Se vår fullständiga guide om <Link href="/kostnad" style={{ color: "#006B3F", fontWeight: "700" }}>körkortets kostnad 2026</Link> för en detaljerad uppdelning av alla kostnader.
+          Se vår fullständiga guide om <Link href="/kostnad" style={{ color: "#1DB954", fontWeight: "700" }}>körkortets kostnad 2026</Link> för en detaljerad uppdelning av alla kostnader.
         </p>
 
         <h2 style={{ fontSize: "clamp(1.4rem, 3vw, 1.9rem)", fontWeight: "900", color: "#0d1f17", marginBottom: "16px", letterSpacing: "-0.02em" }}>
@@ -182,18 +194,18 @@ export default function BKorkortPage() {
           Den genomsnittliga tiden från start till färdigt B-körkort är 6–12 månader. Den som tränar intensivt och planerar bra kan klara det på 3–4 månader. Den som tar det i sin takt och har lång väntetid på uppkörning kan ta upp till 18–24 månader.
         </p>
         <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#444", marginBottom: "40px" }}>
-          Läs mer i vår guide om <Link href="/hur-lang-tid" style={{ color: "#006B3F", fontWeight: "700" }}>hur lång tid det tar att ta körkort</Link>.
+          Läs mer i vår guide om <Link href="/hur-lang-tid" style={{ color: "#1DB954", fontWeight: "700" }}>hur lång tid det tar att ta körkort</Link>.
         </p>
 
         {/* CTA */}
-        <div style={{ background: "linear-gradient(135deg, #006B3F, #008a50)", borderRadius: "24px", padding: "40px 32px", textAlign: "center", marginBottom: "48px" }}>
+        <div style={{ background: "linear-gradient(135deg, #1DB954, #008a50)", borderRadius: "24px", padding: "40px 32px", textAlign: "center", marginBottom: "48px" }}>
           <h3 style={{ fontSize: "22px", fontWeight: "900", color: "white", marginBottom: "12px" }}>
             Klara teoriprovet på första försöket
           </h3>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "15px", marginBottom: "24px" }}>
             Huvet tränar dig på dina svaga ämnen med riktiga frågor ur Transportstyrelsens frågebank.
           </p>
-          <Link href="/#demo" style={{ background: "white", color: "#006B3F", padding: "16px 32px", borderRadius: "999px", fontWeight: "800", fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
+          <Link href="/#demo" style={{ background: "white", color: "#1DB954", padding: "16px 32px", borderRadius: "999px", fontWeight: "800", fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
             Testa gratis →
           </Link>
         </div>
@@ -209,7 +221,7 @@ export default function BKorkortPage() {
               { href: "/moped", label: "🛵 Mopedkörkort" },
               { href: "/korkortstips", label: "📚 Körkortslips" },
             ].map((link) => (
-              <Link key={link.href} href={link.href} style={{ background: "#f0f7f3", color: "#006B3F", padding: "8px 16px", borderRadius: "999px", fontSize: "14px", fontWeight: "600", textDecoration: "none", border: "1px solid #c3ddd2" }}>
+              <Link key={link.href} href={link.href} style={{ background: "#f0f7f3", color: "#1DB954", padding: "8px 16px", borderRadius: "999px", fontSize: "14px", fontWeight: "600", textDecoration: "none", border: "1px solid #c3ddd2" }}>
                 {link.label}
               </Link>
             ))}

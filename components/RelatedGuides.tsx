@@ -148,7 +148,7 @@ export default function RelatedGuides({ currentPath }: RelatedGuidesProps) {
             <h3 style={{
               fontSize: '1.05rem',
               fontWeight: 700,
-              color: '#006B3F',
+              color: '#1DB954',
               margin: '0 0 0.4rem',
               fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
             }}>

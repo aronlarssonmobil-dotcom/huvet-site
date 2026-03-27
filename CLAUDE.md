@@ -19,9 +19,10 @@ npm run start    # Starta produktionsserver
 ### Färger
 | Roll | Hex | Användning |
 |------|-----|------------|
-| Primary Green | `#00C853` | CTA-knappar, accenter, badges |
-| Green Light | `#00E676` | Hover-states, hero accent text |
-| Green BG | `#E8F5E9` | Feature-checkmarks, review-avatarer |
+| Primary Green | `#1DB954` | CTA-knappar, accenter, badges |
+| Green Light | `#24D963` | Hover-states, hero accent text, gradient-slut |
+| Green Dark | `#17a34a` | Gradient-slut, mörkare accenter |
+| Green BG | `#e8f8ee` | Feature-checkmarks, review-avatarer |
 | Dark | `#111` | Journey-sektion, CTA-banner bakgrund |
 | Text | `#111` | Primär textfärg |
 | Muted | `#888` / `#666` / `#777` | Sekundär text beroende på kontext |

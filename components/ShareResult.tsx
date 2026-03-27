@@ -49,7 +49,7 @@ export default function ShareResult({ score, total, percentage, passed, streak }
       // Circle background
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.fillStyle = passed ? '#006B3F' : '#dc2626';
+      ctx.fillStyle = passed ? '#1DB954' : '#dc2626';
       ctx.fill();
 
       // Score text
@@ -171,7 +171,7 @@ export default function ShareResult({ score, total, percentage, passed, streak }
           style={{
             padding: '0.75rem 1rem',
             background: '#f0f7f3',
-            color: '#006B3F',
+            color: '#1DB954',
             border: '1px solid #dceee5',
             borderRadius: 12,
             fontWeight: 700,

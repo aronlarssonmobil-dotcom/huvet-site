@@ -160,14 +160,14 @@ export default function KorkortKostnadPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
 
       {/* Header */}
-      <header style={{ background: '#006B3F', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <header style={{ background: '#1DB954', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Link href="/" style={{ color: 'white', textDecoration: 'none', fontWeight: '900', fontSize: '20px', letterSpacing: '-0.03em' }}>Huvet</Link>
         <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px' }}>·</span>
         <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Körkort kostnad</span>
       </header>
 
       {/* Hero */}
-      <section style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', padding: '64px 20px 56px', textAlign: 'center', color: 'white' }}>
+      <section style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', padding: '64px 20px 56px', textAlign: 'center', color: 'white' }}>
         <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.15)', borderRadius: '999px', padding: '6px 16px', fontSize: '12px', fontWeight: '700', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '20px' }}>
           Kostnadskalkyl 2026
         </div>
@@ -178,7 +178,7 @@ export default function KorkortKostnadPage() {
           Totalkostnad: <strong>15 000–35 000 kr</strong>. Spannet beror på hur mycket du privatövningskör och hur snabbt du klarar proven.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
-          <Link href="/#demo" style={{ background: 'white', color: '#006B3F', padding: '14px 28px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '15px' }}>
+          <Link href="/#demo" style={{ background: 'white', color: '#1DB954', padding: '14px 28px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '15px' }}>
             Träna teori gratis →
           </Link>
           <Link href="/teoriprov" style={{ background: 'transparent', color: 'white', padding: '14px 28px', borderRadius: '999px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', border: '2px solid rgba(255,255,255,0.4)' }}>
@@ -199,7 +199,7 @@ export default function KorkortKostnadPage() {
 
           <div style={{ background: 'white', border: '2px solid #e2efe9', borderRadius: '20px', overflow: 'hidden' }}>
             {/* Table header */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 100px 100px', gap: '12px', padding: '14px 20px', background: '#e6f4ee', fontWeight: '800', fontSize: '13px', color: '#006B3F', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 100px 100px', gap: '12px', padding: '14px 20px', background: '#e6f4ee', fontWeight: '800', fontSize: '13px', color: '#1DB954', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               <span>Post</span>
               <span style={{ textAlign: 'right' }}>Lägst</span>
               <span style={{ textAlign: 'right' }}>Högst</span>
@@ -215,10 +215,10 @@ export default function KorkortKostnadPage() {
               </div>
             ))}
             {/* Total */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 100px 100px', gap: '12px', padding: '18px 20px', borderTop: '2px solid #006B3F', background: '#e6f4ee' }}>
-              <div style={{ fontWeight: '900', fontSize: '16px', color: '#006B3F' }}>TOTALT</div>
-              <div style={{ textAlign: 'right', fontWeight: '900', fontSize: '16px', color: '#006B3F' }}>≈ 10 445 kr</div>
-              <div style={{ textAlign: 'right', fontWeight: '900', fontSize: '16px', color: '#006B3F' }}>≈ 28 795 kr</div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 100px 100px', gap: '12px', padding: '18px 20px', borderTop: '2px solid #1DB954', background: '#e6f4ee' }}>
+              <div style={{ fontWeight: '900', fontSize: '16px', color: '#1DB954' }}>TOTALT</div>
+              <div style={{ textAlign: 'right', fontWeight: '900', fontSize: '16px', color: '#1DB954' }}>≈ 10 445 kr</div>
+              <div style={{ textAlign: 'right', fontWeight: '900', fontSize: '16px', color: '#1DB954' }}>≈ 28 795 kr</div>
             </div>
           </div>
 
@@ -240,7 +240,7 @@ export default function KorkortKostnadPage() {
 
           {tips.map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: '20px', marginBottom: '32px', paddingBottom: '32px', borderBottom: i < tips.length - 1 ? '1px solid #e2efe9' : 'none' }}>
-              <div style={{ flexShrink: 0, width: '44px', height: '44px', borderRadius: '12px', background: '#e6f4ee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '13px', color: '#006B3F' }}>
+              <div style={{ flexShrink: 0, width: '44px', height: '44px', borderRadius: '12px', background: '#e6f4ee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '13px', color: '#1DB954' }}>
                 {t.num}
               </div>
               <div>
@@ -253,14 +253,14 @@ export default function KorkortKostnadPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', padding: '64px 20px', textAlign: 'center', color: 'white' }}>
+      <section style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', padding: '64px 20px', textAlign: 'center', color: 'white' }}>
         <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: '900', margin: '0 0 12px', letterSpacing: '-0.03em' }}>
           Klara teoriprovet på första försöket
         </h2>
         <p style={{ fontSize: '17px', opacity: 0.8, maxWidth: '440px', margin: '0 auto 32px', lineHeight: '1.6' }}>
           Spara 325 kr och flera veckor väntetid. Huvet tränar dig på exakt de frågor du missar.
         </p>
-        <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#006B3F', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
+        <Link href="/#demo" style={{ display: 'inline-block', background: 'white', color: '#1DB954', padding: '16px 36px', borderRadius: '999px', fontWeight: '800', textDecoration: 'none', fontSize: '16px' }}>
           Börja träna gratis →
         </Link>
       </section>

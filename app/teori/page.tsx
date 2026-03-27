@@ -23,7 +23,7 @@ const chapters = [
     title: 'Trafikregler',
     desc: 'Hastighetsbegränsningar, högerregeln, stopplikt, väjningsplikt, omkörning och parkering.',
     icon: '🚦',
-    color: '#006B3F',
+    color: '#1DB954',
   },
   {
     num: 2,
@@ -121,7 +121,7 @@ export default function TeoriOverviewPage() {
 
       <style>{`
         .teori-hero {
-          background: linear-gradient(135deg, #006B3F 0%, #004D2C 60%, #003D23 100%);
+          background: linear-gradient(135deg, #1DB954 0%, #004D2C 60%, #003D23 100%);
           padding: 5.5rem 1.5rem 3rem;
           color: #fff;
         }
@@ -160,7 +160,7 @@ export default function TeoriOverviewPage() {
           transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
         }
         .teori-card:hover {
-          border-color: #006B3F;
+          border-color: #1DB954;
           box-shadow: 0 4px 20px rgba(0,107,63,0.08);
           transform: translateY(-2px);
         }
@@ -200,7 +200,7 @@ export default function TeoriOverviewPage() {
           padding: 0 1.5rem;
         }
         .teori-bottom-cta-inner {
-          background: linear-gradient(135deg, #006B3F, #1DB954);
+          background: linear-gradient(135deg, #1DB954, #1DB954);
           padding: 2.5rem;
           border-radius: 16px;
           text-align: center;
@@ -219,7 +219,7 @@ export default function TeoriOverviewPage() {
         .teori-cta-btn {
           display: inline-block;
           background: #fff;
-          color: #006B3F;
+          color: #1DB954;
           padding: 0.85rem 2rem;
           border-radius: 12px;
           font-weight: 700;

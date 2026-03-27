@@ -157,7 +157,7 @@ export default function UtlandskKorkortPage() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-            <div style={{ width: '36px', height: '36px', background: '#006B3F', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '36px', height: '36px', background: '#1DB954', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="2"/>
                 <circle cx="10" cy="10" r="2.5" fill="white"/>
@@ -168,7 +168,7 @@ export default function UtlandskKorkortPage() {
             </div>
             <span style={{ fontSize: '20px', fontWeight: '900', color: '#0d1f17', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>Huvet</span>
           </Link>
-          <Link href="/#demo" style={{ background: '#006B3F', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+          <Link href="/#demo" style={{ background: '#1DB954', color: 'white', padding: '10px 22px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Träna gratis
           </Link>
         </div>
@@ -181,7 +181,7 @@ export default function UtlandskKorkortPage() {
             { label: 'Hem', href: '/' },
             { label: 'Byta utländskt körkort' },
           ]} />
-          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#006B3F', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
+          <div style={{ display: 'inline-block', background: '#e6f4ee', color: '#1DB954', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.16em', padding: '6px 16px', borderRadius: '999px', marginBottom: '20px' }}>
             Guide 2026
           </div>
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: '900', lineHeight: '1.08', color: '#0d1f17', margin: '0 0 20px', letterSpacing: '-0.04em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
@@ -196,7 +196,7 @@ export default function UtlandskKorkortPage() {
             {facts.map((f) => (
               <div key={f.label} style={{ background: 'white', border: '2px solid #dceee5', borderRadius: '16px', padding: '20px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
-                <div style={{ fontSize: '20px', fontWeight: '900', color: '#006B3F', lineHeight: 1 }}>{f.label}</div>
+                <div style={{ fontSize: '20px', fontWeight: '900', color: '#1DB954', lineHeight: 1 }}>{f.label}</div>
                 <div style={{ fontSize: '12px', color: '#5a6b62', marginTop: '4px' }}>{f.sub}</div>
               </div>
             ))}
@@ -218,7 +218,7 @@ export default function UtlandskKorkortPage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px', margin: '20px 0' }}>
               <div style={{ background: '#f0f7f3', border: '2px solid #dceee5', borderRadius: '16px', padding: '20px' }}>
-                <div style={{ fontWeight: '800', color: '#006B3F', marginBottom: '8px', fontSize: '16px' }}>EU/EES-körkort</div>
+                <div style={{ fontWeight: '800', color: '#1DB954', marginBottom: '8px', fontSize: '16px' }}>EU/EES-körkort</div>
                 <p style={{ fontSize: '14px', color: '#5a6b62', margin: 0, lineHeight: '1.6' }}>
                   Kan bytas direkt utan prov. Gäller körkort från alla EU-länder, Norge, Island och Liechtenstein. Även Schweiz och UK (post-Brexit-avtal) har särskilda utbytesavtal.
                 </p>
@@ -246,7 +246,7 @@ export default function UtlandskKorkortPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', margin: '24px 0' }}>
               {euSteps.map((s) => (
                 <div key={s.step} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ minWidth: '40px', height: '40px', background: '#006B3F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '18px', color: 'white' }}>
+                  <div style={{ minWidth: '40px', height: '40px', background: '#1DB954', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '18px', color: 'white' }}>
                     {s.step}
                   </div>
                   <div>
@@ -257,7 +257,7 @@ export default function UtlandskKorkortPage() {
               ))}
             </div>
             <div style={{ background: '#f0f7f3', border: '2px solid #dceee5', borderRadius: '14px', padding: '16px 20px', marginTop: '16px' }}>
-              <div style={{ fontWeight: '800', color: '#006B3F', marginBottom: '4px', fontSize: '14px' }}>Viktigt om EU-körkort</div>
+              <div style={{ fontWeight: '800', color: '#1DB954', marginBottom: '4px', fontSize: '14px' }}>Viktigt om EU-körkort</div>
               <p style={{ fontSize: '14px', color: '#5a6b62', margin: 0, lineHeight: '1.6' }}>
                 Du behöver inte byta ditt EU/EES-körkort alls om du inte vill. Det gäller fullt ut i Sverige. Anledningar att byta kan vara att kortet snart går ut, att du vill ha ett svenskt kort av praktiska skäl, eller att du behöver lägga till nya behörigheter.
               </p>
@@ -304,7 +304,7 @@ export default function UtlandskKorkortPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {requiredDocs.map((d) => (
                 <div key={d.doc} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', padding: '14px 18px', background: '#f0f7f3', borderRadius: '14px', border: '1px solid #dceee5' }}>
-                  <div style={{ minWidth: '28px', height: '28px', background: '#006B3F', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '14px', fontWeight: '800' }}>✓</div>
+                  <div style={{ minWidth: '28px', height: '28px', background: '#1DB954', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '14px', fontWeight: '800' }}>✓</div>
                   <div>
                     <div style={{ fontWeight: '700', color: '#0d1f17', fontSize: '15px' }}>{d.doc}</div>
                     <div style={{ fontSize: '13px', color: '#5a6b62', marginTop: '2px' }}>{d.note}</div>
@@ -321,7 +321,7 @@ export default function UtlandskKorkortPage() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
               <div style={{ background: '#f0f7f3', border: '2px solid #dceee5', borderRadius: '16px', padding: '24px' }}>
-                <div style={{ fontWeight: '800', color: '#006B3F', fontSize: '18px', marginBottom: '16px' }}>EU/EES-körkort</div>
+                <div style={{ fontWeight: '800', color: '#1DB954', fontSize: '18px', marginBottom: '16px' }}>EU/EES-körkort</div>
                 {[
                   { item: 'Ansökningsavgift', cost: '250 kr' },
                   { item: 'Synundersökning', cost: '0–400 kr' },
@@ -329,12 +329,12 @@ export default function UtlandskKorkortPage() {
                 ].map((row) => (
                   <div key={row.item} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #dceee5' }}>
                     <span style={{ fontSize: '14px', color: '#0d1f17' }}>{row.item}</span>
-                    <span style={{ fontWeight: '700', color: '#006B3F', fontSize: '14px' }}>{row.cost}</span>
+                    <span style={{ fontWeight: '700', color: '#1DB954', fontSize: '14px' }}>{row.cost}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0 0' }}>
                   <span style={{ fontWeight: '900', fontSize: '15px' }}>Totalt</span>
-                  <span style={{ fontWeight: '900', color: '#006B3F', fontSize: '15px' }}>ca 250–800 kr</span>
+                  <span style={{ fontWeight: '900', color: '#1DB954', fontSize: '15px' }}>ca 250–800 kr</span>
                 </div>
               </div>
               <div style={{ background: '#fff', border: '2px solid #dceee5', borderRadius: '16px', padding: '24px' }}>
@@ -349,12 +349,12 @@ export default function UtlandskKorkortPage() {
                 ].map((row) => (
                   <div key={row.item} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #dceee5' }}>
                     <span style={{ fontSize: '14px', color: '#0d1f17' }}>{row.item}</span>
-                    <span style={{ fontWeight: '700', color: '#006B3F', fontSize: '14px' }}>{row.cost}</span>
+                    <span style={{ fontWeight: '700', color: '#1DB954', fontSize: '14px' }}>{row.cost}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0 0' }}>
                   <span style={{ fontWeight: '900', fontSize: '15px' }}>Totalt</span>
-                  <span style={{ fontWeight: '900', color: '#006B3F', fontSize: '15px' }}>ca 3 375–10 775 kr</span>
+                  <span style={{ fontWeight: '900', color: '#1DB954', fontSize: '15px' }}>ca 3 375–10 775 kr</span>
                 </div>
               </div>
             </div>
@@ -375,7 +375,7 @@ export default function UtlandskKorkortPage() {
                 { type: 'Icke-EU utan avtal', time: '3–6 månader', desc: 'Full process med teori + körprov' },
               ].map((t) => (
                 <div key={t.type} style={{ background: '#f0f7f3', border: '1px solid #dceee5', borderRadius: '14px', padding: '18px' }}>
-                  <div style={{ fontWeight: '800', color: '#006B3F', fontSize: '20px' }}>{t.time}</div>
+                  <div style={{ fontWeight: '800', color: '#1DB954', fontSize: '20px' }}>{t.time}</div>
                   <div style={{ fontWeight: '700', color: '#0d1f17', fontSize: '15px', marginTop: '4px' }}>{t.type}</div>
                   <div style={{ fontSize: '13px', color: '#5a6b62', marginTop: '4px' }}>{t.desc}</div>
                 </div>
@@ -387,7 +387,7 @@ export default function UtlandskKorkortPage() {
           </div>
 
           {/* CTA block */}
-          <div style={{ background: 'linear-gradient(135deg, #006B3F 0%, #004d2d 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white', marginBottom: '48px' }}>
+          <div style={{ background: 'linear-gradient(135deg, #1DB954 0%, #17a34a 100%)', borderRadius: '20px', padding: '40px', textAlign: 'center', color: 'white', marginBottom: '48px' }}>
             <div style={{ fontSize: '28px', fontWeight: '900', marginBottom: '12px', letterSpacing: '-0.03em', fontFamily: "var(--font-playfair), 'Playfair Display', serif" }}>
               Behöver du klara teoriprovet?
             </div>
