@@ -49,7 +49,7 @@ export async function GET() {
             style={{
               width: '10px',
               height: '10px',
-              background: '#00C853',
+              background: '#1DB954',
               borderRadius: '50%',
               display: 'flex',
             }}
@@ -74,7 +74,7 @@ export async function GET() {
           }}
         >
           <span>Klara körkortsprovet.</span>
-          <span style={{ color: '#00E676' }}>Första gången.</span>
+          <span style={{ color: '#24D963' }}>Första gången.</span>
         </div>
 
         {/* Subtitle */}
