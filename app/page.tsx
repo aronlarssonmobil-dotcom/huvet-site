@@ -1,6 +1,7 @@
 import QuizDemo from "@/components/QuizDemo";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ProgressDashboard from "@/components/ProgressDashboard";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -113,7 +114,7 @@ export default function Home() {
         .hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(0,30,15,0.5) 0%, rgba(0,30,15,0.2) 40%, rgba(0,30,15,0.15) 60%, rgba(0,30,15,0.6) 100%);
+          background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.65) 100%);
         }
         .hero-content {
           position: relative;
@@ -691,6 +692,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* ─── PROGRESS DASHBOARD (returning users) ─── */}
+      <ProgressDashboard />
 
       {/* ─── QUIZ PREVIEW ─── */}
       <div id="demo" className="quiz-section">
