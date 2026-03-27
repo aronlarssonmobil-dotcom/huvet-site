@@ -1,65 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { loadState, recordAnswer, recordQuizComplete, type GamificationState } from '@/lib/gamification';
+import { getRandomQuestions, categoryLabels, categoryColors as qCategoryColors } from '@/lib/questions';
+import type { Question as BankQuestion, QuizCategory } from '@/lib/questions';
 import XPNotification, { StreakIndicator } from './XPNotification';
 
-const questions = [
-  {
-    id: 1,
-    question: 'Vad gäller vid en stoppskylt?',
-    options: [
-      'Du måste stanna och ge företräde',
-      'Du kan köra igenom om det är fritt',
-      'Du ska sakta ned men behöver inte stanna',
-    ],
-    correct: 0,
-    explanation: 'Vid en stoppskylt (oktagon med "STOP") måste du alltid stanna helt och ge företräde åt all trafik på den korsande vägen — även om det verkar fritt.',
-    category: 'Skyltar',
-  },
-  {
-    id: 2,
-    question: 'Vilket fordon har väjningsplikt i en rondell?',
-    options: [
-      'Fordon inne i rondellen',
-      'Fordon som ska in i rondellen',
-      'Det beror på rondellens storlek',
-    ],
-    correct: 1,
-    explanation: 'Det är alltid fordon som ska köra in i rondellen som har väjningsplikt mot trafik som redan befinner sig i rondellen.',
-    category: 'Väjningsplikt',
-  },
-  {
-    id: 3,
-    question: 'Vad är den högsta tillåtna promillehalten för bilkörning i Sverige?',
-    options: ['0,5 promille', '0,3 promille', '0,2 promille'],
-    correct: 2,
-    explanation: 'I Sverige är gränsen för rattfylleri 0,2 promille alkohol i blodet. Över 1,0 promille räknas som grovt rattfylleri.',
-    category: 'Alkohol & droger',
-  },
-  {
-    id: 4,
-    question: 'Hur långt från ett övergångsställe får du parkera?',
-    options: ['3 meter', '5 meter', '10 meter'],
-    correct: 2,
-    explanation: 'Du får inte parkera inom 10 meter från ett övergångsställe eller cykelöverfart. Det gäller att hålla god sikt för alla trafikanter.',
-    category: 'Parkering',
-  },
-  {
-    id: 5,
-    question: 'Vad innebär en vit heldragen linje i mitten av körbanan?',
-    options: [
-      'Du får köra om om sikten är god',
-      'Absolut körförbud att passera linjen',
-      'Du får passera för att undvika hinder',
-    ],
-    correct: 1,
-    explanation: 'En heldragen mittlinje innebär absolut förbud att korsa eller köra på linjen. Det är ett av de vanligaste felen på körkortsprovet.',
-    category: 'Vägmarkeringar',
-  },
-];
+const DEMO_COUNT = 10;
+
+type DemoQuestion = {
+  id: number;
+  question: string;
+  options: string[];
+  correct: number;
+  explanation: string;
+  category: string;
+};
+
+function bankToDemo(q: BankQuestion, idx: number): DemoQuestion {
+  return {
+    id: idx + 1,
+    question: q.question,
+    options: q.options,
+    correct: q.correctIndex,
+    explanation: q.explanation,
+    category: categoryLabels[q.category] || q.category,
+  };
+}
 
 const categoryColors: Record<string, string> = {
+  ...Object.fromEntries(
+    Object.entries(qCategoryColors).map(([k, v]) => [categoryLabels[k as QuizCategory] || k, v])
+  ),
   'Skyltar': '#006B3F',
   'Väjningsplikt': '#d97706',
   'Alkohol & droger': '#7c3aed',
@@ -68,17 +40,28 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function QuizDemo() {
+  const [questions, setQuestions] = useState<DemoQuestion[]>([]);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
-  const [answers, setAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
+  const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [showExplanation, setShowExplanation] = useState(false);
   const [finished, setFinished] = useState(false);
   const [gfState, setGfState] = useState<GamificationState | null>(null);
   const [xpNotif, setXpNotif] = useState<{ xp: number; achievements: string[] } | null>(null);
 
+  function loadNewQuestions() {
+    const bankQs = getRandomQuestions(DEMO_COUNT);
+    const demoQs = bankQs.map(bankToDemo);
+    setQuestions(demoQs);
+    setAnswers(Array(demoQs.length).fill(null));
+  }
+
   useEffect(() => {
+    loadNewQuestions();
     setGfState(loadState());
   }, []);
+
+  if (questions.length === 0) return null;
 
   const q = questions[current];
   const catColor = categoryColors[q.category] || '#006B3F';
@@ -127,11 +110,11 @@ export default function QuizDemo() {
   function handleRestart() {
     setCurrent(0);
     setSelected(null);
-    setAnswers(Array(questions.length).fill(null));
     setShowExplanation(false);
     setFinished(false);
     setXpNotif(null);
     setGfState(loadState());
+    loadNewQuestions();
   }
 
   if (finished) {
@@ -223,7 +206,7 @@ export default function QuizDemo() {
             ))}
           </div>
           <p style={{ color: '#666', fontSize: '15px', lineHeight: '1.7', marginBottom: '32px' }}>
-            Med Huvet Premium får du {questions.length * 90}+ fler frågor, detaljerad analys av dina svaga ämnen och personliga träningsplaner.
+            Med Huvet Premium får du 200+ fler frågor, detaljerad analys av dina svaga ämnen och personliga träningsplaner.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <a href="#pricing" style={{
